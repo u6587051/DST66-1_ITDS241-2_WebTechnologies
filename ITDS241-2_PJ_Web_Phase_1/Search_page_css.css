@@ -1,0 +1,124 @@
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+
+header {
+    background-color: #010056;
+    padding: 30px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fba906;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 1.5rem;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav {
+    padding-bottom: 10px;
+}
+
+.hero {
+    background-image: url('tools-background.jpg');
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #FFA500;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF8500;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 0;
+    background-color: #1a1a1a;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+}
+
+.feature img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: left;
+    padding: 50px;
+    background-color: #010056;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+ul{
+    float: right;
+}
+
+.SearchInput{
+    margin: auto;
+    padding: 15%;
+    padding-top: 2%;
+    width: 600px;
+    height: 600px;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+#txtProduct{
+    width: 70%;
+    margin: auto;
+}
+
+#SubmitButton{
+    width: 15%;
+}
+#SearchHeading{
+    color: black;
+    padding-bottom: 4%;
+}
+#txtProduct, #SubmitButton{
+    font-size: large;
+    padding: 10px;
+    border-radius: 10px;
+}
