@@ -5,7 +5,7 @@ body, h1, h2, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: #fff;
     color: #fff;
 }
 
@@ -38,13 +38,13 @@ nav {
     padding-bottom: 10px;
 }
 
-.hero {
+/* .hero {
     background-image: url('tools-background.jpg');
     background-size: cover;
     color: #fff;
     text-align: center;
     padding: 6rem 0;
-}
+} */
 
 .hero-content {
     max-width: 800px;
@@ -83,10 +83,15 @@ nav {
 }
 
 footer {
+    position: static;
+    width: 100%;
+    height : 80px;
+    bottom : 0px;
     text-align: left;
     padding: 50px;
     background-color: #010056;
 }
+
 img{
     width: 50px;
     height: 50px;
@@ -95,24 +100,29 @@ ul{
     float: right;
 }
 
-.SearchInput{
+.SearchBox{
     margin: auto;
-    padding: 15%;
     padding-top: 2%;
-    width: 600px;
-    height: 600px;
+    width: 650;
+    height: auto;
     background-color: aliceblue;
-    border-radius: 20px;
+    color: black;
+}
+
+p1 {
+    font-size: large;
 }
 
 #txtProduct{
-    width: 70%;
+    width: 30%;
     margin: auto;
+    margin-bottom: 40px;
 }
 
 #SubmitButton{
-    width: 15%;
+    width: 7%;
 }
+
 #SearchHeading{
     color: black;
     padding-bottom: 4%;
@@ -122,3 +132,100 @@ ul{
     padding: 10px;
     border-radius: 10px;
 }
+
+div.SearchBar{
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+h3#CategoryHead{
+    color: black;
+    font-size: 20px;
+}
+
+a#Category{
+    text-decoration: none;
+    color: #010056;
+    font-size: 20px;
+}
+a#Category:hover{
+    color: #fba906;
+}
+
+.sidebar {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-left: 15%;
+    padding-left: 15px;
+    width: 200px;
+    background-color: #fff;
+    position: absolute;
+    height: 40%;
+    overflow: auto;
+    border: #010056 solid;
+}
+
+h3#CategoryHead{
+    border-bottom: #010056 solid;
+    border-width: 5px;
+}
+
+
+div.content {
+    justify-content:space-evenly; 
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 35%;
+    padding: 1px 16px;
+    height: 1000px;
+    align-items: flex-start;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+div.column{
+    border: gray solid;
+    background-color: #010056;
+    width: 200px;
+    height:300px;
+    margin-right: 0%;
+}
+
+img.productimg{
+    margin-top: 10px ;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    max-height: 200px
+}
+
+h3#producthead, h4#price, h4#buybutton{
+    text-align: center;
+    margin: 0%;
+    margin-left:5px ;
+}
+#price{
+    color: #fba906;
+    font-size: 20px;
+}
+
+#buybutton{
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+#Buy{
+    background-color: #fba906;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    color:black;
+    border-radius: 5px;
+}
+
