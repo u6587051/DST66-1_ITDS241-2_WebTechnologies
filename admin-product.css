@@ -1,0 +1,40 @@
+.bar{
+    display: block;
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    text-align: left;
+}
+section.hero ul{
+    list-style: none;
+}
+section.hero li{
+    margin-bottom: 30px;
+}
+section.hero p{
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+section.hero a{
+    display: block;
+    text-decoration: none;
+    color:white;
+}
+section.hero a:hover{
+    display: block;
+    text-decoration: none;
+    color: #fba906;
+    background-color:rgb(35, 33, 33);
+    line-height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 5px solid #fba906;
+}
+.features {
+    width: 100%;
+}
+span{
+    color: red;
+}

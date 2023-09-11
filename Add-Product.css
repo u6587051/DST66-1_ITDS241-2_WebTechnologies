@@ -1,0 +1,53 @@
+nav a:hover{
+    text-decoration: none;
+    color: #fba906;
+}
+.hero {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+}
+img.upload{
+    width: 450px;
+    height: 450px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+fieldset{
+    width: 500px;
+    height: 340px;
+    text-align: left;
+    border: none;
+}
+legend{
+    text-align: left;
+}
+input{
+    width: 200px;
+    margin-bottom: 1rem;
+}
+textarea{
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h1.title{
+    padding: 20px;
+    text-align: center;
+}
+label{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 60px;
+    background-color:rgb(46, 116, 116);
+    margin-left: 100px;
+    font-weight: bold;
+    cursor: pointer;
+}
+div.content{
+    text-align: center;
+}
