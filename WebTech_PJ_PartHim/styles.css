@@ -129,7 +129,8 @@ img {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 90px;
+    /* margin: 90px; */
+    margin: center;
 }
 
 .sptd {
