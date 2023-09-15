@@ -115,10 +115,11 @@ img {
 }
 
 .ProInfo {
-    /* border-radius: 20px; */
+    border-radius: 20px;
     border: 0px solid;
     width: 50%;
     margin: auto;
+    padding: center;
 }
 
 .ProImg {
@@ -130,10 +131,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 50px;
-}
-
-.sptd {
-    text-align: center;
 }
 
 .ProImgDes {
@@ -149,3 +146,9 @@ table {
     margin: 0 auto;
     display: block;
 }
+
+.BoxContent {
+    width: 750px;
+    padding: 10px;
+    margin: auto;
+  }
