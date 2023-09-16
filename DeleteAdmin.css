@@ -1,0 +1,117 @@
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+
+header {
+    background-color: #010056;
+    padding: 30px;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fba906;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 1.5rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav {
+    padding-bottom: 10px;
+}
+
+.setting {
+    color: #fff;
+    text-align: left;
+    width: 200px;
+    height: 35rem;
+    background-color: grey;
+    border-radius: 0px;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.features {
+    display: inline-block;
+
+}
+
+.features img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: left;
+    padding: 50px;
+    background-color: #010056;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+ul{
+    float: right;
+}
+
+.hover-effect:hover{
+    color: #fba906;
+    cursor: pointer;
+}
+/* ปรับแต่งตาราง */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+table, th, td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+/* ปรับแต่งตาราง */
+/* ปรับแต่งข้อความ */
+h4{
+    margin-left: 20px;
+}
+/* ลักษณะของปุ่ม */
+button {
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #005F7D;
+}
+.edit-button {
+    background-color: #4CAF50;
+}
+.edit-button:hover {
+    background-color: #45a049;
+}
+/* ลักษณะของปุ่ม */
+a{
+    text-decoration: none;
+    color: #fff;
+}

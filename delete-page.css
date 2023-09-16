@@ -36,3 +36,6 @@ span{ /*เปลี่ยนtextเป็นสีแดง*/
     text-decoration: none;
     color: #121212;
 }
+.bdel{ /*เปลี่ยน cursor เป็นชี้*/
+    cursor: pointer;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DeleteAdmin.css">
+    <title>Building Tools Store</title>
+    <link rel="website icon" type="png" href="https://emojis.wiki/emoji-pics/apple/crown-apple.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>TOP KING <img src="https://images.emojiterra.com/google/android-nougat/512px/1f451.png"></h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="setting">
+        <br>
+        <h2 style="margin-left: 20px;">Setting</h2><hr>
+      <a href="Admin(information).html" class="hover-effect"> <h4>  Admin Information   </h4> </a> 
+      <a href="User(Information).html"  class="hover-effect"> <h4>  User Information    </h4> </a>
+      <a href="Admin(edit).html"        class="hover-effect"> <h4>  Edit Admin          </h4> </a>
+      <a href="User(edit).html"         class="hover-effect"> <h4>  Edit User           </h4> </a>
+      <a href="Delete(Admid).html"      class="hover-effect"> <h4>  Delete admin        </h4> </a>
+      <a href="admin-product.html"      class="hover-effect"> <h4>  Product             </h4> </a>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+
+    <!-- สร้างตาราง -->
+    <section class="features">
+        <h1><a class="text" style="font-size: larger; margin-left: 850px;" >Edit Admin</a></h1>
+    <table border="1" style="margin-left: 370px;" id="UserTable">
+        <tr>
+            <th>ตำแหน่งงาน</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+            <th>อีเมล</th>
+            <th>ที่อยู่</th>
+            <th>รหัสไปรษณีย์</th>
+            <th>แก้ไข</th>
+        </tr>
+        <tr>
+            <td contenteditable="true">Admin</td>
+            <td contenteditable="true">ซันนี่</td>
+            <td contenteditable="true">โอตะแมน</td>
+            <td contenteditable="true">Sunny@example.com</td>
+            <td contenteditable="true">ถ.มังกร อ.ปลาคัง จ.สงขลา</td>
+            <td contenteditable="true">46846</td>
+            <td>
+                <!-- เพิ่มปุ่ม แก้ไขและลบ ที่เมื่อกดแล้วจะเรียกใช้ function-->
+                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
+                <button onclick="deleteRow(this)">ลบ</button>
+              </td>
+        </tr>
+        
+    </table>
+    <!-- เพิ่มปุ่ม เพิ่มRowสำหรับผู้ใช้ใหม่ -->
+    <button onclick="addRow()" style="margin-left: 370px;">เพิ่มผู้ดูแลระบบ</button>
+       <br>
+        <script>
+            var selectedCell = null;
+          
+            // ฟังก์ชันแก้ไขแถบ
+            function editRow(button) {
+              var cell = button.parentNode.parentNode.querySelector("[contenteditable=true]");
+              selectedCell = cell;
+              cell.focus();
+            }
+          
+            // ลบแถบในตาราง
+            function deleteRow(button) {
+              var row = button.parentNode.parentNode;
+              row.parentNode.removeChild(row);
+            }
+
+            // ฟังก์ชันเพิ่มแถว
+            function addRow() {
+                var table = document.getElementById('UserTable');
+                var newRow = table.insertRow(table.rows.length);
+                var numberCell = newRow.insertCell(0);
+                var nameCell = newRow.insertCell(1);
+                var surnameCell = newRow.insertCell(2);
+                var emailCell = newRow.insertCell(3);
+                var addressCell = newRow.insertCell(4);
+                var postCell = newRow.insertCell(5);
+                var editCell = newRow.insertCell(6);
+
+                numberCell.contentEditable = true;
+                nameCell.contentEditable = true;
+                surnameCell.contentEditable = true;
+                emailCell.contentEditable = true;
+                addressCell.contentEditable = true;
+                postCell.contentEditable = true;
+                editCell.innerHTML = `
+                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
+                <button onclick="deleteRow(this)">ลบ</button>
+                `;
+  }
+          </script>
+    </section>
+
+    <footer>
+        <p>TopKing 👑</p><br>
+        <p>Tel: 02-345-6789</p><br>
+        <p> Address: 999 Phutthamonthon Sai 4 Rd, Salaya, Phutthamonthon District, Nakhon Pathom 73170 </p>
+    </footer>
+</body>
+</html>

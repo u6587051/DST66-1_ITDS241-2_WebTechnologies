@@ -198,14 +198,10 @@ a#Category:hover{
     margin-top: 50px;
 }
 
-/* ขีดเส้นเพื่อเน้นหัวข้อการจัดหมวดหมู่ของ Sidebar */
+/* กำหนดให้มีขอบล่างเพื่อเน้นหัวข้อการจัดหมวดหมู่ของ Sidebar */
 h3#CategoryHead{
     border-bottom: #010056 solid;
     border-width: 5px;
-}
-
-input#Category{
-    color: #010056;
 }
 
 /* กำหนดคุณสมบัติของ flex box ที่ใช้แสดงสินค้าทั้งหมด */
@@ -382,9 +378,6 @@ span#currentpage{
     padding: 0;
     border-bottom: 1px solid #cccccc;
 }
-/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown */
-
-
 
 /*Sort box ตาม id เรียงจากราคามากไปน้อย,อัพเดตล่าสุด, เรียงจากราคาน้อยไปมาก  */
 a#SortHightoLow, a#Lastest, a#SortLowtoHigh{
