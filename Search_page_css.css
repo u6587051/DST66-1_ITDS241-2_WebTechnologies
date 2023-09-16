@@ -3,14 +3,15 @@ body, h1, h2, p, ul, li {
     padding: 0;
 }
 
-body {
+
+body{
     font-family: Arial, sans-serif;
     background-color: #fff;
     color: #fff;
 }
 
 
-header {
+header{
     background-color: #010056;
     padding: 30px;
     
@@ -84,7 +85,7 @@ nav {
     margin-bottom: 1rem;
 }
 
-footer {
+footer{
     position: static;
     width: 100%;
     height : 80px;
@@ -92,16 +93,21 @@ footer {
     text-align: left;
     padding: 50px;
     background-color: #010056;
+    margin-top: 20%;
 }
 
+/* กำหนดรูปภาพของสินค้าใน Column หรือ Item ใน Container */
 img{
     width: 50px;
     height: 50px;
 }
+
+
 ul{
     float: right;
 }
 
+/* กำหนด Class SearchBox ซึ่งคือส่วนของพื้นที่สำหรับใส่ กล่อง Search และปุ่ม */
 .SearchBox{
     margin: auto;
     padding-top: 2%;
@@ -115,57 +121,68 @@ p1 {
     font-size: large;
 }
 
+/* กำหนดขนาดส่วนของกล่อง Input สำหรับการพิมพ์ Search */
 #txtProduct{
     width: 60%;
     margin: auto;
     margin-bottom: 40px;
 }
 
+/* กำหนดขนาดและสีของปุ่ม Search */
 #SubmitButton{
     width: 10%;
     background-color: white;
 }
 
+/* กำหนดสีขณะเอา Cursor ไปวางบนปุ่ม Search */
 #SubmitButton:hover{
     background-color: #cccccc;
 }
 
-#SubmitButton::after{
+/* กำหนดสีขณะคลิกไปที่ปุ่ม Search บนปุ่ม Search */
+#SubmitButton:active{
     background-color: white;
 }
 
-
+/* กำหนดสี Font และระยะห่างระหว่างตัวอักษรกับขอบด้านล่างของชื่อ Find Your Tools บนกล่อง Search */
 #SearchHeading{
     color: black;
     padding-bottom: 4%;
 }
+
+/* กำหนด Font, ระยะห่างระหว่างขอบและอักษร และความโค้งของขอบของ Search Bar และ Search Button */
 #txtProduct, #SubmitButton{
     font-size: large;
     padding: 10px;
     border-radius: 10px;
 }
 
+/* กำหนดคุณสมบัติของ Search Bar */
 div.SearchBar{
     text-align: center;
     margin-bottom: 4px;
 }
 
-
+/* กำหนดคุณสมบัติในส่วนของหัวข้อคำว่า Category  */
 h3#CategoryHead{
     color: black;
     font-size: 30px;
 }
 
+/* กำหนด font สำหรับลิงค์ไปยังหน้า Category ของอุปกรณ์แต่ละอย่าง */
 a#Category{
     text-decoration: none;
     color: #010056;
     font-size: 25px;
 }
+
+/* กำหนด font สำหรับตอนนำเมาส์ไปวางบนหัวข้อแต่ละ Category */
 a#Category:hover{
     color: #fba906;
     font-size: 30px;
 }
 
+/* กำหนดคุณสมบัติของกล่อง Sidebar ทั้ง Margin, Padding ความกว้าง เป็นต้น */
 .sidebar {
     text-align: left;
     margin: 0;
@@ -175,16 +192,23 @@ a#Category:hover{
     width: 300px;
     background-color: #fff;
     position: absolute;
-    height: 40%;
+    height: 80%;
     overflow: auto;
     border: #010056 solid;
+    margin-top: 50px;
 }
 
+/* ขีดเส้นเพื่อเน้นหัวข้อการจัดหมวดหมู่ของ Sidebar */
 h3#CategoryHead{
     border-bottom: #010056 solid;
     border-width: 5px;
 }
 
+input#Category{
+    color: #010056;
+}
+
+/* กำหนดคุณสมบัติของ flex box ที่ใช้แสดงสินค้าทั้งหมด */
 div.content {
     justify-content:space-evenly; 
     gap: auto;
@@ -194,8 +218,10 @@ div.content {
     padding: 1px 16px;
     align-items: flex-start;
     width: 80%;
+    color:white;
 }
 
+/* กำหนดคุณสมบัติของกล่องสินค้าแต่ละกล่อง */
 div.column{
     display: block;
     border: gray solid;
@@ -206,6 +232,7 @@ div.column{
     border-radius: 10px;
 }
 
+/* กำหนดคุณสมบัติของรูปสินค้าที่แสดง */
 img.productimg{
     margin-top: 10px ;
     width: 100%;
@@ -214,22 +241,29 @@ img.productimg{
     max-height: 200px
 }
 
+
+/* กำหนดคุณสมบัติของ Font ชื่อสินค้า ราคาสินค้า และปุ่มสั่งซื้อสินค้า */
 h3#producthead, h4#price, h4#buybutton{
     text-align: center;
     margin: 0%;
     margin-left:5px ;
 }
+
+/* กำหนดคุณสมบัติสำหรับ Font ของราคา คือสีฟอนต์และขนาดฟอนต์ */
 #price{
     color: #fba906;
     font-size: 20px;
 }
 
+/* กำหนดคุณสมบัติสำหรับกล่องสำหรับกดสั่งซื้อสินค้า */
 #buybutton{
     margin-top: 10%;
     text-align: center;
     border-radius: 10px;
     margin-right: 10px;
 }
+
+/* กำหนด Font และคุณสมบัติของปุ่มสั่งซื้อสินค้า */
 #Buy{
     background-color: #fba906;
     padding: 1%;
@@ -240,6 +274,7 @@ h3#producthead, h4#price, h4#buybutton{
     border-radius: 5px;
 }
 
+/* กำหนดเพื่อให้เพื่อให้ส่วนแสดงสินค้าไม่เปลี่ยนไปตามขนาดจอ */
 div {
     max-width: 768px;
     max-height: 1024px;
@@ -247,26 +282,29 @@ div {
     display: block;
   }
 
+/* กำหนดให้กล่องส่วนแสดงหน้าปัจจุบันที่อยู่บน Container แสดงสินค้าไปอยู่ด้านขวา */
 .heading_content{
-    text-align: right;
-    
+    text-align: right;    
 }  
+
+/* กำหนดกล่องของส่วนหัวก่อนแสดงสินค้า ซึ่งจะระบุว่าขณะนี้ผู้ใช้อยู่หน้าไหน */
 span#currentpage{
     background-color: #010056;
     font-size: 16px;
     padding: 5px;
     border-radius: 10px;
+    color:white;
   }
 
-/* Dropdown */
-
+/*กำหนดคุณสมบัติ Dropdown box เรียงลำดับ*/
 .dropdown {
     display: inline-block;
     position: relative;
     color: black;
   }
-  
-  .dd-button {
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown */
+.dd-button {
     display: inline-block;
     border: 1px solid black;
     border-radius: 4px;
@@ -274,9 +312,10 @@ span#currentpage{
     background-color: white;
     cursor: pointer;
     white-space: nowrap;
-  }
-  
-  .dd-button:after {
+}
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดให้เพิ่มลูกศรชิ้ลง */
+.dd-button:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -288,14 +327,15 @@ span#currentpage{
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid black;
-  }
-  
-  
-  .dd-input {
+}
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อนำ Checkbox ออก */
+.dd-input {
     display: none;
-  }
-  
-  .dd-menu {
+}
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อทำกล่องตอนกดให้ Dropdown */
+.dd-menu {
     position: absolute;
     top: 100%;
     border: 1px solid #ccc;
@@ -306,42 +346,62 @@ span#currentpage{
     background-color: #ffffff;
     list-style-type: none;
     text-align: left;
-  }
-  
-  .dd-input + .dd-menu {
+}
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อซ่อนกล่อง List ที่ผู้ใช้จะเลือกในการจัดเรียง*/
+.dd-input + .dd-menu {
     display: none;
-  } 
-  
-  .dd-input:checked + .dd-menu {
+} 
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อแสดงListของ Dropdown Box*/
+.dd-input:checked + .dd-menu {
     display: block;
-  } 
-  
-  .dd-menu li {
+} 
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อกำหนดคุณสมบัติของกล่อง List เวลากด Dropdown Box*/
+.dd-menu li {
     padding: 10px 20px;
     cursor: pointer;
     white-space: nowrap;
-  }
-  
-  .dd-menu li:hover {
+}
+ 
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อกำหนดสีของกล่อง List เวลาเอาเมาส์วางบน List ของ Dropdown Box*/
+.dd-menu li:hover {
     background-color: #f6f6f6;
-  }
-  
-  .dd-menu li a {
+}
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อกำหนดคุณสมบัติของกล่อง Dropdown Box*/
+.dd-menu li a {
     display: block;
     margin: -10px -20px;
     padding: 10px 20px;
-  }
-  
-  .dd-menu li.divider{
+}
+
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown โดยกำหนดเพื่อกำหนดคุณสมบัติของกล่อง List ของ Dropdown Box*/
+.dd-menu li.divider{
     padding: 0;
     border-bottom: 1px solid #cccccc;
-  }
+}
+/* กำหนดคุณสมบัติของปุ่ม Sort By ซึ่งเป็น Dropdown */
 
-/*เรียงมากไปน้อย */
 
+
+/*Sort box ตาม id เรียงจากราคามากไปน้อย,อัพเดตล่าสุด, เรียงจากราคาน้อยไปมาก  */
 a#SortHightoLow, a#Lastest, a#SortLowtoHigh{
     text-decoration: none;
     color: black;
 }
 
+/* ใช้ตกแต่ง เปลี่ยนสี และขนาดฟอนต์ของส่วนเลือก brand ข้าง sidebar */
+a#Category2{
+    text-decoration: none;
+    color: #010056;
+    font-size: 25px;
+}
+
+/* ใช้ตกแต่ง เปลี่ยนสี และขนาดฟอนต์ของส่วนเลือก brand ข้าง sidebar ขณะกำลังเอาเมาส์ไปวาง*/
+a#Category2:hover{
+    color: #fba906;
+    font-size: 30px;
+}
 
