@@ -160,3 +160,8 @@ table {
     width: 75%;
     margin-top: 10px;
 }
+
+.profile-image{
+    width: 400px;
+    height: 400px;
+}
