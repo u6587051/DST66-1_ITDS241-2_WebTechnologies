@@ -154,14 +154,30 @@ table {
 }
 
 .sectionContent {
-    border: 1px solid black;
+    border: 1px solid wheat;
     border-radius: 10px;
-    margin: auto;
+    margin: 30pt auto;
     width: 75%;
-    margin-top: 10px;
 }
 
 .profile-image{
     width: 400px;
     height: 400px;
+    /* float: left; */
+    clear: none;
+    padding: 20pt;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image {
+    flex: 1;
+}
+
+.text {
+    flex: 2;
 }
