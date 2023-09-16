@@ -1,26 +1,26 @@
-.bar{
+.bar-admin-product{ /*การจัด side bar ของ admin*/
     display: block;
     float: left;
     margin-left: 50px;
     margin-bottom: 100px;
     text-align: left;
 }
-section.hero ul{
+section.hero-admin-product ul{ /*ให้ ul ไม่มีรูปแบบ*/
     list-style: none;
 }
-section.hero li{
+section.hero-admin-product li{ /*ขยับ side bar*/
     margin-bottom: 30px;
 }
-section.hero p{
+section.hero-admin-product p{ /*ขยับข้อความและเป็นตัวหนา*/
     margin-bottom: 30px;
     font-weight: bold;
 }
-section.hero a{
+section.hero-admin-product a{ /*รูปแบบตัวอักษรสีขาวและไม่มีเส้นใต้*/
     display: block;
     text-decoration: none;
     color:white;
 }
-section.hero a:hover{
+section.hero-admin-product a:hover{ /*เปลี่ยนรูปแบบเมื่อเอาเมาส์จ่อเป็นtextสีส้ม*/
     display: block;
     text-decoration: none;
     color: #fba906;
@@ -32,9 +32,12 @@ section.hero a:hover{
     border-top: 1px solid black;
     border-left: 5px solid #fba906;
 }
-.features {
+.features { /*ความกว้าง features*/
     width: 100%;
 }
-span{
+span{ /*เปลี่ยนtextเป็นสีแดง*/
     color: red;
+}
+.hero-admin-product { /*เพิ่มขอบเนื้อหา*/
+    padding: 6rem 0;
 }
