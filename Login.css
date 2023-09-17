@@ -117,7 +117,8 @@ ul{
 }
 
 /*ปุ่มlogin*/
-.login-main-content .outer-box button {
+.login-main-content .outer-box .Login {
+    display: inline-block;
     margin-top: 25px;
     width: 100%;
     background-color: #ffffff;
@@ -127,10 +128,12 @@ ul{
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Removes the underline from the link */
 }
 
 /*ปุ่มlogin แบบhover*/
-.login-main-content .outer-box button:hover{
+.login-main-content .outer-box .Login:hover{
     margin-top: 25px;
     width: 100%;
     background-color: #001878;
@@ -148,6 +151,7 @@ ul{
     gap: 10px; /* Space between elements */
     margin: 5px;
 }
+
 
 
 
