@@ -16,29 +16,28 @@
             </div>
             <ul>
                 <li><a href="Home.html">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Search</a></li>
+                <li><a href="About_us.html">About Us</a></li>
+                <li><a href="Search_page_html.html">Search</a></li>
                 <li><a href="Login.html">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="login-main-content">
-        <form>
+        <form action="Admin(information).html"><!--method="GET"--> 
             <div class="inner-box">
                 <h3>Login Here</h3>
-        
-                <label for="username">Username</label>
-                <input type="text" placeholder=" Email or Phone" id="username">
 
+                
+                <label for="username">Username</label><!--เป็นการloginโดยใช้email--> 
+                <input type="email" placeholder=" Email" id="username" name="username" required>
+            
                 <label for="password">Password</label>
-                <input type="password" placeholder=" Password" id="password">
+                <input type="password" placeholder=" Password" id="password" name="password" required>
             </div>
-            <div class="outer-box">
-                <button>Log In</button>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div class="outer-box">> 
+                <button type="submit" class="Login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
+                <div class="g-signin2" data-onsuccess="onSignIn"></div><!--เป็นการloginด้วยgoogle--> 
             </div>
         </form>
     </section>
