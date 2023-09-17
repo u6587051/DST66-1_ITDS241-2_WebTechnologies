@@ -41,13 +41,10 @@ nav {
     padding-bottom: 10px;
 }
 
-/* .hero {
-    background-image: url('tools-background.jpg');
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 6rem 0;
-} */
+nav a:hover{
+    text-decoration: none;
+    color: #fba906;
+}
 
 .hero-content {
     max-width: 800px;
@@ -213,7 +210,7 @@ div.content {
     margin-left: 35%;
     padding: 1px 16px;
     align-items: flex-start;
-    width: 80%;
+    width: 90%;
     color:white;
 }
 
