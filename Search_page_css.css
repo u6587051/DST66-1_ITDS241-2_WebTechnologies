@@ -114,10 +114,6 @@ ul{
     color: black;
 }
 
-p1 {
-    font-size: large;
-}
-
 /* กำหนดขนาดส่วนของกล่อง Input สำหรับการพิมพ์ Search */
 #txtProduct{
     width: 60%;
