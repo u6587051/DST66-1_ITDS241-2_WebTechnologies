@@ -38,7 +38,10 @@ nav a{
 nav {
     padding-bottom: 10px;
 }
-
+nav a:hover{
+    text-decoration: none;
+    color: #fba906;
+}
 .setting {
     color: #fff;
     text-align: left;
@@ -88,7 +91,7 @@ table, th, td {
 h4{
     margin-left: 20px;
 }
-/* ทำปุ่ม */
+/* แต่งปุ่มลบและแก้ไข */
 button {
     padding: 5px 10px;
     background-color: #008CBA;
