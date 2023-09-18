@@ -1,22 +1,24 @@
+/* กำหนด margin และ padding ของตัว body */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
-
+/* กำหนดฟอนต์, สีพื้นหลังและสีฟอนต์ของตัว body */
 body{
     font-family: Arial, sans-serif;
     background-color: #fff;
     color: #fff;
 }
 
-
+/* กำหนดสีพื้นหลังและ padding ของ body */
 header{
     background-color: #010056;
     padding: 30px;
     
 }
 
+/* กำหนดฟอนต์และสีและ margin ของ class logo*/
 .logo {
     font-size: 30px;
     font-weight: bolder;
@@ -24,64 +26,35 @@ header{
     margin-left: 0%;
 }
 
+/* กำหนดคุณสมบัติของ nav ul ซึ่งเป็นในส่วนของ Navigation bar ได้แก่ list-style, display, align-items */
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
 }
 
+/* กำหนดคุณสมบัติของ nav li ซึ่งเป็นในส่วนของ Navigation bar ให้มี margin ห่างจากด้านขวา 1.5rem*/
 nav li {
     margin-right: 1.5rem;
 }
+
+/* ตกแต่งตัวอักษรของ navigation bar โดยลบเส้นใต้ในส่วนของลิงค์ a และเปลี่ยนสีฟอนต์*/
 nav a{
     text-decoration: none;
     color: white;
 }
+
+/* เพิ่มระยะห่าง padding ด้านล่างของ navigation bar*/
 nav {
     padding-bottom: 10px;
 }
-
+/* ตกแต่งตัวอักษรของ navigation bar โดยลบเส้นใต้และเปลี่ยนสีฟอนต์ขณะเอาเมาส์ไปวาง*/
 nav a:hover{
     text-decoration: none;
     color: #fba906;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: #FFA500;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #FF8500;
-}
-
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 4rem 0;
-    background-color: #1a1a1a;
-}
-
-.feature {
-    text-align: center;
-    padding: 2rem;
-}
-
-.feature img {
-    max-width: 100px;
-    margin-bottom: 1rem;
-}
-
+/* กำหนดคุณสมบัติของ footer เช่น postition, กว้าง, ยาว, สีพื้นหลัง */
 footer{
     position: static;
     width: 100%;
@@ -99,7 +72,7 @@ img{
     height: 50px;
 }
 
-
+/* กำหนด ul ซึ่งใน Search_page จะเป็นในส่วนของ dropdown button ของ Sort by */
 ul{
     float: right;
 }
