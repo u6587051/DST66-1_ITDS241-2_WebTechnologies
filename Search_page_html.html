@@ -51,7 +51,10 @@
 
         <!-- ส่วน Sidebar แบ่ง Category เป็นตามประเภทสินค้า แบรนด์ และราคา-->
         <aside class="sidebar">
+            <!-- h3 id=CategoryHead คือส่วนหัวข้อในแต่ละการจัดหมวดหมู่สำหรับการค้นหา -->
             <h3 id="CategoryHead">หมวดหมู่สินค้า</h3>
+
+            <!-- a id=Category คือการลิงค์ไปยังหน้าที่แสดงสินค้าตามเกณฑ์ที่กำหนด -->
             <a id="Category" href="Search_page_html.html">เครื่องมือทั้งหมด</a><br><br>
             <a id="Category" href="CategoryOutput_เครื่องมือตัด.html">เครื่องมือตัด ขัด ไส เจีย</a><br><br>
             <a id="Category" href="CategoryOutput_เครื่องมือช่างพื้นฐาน.html">เครื่องมือช่างพื้นฐาน</a><br><br>
@@ -81,7 +84,8 @@
                 <div class="dd-button">
                   Sort By
                 </div>
-              
+
+                <!-- การกำหนดรายละเอียดใน Dropdown box -->
                 <input type="checkbox" class="dd-input" id="test">
                  <ul class="dd-menu">
                   <li><a id="Lastest" href="Search_page_html.html">อัพเดตล่าสุด</a></li>
@@ -97,7 +101,8 @@
         <!-- กล่อง Container ใส่สินค้า -->
         <div class="content">
 
-            <!-- แต่ละ Column ซึ่งคือ Item หรือกล่องสำหรับใส่รายละเอียดสินค้า จะประกอบด้วยรูปสินค้า ชื่อ ราคา และ ปุ่มสั่งซื้อสินค้าเพื่อลิงค์ไปยังหน้ารายละเอียดสินค้า -->
+            <!-- แต่ละ Column ซึ่งคือ Item หรือกล่องสำหรับใส่รายละเอียดสินค้า จะประกอบด้วยรูปสินค้า ชื่อ ราคา 
+                และ ปุ่มสั่งซื้อสินค้าเพื่อลิงค์ไปยังหน้ารายละเอียดสินค้า -->
             <div class="column">
                 <img src="WebTech_PJ_PartHim\photo\Product1.jpg" alt="ใบตัด New Kosoku" class="productimg">
                 
