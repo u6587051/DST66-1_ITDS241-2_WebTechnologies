@@ -1,26 +1,29 @@
-li {
+/* รีเซ็ตขอบเขตของการใช้งาน margin และ padding เริ่มต้น */
+body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
+/* สไตล์ทั่วไป */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #fff;
 }
 
-
 header {
     background-color: #010056;
     padding: 30px;
 }
 
+/* โลโก้ */
 .logo {
     font-size: 30px;
     font-weight: bolder;
     color: #fba906;
 }
 
+/* เมนู */
 nav ul {
     list-style: none;
     display: flex;
@@ -37,17 +40,16 @@ nav a {
 }
 
 nav a:hover {
-    display: block;
     text-decoration: none;
-    color: black;
-    background-color: white;
-    block-size: 20px;
+    color: #fba906;
+    background-color: transparent;
 }
 
 nav {
     padding-bottom: 10px;
 }
 
+/* เซ็คชั่นฮีโร่ */
 .hero {
     background-image: url('tools-background.jpg');
     background-size: cover;
@@ -61,6 +63,7 @@ nav {
     margin: 0 auto;
 }
 
+/* ปุ่ม CTA */
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -75,6 +78,7 @@ nav {
     background-color: #FF8500;
 }
 
+/* เซ็คชั่นคุณสมบัติ */
 .features {
     display: flex;
     justify-content: space-around;
@@ -92,28 +96,34 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* ฟุตเตอร์ */
 footer {
     text-align: left;
     padding: 50px;
     background-color: #010056;
 }
 
+/* รูปภาพ */
 img {
     width: 50px;
     height: 50px;
 }
 
+/* สไตล์เพิ่มเติม */
+/* .spul  */
 .spul {
     text-align: right;
     float: right;
 }
 
+/* .ProName */
 .ProName {
     text-align: center;
     padding: center;
     width: 100%;
 }
 
+/* .ProInfo */
 .ProInfo {
     border-radius: 20px;
     border: 0px solid;
@@ -122,37 +132,44 @@ img {
     padding: center;
 }
 
+/* .ProImg */
 .ProImg {
     width: 400px;
     height: 400px;
 }
 
+/* ตาราง */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 50px;
 }
 
+/* .ProImgDes */
 .ProImgDes {
     width: 800px;
     height: 800px;
 }
 
+/* .center-container */
 .center-container {
     text-align: center;
 }
 
+/* .center-image */
 .center-image {
     margin: 0 auto;
     display: block;
 }
 
+/* .BoxContent */
 .BoxContent {
     width: 750px;
     padding: 10px;
     margin: auto;
 }
 
+/* .sectionContent */
 .sectionContent {
     border: 1px solid wheat;
     border-radius: 10px;
@@ -160,24 +177,25 @@ table {
     width: 75%;
 }
 
-.profile-image{
+/* .profile-image */
+.profile-image {
     width: 400px;
     height: 400px;
-    /* float: left; */
-    clear: none;
-    padding: 20pt;
 }
 
+/* .container */
 .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* .image */
 .image {
     flex: 1;
 }
 
+/* .text */
 .text {
     flex: 2;
 }
