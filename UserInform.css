@@ -78,16 +78,17 @@ ul{
     color: #fba906;
     cursor: pointer;
 }
+/* สร้างตารางเก็บข้อมูล */
 table {
     width: 100%;
     border-collapse: collapse;
-    
 }
 table, th, td {
     border: 1px solid white;
     padding: 10px;
     text-align: center;
 }
+/* สร้างตารางเก็บข้อมูล */
 h4{
     margin-left: 20px;
 }
