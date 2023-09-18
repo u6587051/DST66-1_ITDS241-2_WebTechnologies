@@ -74,6 +74,7 @@ ul{
     color: #fba906;
     cursor: pointer;
 }
+/* สร้างตารางเพื่อใส่ข้อมูล */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -87,6 +88,7 @@ table, th, td {
 h4{
     margin-left: 20px;
 }
+/* ทำปุ่ม */
 button {
     padding: 5px 10px;
     background-color: #008CBA;
