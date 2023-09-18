@@ -36,6 +36,10 @@ nav a{
 nav {
     padding-bottom: 10px;
 }
+nav a:hover{
+    text-decoration: none;
+    color: #fba906;
+}
 
 .setting {
     color: #fff;
