@@ -56,7 +56,7 @@ nav a:hover{
 /* กำหนดคุณสมบัติของ footer เช่น position, กว้าง, ยาว, สีพื้นหลัง */
 .home-footer {
     position:relative;
-    width: 100%;
+    width: auto;
     height : 60px;
     bottom : 0px;
     text-align: left;
