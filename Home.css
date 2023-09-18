@@ -1,48 +1,59 @@
+/* กำหนด margin และ padding ของตัว body */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
+/* กำหนดฟอนต์, สีพื้นหลังและสีฟอนต์ของตัว body */
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #fff;
 }
 
-
+/* กำหนดสีพื้นหลังและ padding ของ body */
 header {
     background-color: #010056;
     padding: 30px;
 }
 
+/* กำหนดฟอนต์และสี ของ class logo*/
 .logo {
     font-size: 30px;
     font-weight: bolder;
     color: #fba906;
 }
 
+/* กำหนดคุณสมบัติของ nav ul ซึ่งเป็นในส่วนของ Navigation bar ได้แก่ list-style, display, align-items */
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
 }
 
+/* กำหนดคุณสมบัติของ nav li ซึ่งเป็นในส่วนของ Navigation bar ให้มี margin ห่างจากด้านขวา 1.5rem*/
 nav li {
     margin-right: 1.5rem;
 }
 
+/* ตกแต่งตัวอักษรของ navigation bar โดยลบเส้นใต้ในส่วนของลิงค์ a และเปลี่ยนสีฟอนต์*/
 nav a {
     text-decoration: none;
     color: #fff;
 }
+
+/* เพิ่มระยะห่าง padding ด้านล่างของ navigation bar*/
 nav {
     padding-bottom: 10px;
 }
+
+/* ตกแต่งตัวอักษรของ navigation bar โดยลบเส้นใต้และเปลี่ยนสีฟอนต์ขณะเอาเมาส์ไปวาง*/
 nav a:hover{
     text-decoration: none;
     color: #fba906;
 }
 
+/* กำหนดคุณสมบัติของ footer เช่น position, กว้าง, ยาว, สีพื้นหลัง */
 .home-footer {
     position:relative;
     width: 100%;
@@ -52,29 +63,20 @@ nav a:hover{
     padding: 50px;
     background-color: #010056;
 }
+
+/* กำหนดรูปภาพของlogo */
 .logo img{
     width: 50px;
     height: 50px;
 }
+
 ul{
     float: right;
 }
 
-.dummy_text {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.home-main-content {
-    padding: 20px;
-    text-align: center;
-}
-
+/* กำหนดขนาดของรูปภาพ */
 .home-img-box img{
     height: 100%;
     width: 100%;
-    background-position: center;
-    background-size: cover;
     vertical-align: middle;
-    border-style: none;
 }
