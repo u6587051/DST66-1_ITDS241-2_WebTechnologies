@@ -15,6 +15,11 @@ let connection = mysql.createConnection({
 
 app.use(router);
 
+connection.connect((err){
+    if(err) throw err;
+    console.log(`Connected DB : ${process.env.MYSQL_DATABASE}`);
+})
+
 app.listen(PORT, ()=>{
     console.log(`Server is listening to Port: ${PORT}`);
 });
