@@ -1,0 +1,41 @@
+.ProInfo { 
+    border-radius: 20px;
+    border: 0px solid;
+    width: 50%;
+    margin: auto;
+    padding: center;
+}
+
+.ProImg { /*การจัดขนาดรูปสินค้า*/
+    width: 400px;
+    height: 400px;
+}
+
+table { /*การจัดตาราง*/
+    width: 100%;
+    border-collapse: collapse;
+    margin: 50px;
+}
+
+.ProImgDes { /*การจัดขนาดรูปรายละเอียดสินค้า*/
+    width: 800px;
+    height: 800px;
+}
+.BoxContent { /*การจัดกล่องเนื้อหา*/
+    width: 750px;
+    padding: 10px;
+    margin: auto;
+}
+.bdel,.bback{ /*การจัดปุ่ม delete และ back*/
+    margin-left: 10px;
+}
+span{ /*เปลี่ยนtextเป็นสีแดง*/
+    color:red;
+}
+.back{ /*เปลี่ยนtextเป็นสีดำและไม่มีเส้นใต้*/
+    text-decoration: none;
+    color: #121212;
+}
+.bdel{ /*เปลี่ยน cursor เป็นชี้*/
+    cursor: pointer;
+}
