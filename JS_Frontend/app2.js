@@ -6,7 +6,7 @@ const router = express.Router();
 app.use(router);
 
 router.get('/home', (req,res) =>{
-    res.sendFile();
+    res.sendFile(path.join(`${__dirname}/HTML/Home.html`));
 })
 
 app.listen(port, ()=>{
