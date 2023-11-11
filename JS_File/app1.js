@@ -7,6 +7,9 @@ dotenv.config();
 const router = express.Router();
 app.use(router);
 
+var cors = require('cors');
+app.use(cors());
+
 let connection = mysql.createConnection({
     host : process.env.MYSQL_HOST,
     user : process.env.MYSQL_USERNAME,
