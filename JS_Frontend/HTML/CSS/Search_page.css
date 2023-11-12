@@ -145,18 +145,17 @@ h3#CategoryHead{
     color: black;
     font-size: 30px;
 }
-
-.Category1{
+#Category1{
     color: #010056;
     font-size: 25px;
 }
 
-.Category2{
+#Category2{
     color: #010056;
     font-size: 25px;
 }
 
-.Category3{
+#Category3{
     color: #010056;
     font-size: 25px;
 }
