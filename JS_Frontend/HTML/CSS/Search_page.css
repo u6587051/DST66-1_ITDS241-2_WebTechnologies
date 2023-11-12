@@ -147,40 +147,20 @@ h3#CategoryHead{
 }
 
 .Category1{
-    /* text-decoration: none; */
     color: #010056;
     font-size: 25px;
 }
 
 .Category2{
-    /* text-decoration: none; */
     color: #010056;
     font-size: 25px;
-}
-/* .Category1:hover{
-    color: #fba906;
-    font-size: 30px;
-} */
-
-a#Category2{
-    text-decoration: none;
-    color: #010056;
-    font-size: 25px;
-}
-a#Category2:hover{
-    color: #fba906;
-    font-size: 30px;
 }
 
-a#Category3{
-    text-decoration: none;
+.Category3{
     color: #010056;
     font-size: 25px;
 }
-a#Category3:hover{
-    color: #fba906;
-    font-size: 30px;
-}
+
 
 
 .sidebar {
