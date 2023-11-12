@@ -168,17 +168,14 @@ h3#CategoryHead{
     padding: 0;
     margin-left: 15%;
     padding-left: 15px;
-    width: 300px;
     background-color: #fff;
     position: absolute;
-    height: 40%;
     overflow: auto;
-    border: #010056 solid;
 }
 
 h3#CategoryHead{
     border-bottom: #010056 solid;
-    border-width: 5px;
+    border-width: 3px;
 }
 
 
