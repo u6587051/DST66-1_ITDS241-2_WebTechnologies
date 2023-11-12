@@ -146,15 +146,36 @@ h3#CategoryHead{
     font-size: 30px;
 }
 
-a#Category{
+a#Category1{
     text-decoration: none;
     color: #010056;
     font-size: 25px;
 }
-a#Category:hover{
+a#Category1:hover{
     color: #fba906;
     font-size: 30px;
 }
+
+a#Category2{
+    text-decoration: none;
+    color: #010056;
+    font-size: 25px;
+}
+a#Category2:hover{
+    color: #fba906;
+    font-size: 30px;
+}
+
+a#Category3{
+    text-decoration: none;
+    color: #010056;
+    font-size: 25px;
+}
+a#Category3:hover{
+    color: #fba906;
+    font-size: 30px;
+}
+
 
 .sidebar {
     text-align: left;
