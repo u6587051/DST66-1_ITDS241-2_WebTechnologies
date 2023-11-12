@@ -53,20 +53,47 @@
         <aside class="sidebar">
             <!-- h3 id=CategoryHead คือส่วนหัวข้อในแต่ละการจัดหมวดหมู่สำหรับการค้นหา -->
             <h3 id="CategoryHead">หมวดหมู่สินค้า</h3>
-
             <!-- a id=Category คือการลิงค์ไปยังหน้าที่แสดงสินค้าตามเกณฑ์ที่กำหนด -->
-            <input type="checkbox" name="tooltype" value="1-1000" checked><a id="Category1" href="Search_page_html.html">เครื่องมือทั้งหมด</a><br><br>
-            <input type="checkbox" name="tooltype" value="1-1000"><a id="Category1" href="CategoryOutput_เครื่องมือตัด.html">เครื่องมือตัด ขัด ไส เจีย</a><br><br>
-            <input type="checkbox" name="tooltype" value="1-1000"><a id="Category1" href="CategoryOutput_เครื่องมือช่างพื้นฐาน.html">เครื่องมือช่างพื้นฐาน</a><br><br>
-            <input type="checkbox" name="tooltype" value="1-1000"><a id="Category1" href="CategoryOutput_อุปกรณ์ไฟฟ้า.html">อุปกรณ์เครื่องมือไฟฟ้า</a><br><br>
-            <input type="checkbox" name="tooltype" value="1-1000"><a id="Category1" href="CategoryOutput_เครื่องมือช่างยนต์.html">เครื่องมือช่างยนต์</a><br><br>
-            <input type="checkbox" name="tooltype" value="1-1000"><a id="Category1" href="CategoryOutput_เครื่องมือลม.html">เครื่องมือลม ปั้มลม</a><br><br>
+            <div class="Category1">
+            <input type="checkbox" name="tooltype1" value="เครื่องมือทั้งหมด" checked/>
+            <label for="tooltype1">เครื่องมือทั้งหมด</label><br><br>
+
+            <input type="checkbox" name="tooltype2" value="เครื่องมือตัด" />
+            <label for="tooltype2">เครื่องมือตัด ขัด ไส เจีย</label><br><br>
+
+            <input type="checkbox" name="tooltype3" value="เครื่องมือช่างพื้นฐาน" />
+            <label for="tooltype3">เครื่องมือช่างพื้นฐาน</label><br><br>
+
+            <input type="checkbox" name="tooltype4" value="อุปกรณ์เครื่องมือไฟฟ้า" />
+            <label for="tooltype4">อุปกรณ์เครื่องมือไฟฟ้า</label><br><br>
+
+            <input type="checkbox" name="tooltype5" value="เครื่องมือช่างยนต์" />
+            <label for="tooltype5">เครื่องมือช่างยนต์</label><br><br>
+            
+            <input type="checkbox" name="tooltype6" value="เครื่องมือลม ปั้มลม" />
+            <label for="tooltype6">เครื่องมือลม ปั้มลม</label><br><br>
+            </div>
+
             <h3 id="CategoryHead">ค้นหาด้วยแบรนด์</h3>
-            <input type="checkbox" name="brand" value="makita"><a id="Category2" href="MAKITA_Output_น้อยไปมาก.html">MAKITA</a><br><br>
-            <input type="checkbox" name="brand" value="corolla"><a id="Category2" href="Corolla_Output.html">Corolla</a><br><br>
-            <input type="checkbox" name="brand" value="kosoku"><a id="Category2" href="Kosoku_Output.html">New Kosoku</a><br><br>
-            <input type="checkbox" name="brand" value="stanley"><a id="Category2" href="Stanley_Output.html">Stanley</a><br><br>
-            <input type="checkbox" name="brand" value="total"><a id="Category2" href="Total_Output.html">Total</a><br><br>
+            <div class="Category2">
+            <input type="checkbox" name="brand1" value="makita"><br><br>
+            <label for="brand1">MAKITA</label><br><br>
+
+            <input type="checkbox" name="brand2" value="corolla">
+            <label for="brand2">Corolla</label><br><br>
+
+            <input type="checkbox" name="brand3" value="kosoku">
+            <label for="brand3">New Kosoku</label><br><br>
+
+            <input type="checkbox" name="brand4" value="stanley">
+            <label for="brand4">Stanley</label><br><br>
+
+            <input type="checkbox" name="brand5" value="total">
+            <label for="brand5">Total</label><br><br>
+
+            <div class="Category2">
+
+            
             <h3 id="CategoryHead">ค้นหาตามช่วงราคา</h3>
             <input type="checkbox" name="price_range" value="1-1000"><a id="Category3" href="PriceOutput_1-1000.html">1-1000฿</a><br><br>
             <input type="checkbox" name="price_range" value="1001-2000"><a id="Category3" href="PriceOutput_1001-2000_มากไปน้อย.html">1001-2000฿</a><br><br>
