@@ -106,7 +106,7 @@ router.get('/user-edit', (req,res) =>{
 })
 
 // Route ไปยังหน้า User(information)
-router.get('/user-edit', (req,res) =>{
+router.get('/user-info', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/User(Information).html`));
 })
 
