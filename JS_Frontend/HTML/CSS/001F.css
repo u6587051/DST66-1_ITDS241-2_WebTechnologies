@@ -97,25 +97,25 @@ a{
 
 main {
     display: flex;
-    flex: 1; 
+    flex: 1;
 }
 
 section{
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-.profile-image{
+.square {
+    margin-left:150px ;
+    margin-right: 150px;
+}
+
+.profile-image {
     width: 200px;
     height: 200px;
-    margin-left: 13%;
+    margin-left: 45px;
     margin-top: 15px;
 }
 
-.info{
-    margin-left: 40px;
-}
 
 button {
     padding: 10px 20px;
@@ -127,5 +127,6 @@ button {
     border-radius: 5px;
     text-decoration: none; 
     display: inline-block; 
+    margin-top: 10px;
 }
 
