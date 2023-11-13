@@ -17,25 +17,32 @@ CREATE TABLE USERS(
 UID char(3) NOT NULL UNIQUE,
 email varchar(50) NOT NULL,
 pwd char(5) NOT NULL,
-fname varchar(30) NULL,
-lname varchar(30) NULL,
-address varchar(256) NULL,
-age int NULL,
-need varchar(256) NULL,
-auth int(1) NOT NULL
 );
 
+CREATE TABLE ADMINS(
+AID char(3) NOT NULL UNIQUE,
+email varchar(50) NOT NULL,
+pwd char(5) NOT NULL,
+fname varchar(30) NOT NULL,
+lname varchar(30) NOT NULL,
+address varchar(256) NOT NULL,
+age int NOT NULL,
+need varchar(256) NOT NULL,
+);
+
+INSERT INTO ADMINS VALUES
+("001","pguide@gmail.com","12345","Thanawich","Juangroongruangkit","69 poseidon",20,"อยากจะเป็นนักการเมือง"),
+("002","psub@gmail.com","11111","Jaosub","Juangroongruangkit","888 panunonline",20,"เป็นพ่อเล้า"),
+("003","pjay@gmail.com","69696","Salute","Juangroongruangkit","123 city",20,"หืวข้าว"),
+("004","pcho@gmail.com","25474","Suntipap","Juangroongruangkit","99 samainiyom",19,"อยากเป็นหมอ"),
+("005","phim@gmail.com","98764","Jittakan","Juangroongruangkit","911 USA",21,"อยากจะเป็นนักธุรกิจพันล้าน");
+
 INSERT INTO USERS VALUES
-("001","pguide@gmail.com","12345","Thanawich","Juangroongruangkit","69 poseidon",20,"อยากจะเป็นนักการเมือง",1),
-("002","psub@gmail.com","11111","Jaosub","Juangroongruangkit","888 panunonline",20,"เป็นพ่อเล้า",1),
-("003","pjay@gmail.com","69696","Salute","Juangroongruangkit","123 city",20,"หืวข้าว",1),
-("004","pcho@gmail.com","25474","Suntipap","Juangroongruangkit","99 samainiyom",19,"อยากเป็นหมอ",1),
-("005","phim@gmail.com","98764","Jittakan","Juangroongruangkit","911 USA",21,"อยากจะเป็นนักธุรกิจพันล้าน",1),
-("101","slot888@gmail.com","00004",NULL,NULL,NULL,NULL,NULL,0),
-("102","sunut@gmail.com","it555",NULL,NULL,NULL,NULL,NULL,0),
-("103","sompong@gmail.com","20044",NULL,NULL,NULL,NULL,NULL,0),
-("104","lnwza007@gmail.com","25414",NULL,NULL,NULL,NULL,NULL,0),
-("105","pipat4@gmail.com","99994",NULL,NULL,NULL,NULL,NULL,0);
+("101","slot888@gmail.com","00004"),
+("102","sunut@gmail.com","it555"),
+("103","sompong@gmail.com","20044"),
+("104","lnwza007@gmail.com","25414"),
+("105","pipat4@gmail.com","99994");
 
 INSERT INTO Product VALUES
 ("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4"),
@@ -46,5 +53,7 @@ INSERT INTO Product VALUES
 ("06","Total ปั๊มลมอัตโนมัติ ปั๊มลมมินิ","Total","เครื่องมือไฟฟ้า",1169,99,"12V 18A แรงดัน 120 PSI");
 
 SELECT * FROM USERS;
+
+SELECT * FROM ADMINS;
 
 SELECT * FROM Product;
