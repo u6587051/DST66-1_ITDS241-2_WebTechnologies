@@ -7,12 +7,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
-
 header {
     background-color: #010056;
     padding: 30px;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -42,28 +44,26 @@ nav a:hover{
     text-decoration: none;
     color: #fba906;
 }
-.setting {
-    color: #fff;
-    text-align: left;
-    width: 200px;
-    height: 35rem;
-    background-color: grey;
-    border-radius: 0px;
-    display: inline-block;
-    margin-left: auto;
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.features {
+.cta-button {
     display: inline-block;
-}
-.features img {
-    max-width: 100px;
-    margin-bottom: 1rem;
+    padding: 1rem 2.5rem;
+    background-color: #FFA500;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 footer {
     text-align: left;
     padding: 50px;
     background-color: #010056;
+    flex-shrink: 0;
 }
 img{
     width: 50px;
@@ -76,6 +76,23 @@ ul{
 .hover-effect:hover{
     color: #fba906;
     cursor: pointer;
+}
+
+h4{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.setting {
+    color: #fff;
+    text-align: left;
+    background-color: grey;
+    padding: 10px;
+    width: 200px;
 }
 /* สร้างตารางเพื่อใส่ข้อมูล */
 table {
