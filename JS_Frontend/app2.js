@@ -10,9 +10,9 @@ app.use(router);
 router.get('/aboutus', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/About_us.html`));
 })
-router.get('/CSS/him-styles.css', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
-})
+// router.get('/CSS/him-styles.css', (req,res) =>{
+//     res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
+// })
 
 // Route ไปยังหน้า Add-product
 router.get('/add-product', (req,res) =>{
