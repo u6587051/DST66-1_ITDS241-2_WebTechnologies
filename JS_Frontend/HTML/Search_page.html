@@ -23,10 +23,10 @@
 
             <!-- List เพื่อใช้เชื่อมไปยังหน้าต่างๆบน Navigation Bar -->
             <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="About_us.html">About Us</a></li>
-                <li><a href="Search_page_html.html">Search</a></li>
-                <li><a href="Login.html">Login</a></li>
+                <li><a href="http://203.159.93.114:8021/home">Home</a></li>
+                <li><a href="http://203.159.93.114:8021/aboutus">About Us</a></li>
+                <li><a href="http://203.159.93.114:8021/Searchpage">Search</a></li>
+                <li><a href="http://203.159.93.114:8021/login">Login</a></li>
             </ul>
         </nav>
         <!-- Navigation bar -->
@@ -40,7 +40,7 @@
             <div class="SearchBar"><h1 id="SearchHeading">Find Your Tools🛠️ </h1>
                     <label for="txtProduct"></label>
                     <input type="text" id="txtProduct" placeholder="Search For Your Products" >
-                    <a id="selectall" href="Search_page_html.html"><button type="Submit" id="SubmitButton">Search</button></a>
+                    <a id="selectall" href="http://203.159.93.114:8021/Searchpage"><button type="Submit" id="SubmitButton">Search</button></a>
                     
             </div>
         </section>
@@ -53,52 +53,34 @@
         <aside class="sidebar">
             <!-- h3 id=CategoryHead คือส่วนหัวข้อในแต่ละการจัดหมวดหมู่สำหรับการค้นหา -->
             <h3 id="CategoryHead">หมวดหมู่สินค้า</h3>
-            <!-- a id=Category คือการลิงค์ไปยังหน้าที่แสดงสินค้าตามเกณฑ์ที่กำหนด -->
-            <div class="Category1">
-            <input type="checkbox" name="tooltype2" value="เครื่องมือตัด" />
-            <label for="tooltype2">เครื่องมือตัด ขัด ไส เจีย</label><br><br>
-
-            <input type="checkbox" name="tooltype3" value="เครื่องมือช่างพื้นฐาน" />
-            <label for="tooltype3">เครื่องมือช่างพื้นฐาน</label><br><br>
-
-            <input type="checkbox" name="tooltype4" value="อุปกรณ์เครื่องมือไฟฟ้า" />
-            <label for="tooltype4">อุปกรณ์เครื่องมือไฟฟ้า</label><br><br>
-
-            <input type="checkbox" name="tooltype5" value="เครื่องมือช่างยนต์" />
-            <label for="tooltype5">เครื่องมือช่างยนต์</label><br><br>
-            
-            <input type="checkbox" name="tooltype6" value="เครื่องมือลม ปั้มลม" />
-            <label for="tooltype6">เครื่องมือลม ปั้มลม</label><br><br>
-            </div>
+            <!-- select id=Category ตามด้วยเลขต่างๆ คือการเลือกการแสดงสินค้าตามเกณฑ์ที่กำหนด -->
+            <select name="Category1" id="Category1">
+                <option value="เครื่องมือทั้งหมด">เครื่องมือทั้งหมด</option>
+                <option value="เครื่องมือตัด">เครื่องมือตัด</option>
+                <option value="เครื่องมือช่างพื้นฐาน">เครื่องมือช่างพื้นฐาน</option>
+                <option value="อุปกรณ์เครื่องมือไฟฟ้า++">อุปกรณ์เครื่องมือไฟฟ้า</option>
+                <option value="เครื่องมือช่างยนต์">เครื่องมือช่างยนต์</option>
+                <option value="เครื่องมือลม">เครื่องมือลม ปั้มลม</option>
+              </select>
 
             <h3 id="CategoryHead">ค้นหาด้วยแบรนด์</h3>
-            <div class="Category2">
-            <input type="checkbox" name="brand1" value="makita">
-            <label for="brand1">MAKITA</label><br><br>
+            <select name="Category2" id="Category2">
+                <option value="makita">All brand</option>
+                <option value="makita">MAKITA</option>
+                <option value="corolla">Corolla</option>
+                <option value="kosoku++">New Kosoku</option>
+                <option value="stanley">Stanley</option>
+                <option value="total">Total</option>
+            </select>
 
-            <input type="checkbox" name="brand2" value="corolla">
-            <label for="brand2">Corolla</label><br><br>
-
-            <input type="checkbox" name="brand3" value="kosoku">
-            <label for="brand3">New Kosoku</label><br><br>
-
-            <input type="checkbox" name="brand4" value="stanley">
-            <label for="brand4">Stanley</label><br><br>
-
-            <input type="checkbox" name="brand5" value="total">
-            <label for="brand5">Total</label><br><br>
-
-            </div>
-
-            <div class="Category3">
             <h3 id="CategoryHead">ค้นหาตามช่วงราคา</h3>
-            <input type="checkbox" name="price_range" value="1-1000">
-            <label for="brand5">1-1000฿</label><br><br>
-            <input type="checkbox" name="price_range" value="1001-2000">
-            <label for="brand5">1001-2000฿</label><br><br>
-            <input type="checkbox" name="price_range" value="morethan2000">
-            <label for="brand5">>1000฿</label><br><br>
-            </div>
+            <select name="Category3" id="Category3">
+                <option value="1-1000">All range</option>
+                <option value="1-1000">1-1000฿</option>
+                <option value="1001-2000">1001-2000฿</option>
+                <option value="morethan2000">>2000฿</option>
+            </select>
+
         </aside>
 
         <!-- กล่องใส่ Category -->
@@ -107,14 +89,7 @@
         <div class="heading_content">
             <span id="currentpage">Home/Search/เครื่องมือทั้งหมด</span><br><br>
 
-            <!-- กล่อง Sort By ซึ่งเป็น Dropdown box -->
-            <label class="dropdown">
-                <div class="dd-button">
-                  Sort By
-                </div>
-                
-              </label>
-            <!-- กล่อง Sort By Dropdown box -->
+
         </div>
         <!-- ส่วนหัวของ Container -->
 
@@ -128,7 +103,7 @@
                 
                 <h3 id="producthead">ใบตัด New Kosoku ขนาด 4X4</h3>
                 <h4 id="price">฿349</h4>
-                <h4 id="buybutton"><a id="Buy" href="Product1.html">สั่งซื้อสินค้า</a></h4>
+                <h4 id="buybutton"><a id="Buy" href="http://203.159.93.114:8021/Product1">สั่งซื้อสินค้า</a></h4>
             </div>
 
             <div class="column">
@@ -136,7 +111,7 @@
                 
                 <h3 id="producthead">MAKITA สว่าน DF001G Cordless Driver Drill 40V</h3>
                 <h4 id="price">฿3500</h4>
-                <h4 id="buybutton"><a id="Buy" href="Product2.html">สั่งซื้อสินค้า</a></h4>
+                <h4 id="buybutton"><a id="Buy" href="http://203.159.93.114:8021/Product2">สั่งซื้อสินค้า</a></h4>
             </div>
 
             <div class="column">
@@ -144,7 +119,7 @@
                 
                 <h3 id="producthead">เครื่องตัดเหล็ก 12" Stanley #15-166</h3>
                 <h4 id="price">฿1400</h4>
-                <h4 id="buybutton"><a id="Buy" href="Product3.html">สั่งซื้อสินค้า</a></h4>
+                <h4 id="buybutton"><a id="Buy" href="http://203.159.93.114:8021/Product3">สั่งซื้อสินค้า</a></h4>
             </div>
 
             <div class="column">
@@ -152,7 +127,7 @@
                 
                 <h3 id="producthead">ใบตัด Corolla ขนาด 4X1</h3>
                 <h4 id="price">฿500</h4>
-                <h4 id="buybutton"><a id="Buy" href="Product4.html">สั่งซื้อสินค้า</a></h4>
+                <h4 id="buybutton"><a id="Buy" href="http://203.159.93.114:8021/Product4">สั่งซื้อสินค้า</a></h4>
             </div>
 
             <div class="column">
@@ -160,7 +135,7 @@
                 
                 <h3 id="producthead">MAKITA สว่านไร้สาย สว่าน 3 ระบบ 148V</h3>
                 <h4 id="price">฿849</h4>
-                <h4 id="buybutton"><a id="Buy" href="Product5.html">สั่งซื้อสินค้า</a></h4>
+                <h4 id="buybutton"><a id="Buy" href="http://203.159.93.114:8021/Product5">สั่งซื้อสินค้า</a></h4>
             </div>
             
             <div class="column">
@@ -168,7 +143,7 @@
                 
                 <h3 id="producthead">Total ปั๊มลมอัตโนมัติ ปั๊มลมมินิ 12V 18A แรงดัน 120 PSI</h3>
                 <h4 id="price">฿1169</h4>
-                <h4 id="buybutton"><a id="Buy" href="Product6.html">สั่งซื้อสินค้า</a></h4>
+                <h4 id="buybutton"><a id="Buy" href="http://203.159.93.114:8021/Product6">สั่งซื้อสินค้า</a></h4>
             </div>
                     
         </div>
