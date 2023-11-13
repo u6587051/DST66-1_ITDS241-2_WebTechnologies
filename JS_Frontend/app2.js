@@ -4,10 +4,14 @@ const port=8021 ;
 const app = express();
 const router = express.Router();
 app.use(router);
+app.use(express.static(path.join(__dirname, 'JS_Frontend')))
 
 // Route ไปยังหน้า About us
 router.get('/aboutus', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/About_us.html`));
+})
+router.get('/CSS/him-styles.css', (req,res) =>{
+    res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
 })
 
 // Route ไปยังหน้า Add-product
