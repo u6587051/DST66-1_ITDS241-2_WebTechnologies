@@ -4,7 +4,7 @@ const port=8021 ;
 const app = express();
 const router = express.Router();
 app.use(router);
-app.use(express.static(path.join(__dirname, 'JS_Frontend')))
+// app.use(express.static(path.join(__dirname, 'JS_Frontend')))
 
 // Route ไปยังหน้า About us
 router.get('/aboutus', (req,res) =>{
