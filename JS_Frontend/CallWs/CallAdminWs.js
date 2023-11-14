@@ -46,12 +46,12 @@ let FNAME_TXT = document.querySelector("#afname");
 function clearInput() {
   AID_TXT.value = "";
   EMAIL_TXT.value = "";
-  PWD_TXT.value = "";
+  // PWD_TXT.value = "";
   FNAME_TXT.value = "";
-  LNAME_TXT.value = "";
-  ADDRESS_TXT.value = "";
-  AGE_TXT.value = "";
-  NEED_TXT.value = "";
+  // LNAME_TXT.value = "";
+  // ADDRESS_TXT.value = "";
+  // AGE_TXT.value = "";
+  // NEED_TXT.value = "";
 }
   
 let insertB = document.querySelector("#ainsert");
@@ -59,40 +59,57 @@ let updateB = document.querySelector("#aupdate");
 let deleteB = document.querySelector("#adelete");
 let selectB = document.querySelector("#aselect");
 let selectallB = document.querySelector("#aselectall");
+// let loginB = document.querySelector("#login");
   
 insertB.addEventListener("click", () => {
-    STU_ID = STU_IDTxtRef.value;
-    console.log(STU_ID);
-    STU_FNAME = STU_FNAMETxtRef.value;
-    STU_LNAME = STU_LNAMETxtRef.value;
-    STU_AGE = STU_AGETxtRef.value;
-    let student_data = {
-      STU_ID: STU_ID,
-      STU_FNAME: STU_FNAME,
-      STU_LNAME: STU_LNAME,
-      STU_AGE: STU_AGE,
-    };
-    callAdminWs("http://localhost:8021/adminWS/" + "admin", "insert", admindata).then((data) => {
-      console.log(data);
-      if (data.data > 0) {
-        alert(data.message);
-        clearInput();
-      }
-    });
+    console.log("insert leaw ja")
+    // AID = AID_TXT.value;
+    // EMAIL = EMAIL_TXT.value;
+    // // PWD = PWD_TXT.value;
+    // FNAME = FNAME_TXT.value;
+    // // LNAME = LNAME_TXT.value;
+    // // ADDRESS = ADDRESS_TXT.value;
+    // // AGE = AGE_TXT.value;
+    // // NEED = NEED_TXT.value;
+    // let admindata = {
+    //   AID: AID,
+    //   EMAIL: EMAIL,
+    //   // PWD: PWD,
+    //   FNAME: FNAME,
+    //   // LNAME: LNAME,
+    //   // ADDRESS: ADDRESS,
+    //   // AGE: AGE,
+    //   // NEED: NEED,
+    // };
+    // callAdminWs("http://localhost:8021/adminWS/" + "admin", "insert", admindata).then((data) => {
+    //   console.log(data);
+    //   if (data.data > 0) {
+    //     alert(data.message);
+    //     clearInput();
+    //   }
+    // });
 });
   
 updateB.addEventListener("click", () => {
-    STU_ID = STU_IDTxtRef.value;
-    STU_FNAME = STU_FNAMETxtRef.value;
-    STU_LNAME = STU_LNAMETxtRef.value;
-    STU_AGE = STU_AGETxtRef.value;
-    let student_data = {
-      STU_ID: STU_ID,
-      STU_FNAME: STU_FNAME,
-      STU_LNAME: STU_LNAME,
-      STU_AGE: STU_AGE,
+    AID = AID_TXT.value;
+    EMAIL = EMAIL_TXT.value;
+    // PWD = PWD_TXT.value;
+    FNAME = FNAME_TXT.value;
+    // LNAME = LNAME_TXT.value;
+    // ADDRESS = ADDRESS_TXT.value;
+    // AGE = AGE_TXT.value;
+    // NEED = NEED_TXT.value;
+    let admindata = {
+      AID: AID,
+      EMAIL: EMAIL,
+      // PWD: PWD,
+      FNAME: FNAME,
+      // LNAME: LNAME,
+      // ADDRESS: ADDRESS,
+      // AGE: AGE,
+      // NEED: NEED,
     };
-    callStudentWS("http://localhost:8021/adminWS/" + "admin", "update", admindata).then((data) => {
+    callAdminWs("http://localhost:8021/adminWS/" + "admin", "update", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -102,11 +119,11 @@ updateB.addEventListener("click", () => {
 });
   
 deleteB.addEventListener("click", () => {
-    STU_ID = STU_IDTxtRef.value;
-    let student_data = {
-      student_id: STU_ID,
+    AID = AID_TXT.value;
+    let admindata = {
+      AID: AID,
     };
-    callStudentWS("http://localhost:8021/adminWS/" + "admin", "delete", admindata).then((data) => {
+    callAdminWs("http://localhost:8021/adminWS/" + "admin", "delete", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -116,21 +133,25 @@ deleteB.addEventListener("click", () => {
 });
   
 selectB.addEventListener("click", () => {
-    STU_ID = STU_IDTxtRef.value;
-    callStudentWS("http://localhost:8021/adminWS/" + "admin/" + AID, "select").then((data) => {
+    AID = AID_TXT.value;
+    callAdminWs("http://localhost:8021/adminWS/" + "admin/" + AID, "select").then((data) => {
       console.log(data);
       if (data) {
         alert(data.message);
-        STU_IDTxtRef.value = data.data.STU_ID;
-        STU_FNAMETxtRef.value = data.data.STU_FNAME;
-        STU_LNAMETxtRef.value = data.data.STU_LNAME;
-        STU_AGETxtRef.value = data.data.STU_AGE;
+        AID_TXT.value = data.data.AID;
+        EMAIL_TXT.value = data.data.EMAIL;
+        // PWD_TXT.value = data.data.PWD;
+        FNAME_TXT.value = data.data.FNAME;
+        // LNAME_TXT.value = data.data.LNAME;
+        // ADDRESS_TXT.value = data.data.ADDRESS;
+        // AGE_TXT.value = data.data.AGE;
+        // NEED_TXT.value = data.data.NEED;
       }
     });
 });
   
 selectallB.addEventListener("click", () => {
-    callStudentWS("http://localhost:8021/adminWS/" + "admins", "selectall").then((data) => {
+    callAdminWs("http://localhost:8021/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
@@ -146,10 +167,14 @@ selectallB.addEventListener("click", () => {
         output += "<tbody>";
         data.data.forEach((element) => {
           output += "<tr>";
-          output += "<td>" + element.STU_ID + "</td>";
-          output += "<td>" + element.STU_FNAME + "</td>";
-          output += "<td>" + element.STU_LNAME + "</td>";
-          output += "<td>" + element.STU_AGE + "</td>";
+          output += "<td>" + element.AID + "</td>";
+          output += "<td>" + element.EMAIL + "</td>";
+          // output += "<td>" + element.PWD + "</td>";
+          output += "<td>" + element.FNAME + "</td>";
+          // output += "<td>" + element.LNAME + "</td>";
+          // output += "<td>" + element.ADDRESS + "</td>";
+          // output += "<td>" + element.AGE + "</td>";
+          // output += "<td>" + element.NEED + "</td>";
           output += "</tr>";
         });
         output += "</tbody>";
