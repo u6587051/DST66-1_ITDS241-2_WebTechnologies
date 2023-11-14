@@ -81,7 +81,7 @@ insertB.addEventListener("click", () => {
     //   // AGE: AGE,
     //   // NEED: NEED,
     // };
-    // callAdminWs("http://localhost:8021/adminWS/" + "admin", "insert", admindata).then((data) => {
+    // callAdminWs("http://localhost:8022/adminWS/" + "admin", "insert", admindata).then((data) => {
     //   console.log(data);
     //   if (data.data > 0) {
     //     alert(data.message);
@@ -109,7 +109,7 @@ updateB.addEventListener("click", () => {
       // AGE: AGE,
       // NEED: NEED,
     };
-    callAdminWs("http://localhost:8021/adminWS/" + "admin", "update", admindata).then((data) => {
+    callAdminWs("http://localhost:8022/adminWS/" + "admin", "update", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -123,7 +123,7 @@ deleteB.addEventListener("click", () => {
     let admindata = {
       AID: AID,
     };
-    callAdminWs("http://localhost:8021/adminWS/" + "admin", "delete", admindata).then((data) => {
+    callAdminWs("http://localhost:8022/adminWS/" + "admin", "delete", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -134,7 +134,7 @@ deleteB.addEventListener("click", () => {
   
 selectB.addEventListener("click", () => {
     AID = AID_TXT.value;
-    callAdminWs("http://localhost:8021/adminWS/" + "admin/" + AID, "select").then((data) => {
+    callAdminWs("http://localhost:8022/adminWS/" + "admin/" + AID, "select").then((data) => {
       console.log(data);
       if (data) {
         alert(data.message);
@@ -151,7 +151,7 @@ selectB.addEventListener("click", () => {
 });
   
 selectallB.addEventListener("click", () => {
-    callAdminWs("http://localhost:8021/adminWS/" + "admins", "selectall").then((data) => {
+    callAdminWs("http://localhost:8022/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);

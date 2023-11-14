@@ -5,6 +5,15 @@ const dotenv = require('dotenv')
 dotenv.config();
 const router = express.Router();
 app.use(router);
+
+const cors = require('cors');
+let whiteList = ["http://localhost:8021", "http://localhost:8022"];
+let corsOptions = {
+  origin: whiteList,
+  methods: "GET,POST,PUT,DELETE",
+};
+app.use(cors(corsOptions));
+
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 

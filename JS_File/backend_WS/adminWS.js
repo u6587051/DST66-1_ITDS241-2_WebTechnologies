@@ -1,10 +1,21 @@
 const express =require('express');
 const mysql = require('mysql2');
 const app = express();
-const dotenv = require('dotenv')
-dotenv.config();
 const router = express.Router();
+
+const dotenv = require('dotenv');
+dotenv.config();
+
+const cors = require('cors');
+let whiteList = ["http://localhost:8021", "http://localhost:8022"];
+let corsOptions = {
+  origin: whiteList,
+  methods: "GET,POST,PUT,DELETE",
+};
+app.use(cors(corsOptions));
+
 app.use(router);
+
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
