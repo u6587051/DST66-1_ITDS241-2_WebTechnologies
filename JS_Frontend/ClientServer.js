@@ -8,6 +8,7 @@ router.use(
   })
 );
 
+
 // Add js to Node.js Server ไว้ Call Service
 // router.get("/js/callStudentService.js", function (req, res) {
 //   res.sendFile(path.join(__dirname + "/js/callStudentService.js"));
@@ -21,6 +22,7 @@ router.use(
 router.get('/aboutus', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/About_us.html`));
 })
+
 // router.get('/CSS/him-styles.css', (req,res) =>{
 //     res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
 // })
