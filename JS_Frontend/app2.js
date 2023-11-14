@@ -24,11 +24,6 @@ router.get('/admin-product', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/admin-product.html`));
 })
 
-// Route ไปยังหน้า Admin(information)
-router.get('/admin-info', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Admin(information).html`));
-})
-
 // Route ไปยังหน้า User(edit)
 router.get('/admin-edit', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
