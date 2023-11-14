@@ -27,6 +27,24 @@ router.get("/admins", function (req, res) {
     });
   });
 
+router.get("/admin/:aid", function (req, res) {
+    let admin_id = req.params.aid;
+  
+    dbConn.query("SELECT * FROM ADMINS where AID=?",admin_id,function (error, results) {
+        if (error || results.length === 0)
+          return res.send({
+            error: true,
+            message: "Admin is not found.",
+          });
+        return res.send({
+          error: false,
+          data: results[0],
+          message: "Student retrieved",
+        });
+      }
+    );
+  });
+
 router.post("/admin", function (req, res) {
     let admin = req.body
  
@@ -43,20 +61,17 @@ router.post("/admin", function (req, res) {
     );
   });
 
-router.put("/student", function (req, res) {
+router.put("/admin", function (req, res) {
     let admin_id = req.body.AID;
     let admin = req.body;
 
-    connection.query("UPDATE student SET ? WHERE STU_ID = ?",[admin, admin_id],function (error, results) {
+    connection.query("UPDATE ADMINS SET ? WHERE AID = ?",[admin, admin_id],function (error, results) {
         if (error)
-          return res.send({
-            error: student,
-            message: "The student cannot be updated.",
-          });
+          throw(error)
         return res.send({
           error: false,
           data: results.affectedRows,
-          message: "Student has been updated successfully.",
+          message: "Admin has been updated.",
         });
       }
     );
