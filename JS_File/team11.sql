@@ -13,13 +13,13 @@ PDetail varchar(256) NOT NULL,
 PRIMARY KEY (PID)
 );
 
-CREATE TABLE USERS(
-UID char(3) NOT NULL UNIQUE,
-email varchar(50) NOT NULL,
-address varchar(256),
-pwd char(5) NOT NULL,
-PRIMARY KEY (UID)
-);
+-- CREATE TABLE USERS(
+-- UID char(3) NOT NULL UNIQUE,
+-- email varchar(50) NOT NULL,
+-- address varchar(256),
+-- pwd char(5) NOT NULL,
+-- PRIMARY KEY (UID)
+-- );
 
 CREATE TABLE ADMINS(
 AID char(3) NOT NULL UNIQUE,
@@ -40,12 +40,12 @@ INSERT INTO ADMINS VALUES
 ("004","pcho@gmail.com","25474","Suntipap","Juangroongruangkit","99 samainiyom",19,"อยากเป็นหมอ"),
 ("005","phim@gmail.com","98764","Jittakan","Juangroongruangkit","911 USA",21,"อยากจะเป็นนักธุรกิจพันล้าน");
 
-INSERT INTO USERS VALUES
-("101","slot888@gmail.com","69 jatujak","00004"),
-("102","sunut@gmail.com","99 thonglor","it555"),
-("103","sompong@gmail.com","111 pitsamai","20044"),
-("104","lnwza007@gmail.com","10 ten","25414"),
-("105","pipat4@gmail.com","78 swadee","99994");
+-- INSERT INTO USERS VALUES
+-- ("101","slot888@gmail.com","69 jatujak","00004"),
+-- ("102","sunut@gmail.com","99 thonglor","it555"),
+-- ("103","sompong@gmail.com","111 pitsamai","20044"),
+-- ("104","lnwza007@gmail.com","10 ten","25414"),
+-- ("105","pipat4@gmail.com","78 swadee","99994");
 
 INSERT INTO Product VALUES
 ("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4"),
@@ -55,7 +55,7 @@ INSERT INTO Product VALUES
 ("05","MAKITA สว่านไร้สาย สว่าน 3 ระบบ","MAKITA","เครื่องมือไฟฟ้า",849,99,"148V"),
 ("06","Total ปั๊มลมอัตโนมัติ ปั๊มลมมินิ","Total","เครื่องมือลมปั้มลม",1169,99,"12V 18A แรงดัน 120 PSI");
 
-SELECT * FROM USERS;
+-- SELECT * FROM USERS;
 
 SELECT * FROM ADMINS;
 
