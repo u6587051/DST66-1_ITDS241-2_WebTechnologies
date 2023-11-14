@@ -26,7 +26,7 @@
         <br>
         <h2 style="margin-left: 20px;">Setting</h2><hr>
         <a href="http://localhost:8021/admin-edit" class="hover-effect"> <h4>  Admin Information   </h4> </a> 
-        <a href="http://localhost:8021/admin-product"      class="hover-effect"> <h4>  Product             </h4> </a>
+        <a href="http://localhost:8021/admin-product" class="hover-effect"> <h4>  Product             </h4> </a>
     </section>
 
     <!-- สร้างตาราง -->
@@ -39,29 +39,29 @@
         </tr>
         <tr> 
             <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
-            <td contenteditable="true">101</td>
-            <td contenteditable="true">slot888@gmail.com</td>
-            <td contenteditable="true">00004</td>
+            <td contenteditable="false">101</td>
+            <td contenteditable="false">slot888@gmail.com</td>
+            <td contenteditable="false">00004</td>
         </tr>
         <tr>
-            <td contenteditable="true">102</td>
-            <td contenteditable="true">sunut@gmail.com</td>
-            <td contenteditable="true">it555</td>
+            <td contenteditable="false">102</td>
+            <td contenteditable="false">sunut@gmail.com</td>
+            <td contenteditable="false">it555</td>
         </tr>
         <tr>
-            <td contenteditable="true">103</td>
-            <td contenteditable="true">sompong@gmail.com</td>
-            <td contenteditable="true">25414</td>
+            <td contenteditable="false">103</td>
+            <td contenteditable="false">sompong@gmail.com</td>
+            <td contenteditable="false">25414</td>
         </tr>
         <tr>
-            <td contenteditable="true">104</td>
-            <td contenteditable="true">lnwza007@gmail.com</td>
-            <td contenteditable="true">25414</td>
+            <td contenteditable="false">104</td>
+            <td contenteditable="false">lnwza007@gmail.com</td>
+            <td contenteditable="false">25414</td>
         </tr>
         <tr>
-            <td contenteditable="true">105</td>
-            <td contenteditable="true">pipat4@gmail.com</td>
-            <td contenteditable="true">99994</td>
+            <td contenteditable="false">105</td>
+            <td contenteditable="false">pipat4@gmail.com</td>
+            <td contenteditable="false">99994</td>
         </tr>
         
             <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
@@ -74,7 +74,7 @@
           
             // ฟังก์ชันแก้ไขแถบ
             function editRow(button) {
-              var cell = button.parentNode.parentNode.querySelector("[contenteditable=true]");
+              var cell = button.parentNode.parentNode.querySelector("[contenteditable=false]");
               selectedCell = cell;
               cell.focus();
             }
@@ -93,9 +93,9 @@
                 var emailCell = newRow.insertCell(1);
                 var pwdCell = newRow.insertCell(2);
 
-                IDCell.contentEditable = true;
-                emailCell.contentEditable = true;
-                pwdCell.contentEditable = true;
+                IDCell.contentEditable = false;
+                emailCell.contentEditable = false;
+                pwdCell.contentEditable = false;
   }
           </script>
         
