@@ -16,6 +16,7 @@ PRIMARY KEY (PID)
 CREATE TABLE USERS(
 UID char(3) NOT NULL UNIQUE,
 email varchar(50) NOT NULL,
+address varchar(256),
 pwd char(5) NOT NULL,
 PRIMARY KEY (UID)
 );
@@ -40,11 +41,11 @@ INSERT INTO ADMINS VALUES
 ("005","phim@gmail.com","98764","Jittakan","Juangroongruangkit","911 USA",21,"อยากจะเป็นนักธุรกิจพันล้าน");
 
 INSERT INTO USERS VALUES
-("101","slot888@gmail.com","00004"),
-("102","sunut@gmail.com","it555"),
-("103","sompong@gmail.com","20044"),
-("104","lnwza007@gmail.com","25414"),
-("105","pipat4@gmail.com","99994");
+("101","slot888@gmail.com","69 jatujak","00004"),
+("102","sunut@gmail.com","99 thonglor","it555"),
+("103","sompong@gmail.com","111 pitsamai","20044"),
+("104","lnwza007@gmail.com","10 ten","25414"),
+("105","pipat4@gmail.com","78 swadee","99994");
 
 INSERT INTO Product VALUES
 ("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4"),
