@@ -21,7 +21,7 @@
             </ul>
         </nav>
     </header>
-
+<main>
     <section class="setting">
         <br>
         <h2 style="margin-left: 20px;">Setting</h2><hr>
@@ -32,118 +32,43 @@
 
     <!-- สร้างตาราง -->
     <section class="features">
-        <h1><a class="text" style="font-size: larger; margin-left: 600px;" >Edit User</a></h1>
-    <table border="1" style="margin-left: 200px;" id="UserTable">
+    <table border="1" id="UserTable">
         <tr>
-            <th>เลขประจำตัว</th>
-            <th>ชื่อ</th>
-            <th>นามสกุล</th>
-            <th>อีเมล</th>
-            <th>ที่อยู่</th>
-            <th>รหัสไปรษณีย์</th>
-            <th>แก้ไข</th>
+            <th>UID</th>  
+            <th>Email</th>
+            <th>Password</th>
         </tr>
         <tr> 
             <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
-            <td contenteditable="true">00001</td>
-            <td contenteditable="true">John</td>
-            <td contenteditable="true">Doe</td>
-            <td contenteditable="true">john@example.com</td>
-            <td contenteditable="true">หนองปลาไหล</td>
-            <td contenteditable="true">85499</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
-        </tr>
-        <tr>
-            <td contenteditable="true">00002</td>
-            <td contenteditable="true">Jane</td>
-            <td contenteditable="true">Smith</td>
-            <td contenteditable="true">jane@example.com</td>
-            <td contenteditable="true">Middle of forest</td>
-            <td contenteditable="true">98765</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
-        </tr>
-        <tr>
-            <td contenteditable="true">00003</td>
-            <td contenteditable="true">Olivia</td>
-            <td contenteditable="true">Smith</td>
-            <td contenteditable="true">Olivia@example.com</td>
-            <td contenteditable="true">Middle of sea</td>
-            <td contenteditable="true">65488</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
-        </tr>
-        <tr>
+            <td contenteditable="true">101</td>
+            <td contenteditable="true">slot888@gmail.com</td>
             <td contenteditable="true">00004</td>
-            <td contenteditable="true">Ethan</td>
-            <td contenteditable="true">Johnson</td>
-            <td contenteditable="true">Ethan@example.com</td>
-            <td contenteditable="true">Middle of ocean</td>
-            <td contenteditable="true">32194</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
         </tr>
         <tr>
-            <td contenteditable="true">00005</td>
-            <td contenteditable="true">Sophia</td>
-            <td contenteditable="true">Brown</td>
-            <td contenteditable="true">Sophia@example.com</td>
-            <td contenteditable="true">Middle of jungle</td>
-            <td contenteditable="true">21804</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
+            <td contenteditable="true">102</td>
+            <td contenteditable="true">sunut@gmail.com</td>
+            <td contenteditable="true">it555</td>
         </tr>
         <tr>
-            <td contenteditable="true">00006</td>
-            <td contenteditable="true">Liam</td>
-            <td contenteditable="true">Davis</td>
-            <td contenteditable="true">Liam@example.com</td>
-            <td contenteditable="true">Middle of Olympus</td>
-            <td contenteditable="true">78246</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
+            <td contenteditable="true">103</td>
+            <td contenteditable="true">sompong@gmail.com</td>
+            <td contenteditable="true">25414</td>
         </tr>
         <tr>
-            <td contenteditable="true">00007</td>
-            <td contenteditable="true">Ava</td>
-            <td contenteditable="true">Wilson</td>
-            <td contenteditable="true">Ava@example.com</td>
-            <td contenteditable="true">Middle of everest</td>
-            <td contenteditable="true">38495</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
+            <td contenteditable="true">104</td>
+            <td contenteditable="true">lnwza007@gmail.com</td>
+            <td contenteditable="true">25414</td>
         </tr>
         <tr>
-            <td contenteditable="true">00008</td>
-            <td contenteditable="true">Noah</td>
-            <td contenteditable="true">Anderson</td>
-            <td contenteditable="true">Noah@example.com</td>
-            <td contenteditable="true">Middle of Pompeii</td>
-            <td contenteditable="true">84079</td>
-            <td>
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-              </td>
+            <td contenteditable="true">105</td>
+            <td contenteditable="true">pipat4@gmail.com</td>
+            <td contenteditable="true">99994</td>
         </tr>
+        
             <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
     </table>
     <!-- เมื่อกดจะเรียกใช้ฟังก์ชัน addRow -->
-    <button onclick="addRow()" style="margin-left: 370px;">เพิ่มผู้ใช้งาน</button>
+    <button onclick="addRow()" style="margin-left: 130px;">เพิ่มผู้ใช้งาน</button>
        <br>
         <script>
             var selectedCell = null;
@@ -165,24 +90,13 @@
             function addRow() {
                 var table = document.getElementById('UserTable');
                 var newRow = table.insertRow(table.rows.length);
-                var numberCell = newRow.insertCell(0);
-                var nameCell = newRow.insertCell(1);
-                var surnameCell = newRow.insertCell(2);
-                var emailCell = newRow.insertCell(3);
-                var addressCell = newRow.insertCell(4);
-                var postCell = newRow.insertCell(5);
-                var editCell = newRow.insertCell(6);
+                var IDCell = newRow.insertCell(0);
+                var emailCell = newRow.insertCell(1);
+                var pwdCell = newRow.insertCell(2);
 
-                numberCell.contentEditable = true;
-                nameCell.contentEditable = true;
-                surnameCell.contentEditable = true;
+                IDCell.contentEditable = true;
                 emailCell.contentEditable = true;
-                addressCell.contentEditable = true;
-                postCell.contentEditable = true;
-                editCell.innerHTML = `
-                <button class="edit-button" onclick="editRow(this)">แก้ไข</button>
-                <button onclick="deleteRow(this)">ลบ</button>
-                `;
+                pwdCell.contentEditable = true;
   }
           </script>
         
@@ -192,7 +106,7 @@
         
         
     </section>
-
+</main>
     <footer>
         <p>TopKing 👑</p><br>
         <p>Tel: 02-345-6789</p><br>

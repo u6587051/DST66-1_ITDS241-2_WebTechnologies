@@ -98,12 +98,15 @@ a{
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-left: 40%;
+    margin-top: 10%;
     
 }
 table, th, td {
     border: 1px solid white;
     padding: 10px;
     text-align: center;
+    
 }
 h4{
     margin-left: 20px;
@@ -129,4 +132,9 @@ button:hover {
 a{
     text-decoration: none;
     color: #fff;
+}
+
+main{
+    display: flex;
+    flex: 1;
 }
