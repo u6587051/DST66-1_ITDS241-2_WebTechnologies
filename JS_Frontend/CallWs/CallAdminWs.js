@@ -1,4 +1,4 @@
-async function CallAdminWs(url, method, sentData = {}) {
+async function callAdminWs(url, method, sentData = {}) {
     let data;
     if (method == "selectall") {
       let response = await fetch(url, {
@@ -31,28 +31,36 @@ async function CallAdminWs(url, method, sentData = {}) {
     }
   
     return data;
-  }
+}
 
-  let STU_ID, STU_FNAME, STU_LNAME, STU_AGE;
-  let STU_IDTxtRef = document.querySelector("#STU_ID");
-  let STU_FNAMETxtRef = document.querySelector("#STU_FNAME");
-  let STU_LNAMETxtRef = document.querySelector("#STU_LNAME");
-  let STU_AGETxtRef = document.querySelector("#STU_AGE");
+let AID, EMAIL, PWD, FNAME, LNAME, ADDRESS, AGE, NEED;
+let AID_TXT = document.querySelector("#aid");
+let EMAIL_TXT = document.querySelector("#aemail");
+// let PWD_TXT = document.querySelector("#");
+let FNAME_TXT = document.querySelector("#afname");
+// let LNAME_TXT = document.querySelector("#");
+// let ADDRESS_TXT = document.querySelector("#");
+// let AGE_TXT = document.querySelector("#");
+// let NEED_TXT = document.querySelector("#");
   
-  function clearInput() {
-    STU_IDTxtRef.value = "";
-    STU_FNAMETxtRef.value = "";
-    STU_LNAMETxtRef.value = "";
-    STU_AGETxtRef.value = "";
-  }
+function clearInput() {
+  AID_TXT.value = "";
+  EMAIL_TXT.value = "";
+  PWD_TXT.value = "";
+  FNAME_TXT.value = "";
+  LNAME_TXT.value = "";
+  ADDRESS_TXT.value = "";
+  AGE_TXT.value = "";
+  NEED_TXT.value = "";
+}
   
-  let insertB = document.querySelector("#ainsert");
-  let updateB = document.querySelector("#aupdate");
-  let deleteB = document.querySelector("#adelete");
-  let selectB = document.querySelector("#aselect");
-  let selectallB = document.querySelector("#aselectall");
+let insertB = document.querySelector("#ainsert");
+let updateB = document.querySelector("#aupdate");
+let deleteB = document.querySelector("#adelete");
+let selectB = document.querySelector("#aselect");
+let selectallB = document.querySelector("#aselectall");
   
-  insertB.addEventListener("click", () => {
+insertB.addEventListener("click", () => {
     STU_ID = STU_IDTxtRef.value;
     console.log(STU_ID);
     STU_FNAME = STU_FNAMETxtRef.value;
@@ -64,16 +72,16 @@ async function CallAdminWs(url, method, sentData = {}) {
       STU_LNAME: STU_LNAME,
       STU_AGE: STU_AGE,
     };
-    callStudentWS("http://localhost:8021/adminWS" + "student", "insert", student_data).then((data) => {
+    callAdminWs("http://localhost:8021/adminWS/" + "admin", "insert", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
         clearInput();
       }
     });
-  });
+});
   
-  updateB.addEventListener("click", () => {
+updateB.addEventListener("click", () => {
     STU_ID = STU_IDTxtRef.value;
     STU_FNAME = STU_FNAMETxtRef.value;
     STU_LNAME = STU_LNAMETxtRef.value;
@@ -84,32 +92,32 @@ async function CallAdminWs(url, method, sentData = {}) {
       STU_LNAME: STU_LNAME,
       STU_AGE: STU_AGE,
     };
-    callStudentWS("http://localhost:8021/adminWS" + "student", "update", student_data).then((data) => {
+    callStudentWS("http://localhost:8021/adminWS/" + "admin", "update", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
         clearInput();
       }
     });
-  });
+});
   
-  deleteB.addEventListener("click", () => {
+deleteB.addEventListener("click", () => {
     STU_ID = STU_IDTxtRef.value;
     let student_data = {
       student_id: STU_ID,
     };
-    callStudentWS("http://localhost:8021/adminWS" + "student", "delete", student_data).then((data) => {
+    callStudentWS("http://localhost:8021/adminWS/" + "admin", "delete", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
         clearInput();
       }
     });
-  });
+});
   
-  selectB.addEventListener("click", () => {
+selectB.addEventListener("click", () => {
     STU_ID = STU_IDTxtRef.value;
-    callStudentWS("http://localhost:8021/adminWS" + "student/" + STU_ID, "select").then((data) => {
+    callStudentWS("http://localhost:8021/adminWS/" + "admin/" + AID, "select").then((data) => {
       console.log(data);
       if (data) {
         alert(data.message);
@@ -119,10 +127,10 @@ async function CallAdminWs(url, method, sentData = {}) {
         STU_AGETxtRef.value = data.data.STU_AGE;
       }
     });
-  });
+});
   
-  selectallB.addEventListener("click", () => {
-    callStudentWS("http://localhost:8021/adminWS" + "students", "selectall").then((data) => {
+selectallB.addEventListener("click", () => {
+    callStudentWS("http://localhost:8021/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
@@ -150,5 +158,4 @@ async function CallAdminWs(url, method, sentData = {}) {
         clearInput();
       }
     });
-  });
-  
+});
