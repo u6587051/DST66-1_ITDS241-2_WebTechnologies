@@ -1,15 +1,28 @@
-const express=require('express');
-const path=require('path');
-const port=8021 ;  
-const app = express();
-const router = express.Router();
-app.use(router);
-// app.use(express.static(path.join(__dirname, 'JS_Frontend')))
+var express = require("express"),
+  router = express.Router(),
+  path = require("path");
+
+router.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+
+// Add js to Node.js Server ไว้ Call Service
+// router.get("/js/callStudentService.js", function (req, res) {
+//   res.sendFile(path.join(__dirname + "/js/callStudentService.js"));
+// });
+
+// router.get("/js/callStudentServicewithjwt.js", function (req, res) {
+//   res.sendFile(path.join(__dirname + "/js/callStudentServicewithjwt.js"));
+// });
 
 // Route ไปยังหน้า About us
 router.get('/aboutus', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/About_us.html`));
 })
+
 // router.get('/CSS/him-styles.css', (req,res) =>{
 //     res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
 // })
@@ -114,7 +127,4 @@ router.get('/user-info', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/User(Information).html`));
 })
 
-
-app.listen(port, ()=>{
-    console.log(`Server is listening to Port: ${port}`);
-})
+module.exports = router;

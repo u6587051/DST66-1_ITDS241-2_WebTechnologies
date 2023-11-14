@@ -2,9 +2,9 @@
   "name": "js_frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "app2.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon app2.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
