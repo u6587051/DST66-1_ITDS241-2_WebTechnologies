@@ -33,5 +33,3 @@ async function CallAdminWs(url, method, sentData = {}) {
     return data;
   }
 
-
-  
