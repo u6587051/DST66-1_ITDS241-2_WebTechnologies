@@ -17,6 +17,7 @@ CREATE TABLE USERS(
 UID char(3) NOT NULL UNIQUE,
 email varchar(50) NOT NULL,
 pwd char(5) NOT NULL,
+PRIMARY KEY (UID)
 );
 
 CREATE TABLE ADMINS(
@@ -28,6 +29,7 @@ lname varchar(30) NOT NULL,
 address varchar(256) NOT NULL,
 age int NOT NULL,
 need varchar(256) NOT NULL,
+PRIMARY KEY (AID)
 );
 
 INSERT INTO ADMINS VALUES
