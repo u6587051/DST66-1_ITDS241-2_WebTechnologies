@@ -163,9 +163,10 @@
 //     console.log(`Server is listening to Port: ${process.env.MYSQL_PORT}`);
 // });
 
-
-const express =require('express');
+const express = require('express');
+const dotenv = require('dotenv');
 const app = express();
+dotenv.config();
 
 const AdminServiceRouter = require("./backend_WS/adminWS");
 const UserServiceRouter = require("./backend_WS/userWS");

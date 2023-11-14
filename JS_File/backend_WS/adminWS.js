@@ -61,3 +61,5 @@ router.put("/student", function (req, res) {
       }
     );
 });
+
+module.exports = router;
