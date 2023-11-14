@@ -1,32 +1,22 @@
 async function CallUserWS(url, method, sentData = {}) {
     let data;
-    if (method == "selectall") {
+    if (method == "Uselectall") {
       let response = await fetch(url, {
         method: "GET",
       });
       data = await response.json();
-    } else if (method == "selectUID") {
+    } else if (method == "Uselect3crit") {
       let response = await fetch(url, {
         method: "GET",
       });
       data = await response.json();
-    } else if (method == "selectEmail") {
-        let response = await fetch(url, {
-          method: "GET",
-        });
-        data = await response.json();
-    } else if (method == "select") {
-        let response = await fetch(url, {
-          method: "GET",
-        });
-        data = await response.json();
-    } else if (method == "insert" || method == "update" || method == "delete") {
+    } else if (method == "Uinsert" || method == "Uupdate" || method == "Udelete") {
       let aMethod;
-      if (method == "insert") {
+      if (method == "Uinsert") {
         aMethod = "POST";
-      } else if (method == "update") {
+      } else if (method == "Uupdate") {
         aMethod = "PUT";
-      } else if (method == "delete") {
+      } else if (method == "Udelete") {
         aMethod = "DELETE";
       }
       let response = await fetch(url, {
