@@ -39,7 +39,7 @@ router.get('/admin-product', (req,res) =>{
 
 // Route ไปยังหน้า Admin(edit)
 router.get('/admin-edit', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Admin(edit).html`));
+    res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
 })
 
 // Route ไปยังหน้า Admin(information)
@@ -115,11 +115,6 @@ router.get('/Product6', (req,res) =>{
 // Route ไปยังหน้า Search page
 router.get('/Searchpage', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/Search_page.html`));
-})
-
-// Route ไปยังหน้า User(edit)
-router.get('/user-edit', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
 })
 
 // Route ไปยังหน้า User(information)

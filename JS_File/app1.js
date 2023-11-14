@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const AdminServiceRouter = require("./backend_WS/adminWS");
-const UserServiceRouter = require("./backend_WS/userWS");
+const UserServiceRouter = require("../trash/userWS");
 const ProductServiceRouter = require("./backend_WS/productWS");
 
 app.use("/adminWS",AdminServiceRouter);
