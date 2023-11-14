@@ -24,14 +24,9 @@ router.get('/admin-product', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/admin-product.html`));
 })
 
-// Route ไปยังหน้า Admin(edit)
+// Route ไปยังหน้า User(edit)
 router.get('/admin-edit', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Admin(edit).html`));
-})
-
-// Route ไปยังหน้า Admin(information)
-router.get('/admin-info', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Admin(information).html`));
+    res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
 })
 
 // Route ไปยังหน้า Delete-page
@@ -103,17 +98,6 @@ router.get('/Product6', (req,res) =>{
 router.get('/Searchpage', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/Search_page.html`));
 })
-
-// Route ไปยังหน้า User(edit)
-router.get('/user-edit', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
-})
-
-// Route ไปยังหน้า User(information)
-router.get('/user-info', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/User(Information).html`));
-})
-
 
 app.listen(port, ()=>{
     console.log(`Server is listening to Port: ${port}`);

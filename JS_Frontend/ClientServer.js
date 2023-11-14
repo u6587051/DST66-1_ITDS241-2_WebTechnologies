@@ -27,11 +27,6 @@ router.get('/aboutus', (req,res) =>{
 //     res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
 // })
 
-// Route ไปยังหน้า Add-product
-router.get('/add-product', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Add-Product.html`));
-})
-
 // Route ไปยังหน้า Admin-product
 router.get('/admin-product', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/admin-product.html`));
@@ -39,12 +34,7 @@ router.get('/admin-product', (req,res) =>{
 
 // Route ไปยังหน้า Admin(edit)
 router.get('/admin-edit', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Admin(edit).html`));
-})
-
-// Route ไปยังหน้า Admin(information)
-router.get('/admin-info', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Admin(information).html`));
+    res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
 })
 
 // Route ไปยังหน้า Delete-page
@@ -115,16 +105,6 @@ router.get('/Product6', (req,res) =>{
 // Route ไปยังหน้า Search page
 router.get('/Searchpage', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/Search_page.html`));
-})
-
-// Route ไปยังหน้า User(edit)
-router.get('/user-edit', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
-})
-
-// Route ไปยังหน้า User(information)
-router.get('/user-info', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/User(Information).html`));
 })
 
 module.exports = router;

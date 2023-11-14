@@ -129,3 +129,25 @@ button {
     display: inline-block; 
 }
 
+.search-container form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+.search-container input, .search-container button {
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+.search-container button {
+    cursor: pointer;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
