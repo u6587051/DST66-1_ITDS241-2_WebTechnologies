@@ -22,12 +22,28 @@
         </nav>
     </header>
 <main>
+    
     <section class="setting">
         <br>
         <h2 style="margin-left: 20px;">Setting</h2><hr>
         <a href="http://localhost:8021/admin-edit" class="hover-effect"> <h4>  Admin Information   </h4> </a> 
         <a href="http://localhost:8021/admin-product" class="hover-effect"> <h4>  Product             </h4> </a>
     </section>
+    <section>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Enter ID" name="id">
+                <input type="text" placeholder="Enter Full Name" name="fullname">
+                <input type="email" placeholder="Enter Email" name="email">
+                <button type="insert">Insert</button>
+                <button type="update">Update</button>
+                <button type="delete">Delete</button>
+                <button type="Select">Select</button>
+                <button type="Select all">Select all</button>
+            </form>
+        </div>
+    </section>
+
 
     <!-- สร้างตาราง -->
     <section class="features">
