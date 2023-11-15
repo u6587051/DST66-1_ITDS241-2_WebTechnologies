@@ -37,12 +37,12 @@ async function callAdminWs(url, method, sentData = {}) {
 let AID, EMAIL, PWD, FNAME, LNAME, ADDRESS, AGE, NEED; //กำหนดค่าที่รับค่าจาก id input box
 let AID_TXT = document.querySelector("#aid");
 let EMAIL_TXT = document.querySelector("#aemail");
-let PWD_TXT = document.querySelector("#");
+let PWD_TXT = document.querySelector("#apwd");
 let FNAME_TXT = document.querySelector("#afname");
-let LNAME_TXT = document.querySelector("#");
-let ADDRESS_TXT = document.querySelector("#");
-let AGE_TXT = document.querySelector("#");
-let NEED_TXT = document.querySelector("#");
+let LNAME_TXT = document.querySelector("#alname");
+let ADDRESS_TXT = document.querySelector("#aaddress");
+let AGE_TXT = document.querySelector("#aage");
+let NEED_TXT = document.querySelector("#aneed");
   
 function clearInput() { //function ในการ clear กล่อง input box
   AID_TXT.value = "";
