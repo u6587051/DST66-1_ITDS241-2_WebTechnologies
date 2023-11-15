@@ -87,7 +87,7 @@ router.put("/product", function (req, res) {
     );
 });
 
-router.delete("/prodcut", function (req, res) {
+router.delete("/product", function (req, res) {
   let product_id = req.body.PID;
 
   connection.query("DELETE FROM product WHERE PID = ?",[product_id],function (error, results) {
@@ -101,5 +101,30 @@ router.delete("/prodcut", function (req, res) {
     }
   );
 });
+
+
+
+//หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
+
+// router.get("/product/:pcat&:pbrand&:pprice", function (req, res) {
+//   let pcat = req.params.pcat;
+//   let pbrand = req.params.pbrand;
+//   let pprice = req.params.pprice;
+//   var sql = "SELECT * FROM product WHERE (pcat LIKE ? OR pcat IS NULL) AND (pbrand LIKE ? OR pbrand IS NULL) AND (pprice LIKE ? OR pprice IS NULL)";
+
+//   connection.query(sql,[pcat, pbrand, pprice],function (error, results) {
+//       if (error || results.length === 0)
+//         return res.send({
+//           error: true,
+//           message: "Product is not found.",
+//         });
+//       return res.send({
+//         error: false,
+//         data: results[0],
+//         message: "Product retrieved",
+//       });
+//     }
+//   );
+// });
 
 module.exports = router;
