@@ -110,23 +110,44 @@ router.delete("/product", function (req, res) {
 
 
 
+
 //หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
-router.get('/product/:pcat?/:pbrand?/:pricerange?', function (req, res) {
-  let pcat = req.params.pcat ? req.params.pcat:'';
+router.get('/product/:pid?/:pname?/:pbrand?/:pcat?/:pricerange?/:pquan?/:pdetail?', function (req, res) {
+  let pid = req.params.pid ? req.params.pid:'';
+  let pname = req.params.pname ? req.params.pname:'';
   let pbrand = req.params.pbrand ? req.params.pbrand:'';
+  let pcat = req.params.pcat ? req.params.pcat:'';
   let pricerange = req.params.pricerange ? req.params.pricerange:'';
+  let pquan = req.params.pquan ? req.params.pquan:'';
+  let pdetail = req.params.pdetail ? req.params.pdetail:'';
   
     // Build the base SQL query
   let sql = "SELECT * FROM product WHERE 1";
   
     // Add conditions for each parameter if provided
+  if (pid) {
+      sql += " AND (pid LIKE ? OR pid = '')";
+    }
+
+  if (pname) {
+      sql += " AND (pname LIKE ? OR pname = '')";
+    }
+  
+  if (pbrand) {
+      sql += " AND (pbrand LIKE ? OR pbrand = '')";
+    }
+    
   if (pcat) {
     sql += " AND (pcat LIKE ? OR pcat = '')";
   }
-  
-  if (pbrand) {
-    sql += " AND (pbrand LIKE ? OR pbrand = '')";
+  if (pquan) {
+    sql += " AND (pquan LIKE ? OR pquan = '')";
   }
+  if (pdetail) {
+    sql += " AND (pdetail LIKE ? OR pdetail = '')";
+  }
+  
+
   
     // Add a condition to categorize products based on price
   if (pricerange) {
@@ -142,7 +163,7 @@ router.get('/product/:pcat?/:pbrand?/:pricerange?', function (req, res) {
     }
   
     // Execute the query with appropriate parameters
-    connection.query(sql, [`%${pcat}%`,`%${pbrand}%`], function (error, results) {
+    connection.query(sql, [`%${pid}%`,`%${pname}%`,`%${pbrand}%`,`%${pcat}%`,`%${pquan}%`,`%${pdetail}%`], function (error, results) {
       if (error || results.length === 0) {
         return res.send({
           error: true,
