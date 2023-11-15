@@ -15,6 +15,7 @@ let corsOptions = {
   methods: "GET,POST,PUT,DELETE",
 };
 app.use(cors(corsOptions));
+router.use(cors(corsOptions));
 
 //router ใช้งานไฟล์ json ได้
 router.use(express.json());
@@ -42,24 +43,20 @@ router.get("/products", function (req, res) {
     });
   });
 
-//รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
-// router.get("/product/:pid", function (req, res) {
-//     let product_id = req.params.pid;
+// รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
+router.get("/product/:pid", function (req, res) {
+    let product_id = req.params.pid;
   
-//     connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
-//         if (error || results.length === 0)
-//           return res.send({
-//             error: true,
-//             message: "Product is not found.",
-//           });
-//         return res.send({
-//           error: false,
-//           data: results[0],
-//           message: "Product retrieved",
-//         });
-//       }
-//     );
-// });
+    connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
+        if (error || results.length === 0)
+          return res.send({
+            error: true,
+            message: "Product is not found.",
+          });
+        return res.send({error: false,data: results[0],message: "Product retrieved"});
+      }
+    );
+});
 
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/product", function (req, res) {
@@ -111,7 +108,10 @@ router.delete("/product", function (req, res) {
   );
 });
 
-//หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้โดยเริ่มจาก Pcat=>Pbrand=>pricerange
+
+
+
+//หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
 router.get('/product/:pid?/:pname?/:pbrand?/:pcat?/:pricerange?/:pquan?/:pdetail?', function (req, res) {
   let pid = req.params.pid ? req.params.pid:'';
   let pname = req.params.pname ? req.params.pname:'';
@@ -178,5 +178,6 @@ router.get('/product/:pid?/:pname?/:pbrand?/:pcat?/:pricerange?/:pquan?/:pdetail
       });
     });
 });
+  
 
 module.exports = router;
