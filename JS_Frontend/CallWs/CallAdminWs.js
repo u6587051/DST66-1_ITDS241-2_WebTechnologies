@@ -1,22 +1,23 @@
+//function ในการเรียก adminWS ผ่านการ fetch api
 async function callAdminWs(url, method, sentData = {}) {
     let data;
-    if (method == "selectall") {
+    if (method == "selectall") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
-        method: "GET",
+        method: "GET", //ส่ง method get ไปยัง adminWS
       });
       data = await response.json();
     } else if (method == "select") {
-      let response = await fetch(url, {
-        method: "GET",
+      let response = await fetch(url, { //ถ้า method ที่รับ parameter คือแสดงผลจาก params
+        method: "GET", //ส่ง method get ไปยัง adminWS
       });
       data = await response.json();
-    } else if (method == "insert" || method == "update" || method == "delete") {
+    } else if (method == "insert" || method == "update" || method == "delete") { 
       let aMethod;
-      if (method == "insert") {
+      if (method == "insert") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง adminWS
         aMethod = "POST";
-      } else if (method == "update") {
+      } else if (method == "update") { //ถ้า method ที่รับ parameter มาเท่ากับ update method put ไปยัง adminWS
         aMethod = "PUT";
-      } else if (method == "delete") {
+      } else if (method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ delete  method delete ไปยัง adminWS
         aMethod = "DELETE";
       }
       let response = await fetch(url, {
@@ -30,47 +31,50 @@ async function callAdminWs(url, method, sentData = {}) {
       data = await response.json();
     }
   
-    return data;
+    return data; //ส่งข้อมูลกลับมา
 }
 
-let AID, EMAIL, PWD, FNAME, LNAME, ADDRESS, AGE, NEED;
+let AID, EMAIL, PWD, FNAME, LNAME, ADDRESS, AGE, NEED; //กำหนดค่าที่รับค่าจาก id input box
 let AID_TXT = document.querySelector("#aid");
 let EMAIL_TXT = document.querySelector("#aemail");
-// let PWD_TXT = document.querySelector("#");
+let PWD_TXT = document.querySelector("#");
 let FNAME_TXT = document.querySelector("#afname");
-// let LNAME_TXT = document.querySelector("#");
-// let ADDRESS_TXT = document.querySelector("#");
-// let AGE_TXT = document.querySelector("#");
-// let NEED_TXT = document.querySelector("#");
+let LNAME_TXT = document.querySelector("#");
+let ADDRESS_TXT = document.querySelector("#");
+let AGE_TXT = document.querySelector("#");
+let NEED_TXT = document.querySelector("#");
   
-function clearInput() {
+function clearInput() { //function ในการ clear กล่อง input box
   AID_TXT.value = "";
   EMAIL_TXT.value = "";
-  // PWD_TXT.value = "";
+  PWD_TXT.value = "";
   FNAME_TXT.value = "";
-  // LNAME_TXT.value = "";
-  // ADDRESS_TXT.value = "";
-  // AGE_TXT.value = "";
-  // NEED_TXT.value = "";
+  LNAME_TXT.value = "";
+  ADDRESS_TXT.value = "";
+  AGE_TXT.value = "";
+  NEED_TXT.value = "";
 }
-  
+
+//รับค่าปุ่มมาจาก input box โดย id
 let insertB = document.querySelector("#ainsert");
 let updateB = document.querySelector("#aupdate");
 let deleteB = document.querySelector("#adelete");
 let selectB = document.querySelector("#aselect");
 let selectallB = document.querySelector("#aselectall");
 // let loginB = document.querySelector("#login");
-  
+
+//หากกดคลิก insert button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
+//ส่ง parameter url คือ http://localhost:8022/adminWS/admin, method คือ insert, data คือไฟล์ json ที่รับค่ามา
 insertB.addEventListener("click", () => {
     // console.log("insert leaw ja")
     AID = AID_TXT.value;
     EMAIL = EMAIL_TXT.value;
-    PWD = "333";
+    PWD = PWD_TXT.value;
     FNAME = FNAME_TXT.value;
-    LNAME = "sudlor";
-    ADDRESS = "mangsiso";
-    AGE = "12";
-    NEED = "need";
+    LNAME = LNAME_TXT.value;
+    ADDRESS = ADDRESS_TXT.value;
+    AGE = AGE_TXT.value;
+    NEED = NEED_TXT.value;
     let admindata = {
       AID: AID,
       EMAIL: EMAIL,
@@ -90,16 +94,18 @@ insertB.addEventListener("click", () => {
       }
     });
 });
-  
+
+//หากกดคลิก update button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
+//ส่ง parameter url คือ http://localhost:8022/adminWS/admin, method คือ update, data คือไฟล์ json ที่รับค่ามา
 updateB.addEventListener("click", () => {
     AID = AID_TXT.value;
     EMAIL = EMAIL_TXT.value;
-    PWD = "1";
+    PWD = PWD_TXT.value;
     FNAME = FNAME_TXT.value;
-    LNAME = "s";
-    ADDRESS = "ad";
-    AGE = "100";
-    NEED = "i";
+    LNAME = LNAME_TXT.value;
+    ADDRESS = ADDRESS_TXT.value;
+    AGE = AGE_TXT.value;
+    NEED = NEED_TXT.value;
     let admindata = {
       AID: AID,
       EMAIL: EMAIL,
@@ -119,7 +125,9 @@ updateB.addEventListener("click", () => {
       }
     });
 });
-  
+
+//หากกดคลิก delete button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
+//ส่ง parameter url คือ http://localhost:8022/adminWS/admin, method คือ delete, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น admin id ไว้เช็ค
 deleteB.addEventListener("click", () => {
     AID = AID_TXT.value;
     let admindata = {
@@ -134,7 +142,9 @@ deleteB.addEventListener("click", () => {
       }
     });
 });
-  
+
+//หากกดคลิก select button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
+//ส่ง parameter url คือ http://localhost:8022/adminWS/admin บวกกับตัว admin id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น admin id ไว้เช็ค
 selectB.addEventListener("click", () => {
     AID = AID_TXT.value;
     callAdminWs("http://localhost:8022/adminWS/" + "admin/" + AID, "select").then((data) => {
@@ -152,7 +162,9 @@ selectB.addEventListener("click", () => {
       }
     });
 });
-  
+
+//หากกดคลิก selectall button เรียก function callAdminWS
+//ส่ง parameter url คือ http://localhost:8022/adminWS/admins, method คือ selectall, data คือไฟล์ json ที่รับค่ามาแล้วแสดงผลค่า admin ทั้งหมดเข้าไปใน html
 selectallB.addEventListener("click", () => {
     callAdminWs("http://localhost:8022/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);

@@ -1,3 +1,4 @@
+//import express,mysql,router,dotenv
 const express =require('express');
 const mysql = require('mysql2');
 const app = express();
@@ -6,6 +7,7 @@ dotenv.config();
 const router = express.Router();
 app.use(router);
 
+//import cors เพื่อสามารถทำงานคนละ origin ได้
 const cors = require('cors');
 let whiteList = ["http://localhost:8021", "http://localhost:8022"];
 let corsOptions = {
@@ -14,9 +16,11 @@ let corsOptions = {
 };
 app.use(cors(corsOptions));
 
+//router ใช้งานไฟล์ json ได้
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
+//สร้างตัวเชื่อมต่อ database
 let connection = mysql.createConnection({
     host : process.env.MYSQL_HOST,
     user : process.env.MYSQL_USERNAME,
@@ -24,11 +28,12 @@ let connection = mysql.createConnection({
     database : process.env.MYSQL_DATABASE
 });
 
+//รับ get มาแล้วแสดงข้อความว่าอยู่ในหน้าการทำงาน product
 router.get("/", function (req, res) {
     return res.send({ message: "you are in product page" });
 });
 
-//แสดงหลังจากกดปุ่ม product
+//รับ get มาแล้วแสดงผล product ทั้งหมด
 router.get("/products", function (req, res) {
   connection.query("SELECT * FROM product", function (error, results) {
       if (error)
@@ -37,24 +42,26 @@ router.get("/products", function (req, res) {
     });
   });
 
-// router.get("/product/:pid", function (req, res) {
-//     let product_id = req.params.pid;
+//รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
+router.get("/product/:pid", function (req, res) {
+    let product_id = req.params.pid;
   
-//     connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
-//         if (error || results.length === 0)
-//           return res.send({
-//             error: true,
-//             message: "Product is not found.",
-//           });
-//         return res.send({
-//           error: false,
-//           data: results[0],
-//           message: "Product retrieved",
-//         });
-//       }
-//     );
-// });
+    connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
+        if (error || results.length === 0)
+          return res.send({
+            error: true,
+            message: "Product is not found.",
+          });
+        return res.send({
+          error: false,
+          data: results[0],
+          message: "Product retrieved",
+        });
+      }
+    );
+});
 
+//รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/product", function (req, res) {
     let product = req.body
  
@@ -71,6 +78,7 @@ router.post("/product", function (req, res) {
     );
   });
 
+//รับ put มาเพื่ออัพเดทข้อมูลใน database จาก product id และอัพเดทข้อมูลจากข้อมูลที่ได้รับ
 router.put("/product", function (req, res) {
     let product_id = req.body.PID;
     let product = req.body;
@@ -87,6 +95,7 @@ router.put("/product", function (req, res) {
     );
 });
 
+//รับ delete มาเพื่อลบข้อมูล admin จาก admin id ที่กำหนด
 router.delete("/product", function (req, res) {
   let product_id = req.body.PID;
 
