@@ -27,14 +27,6 @@ app.use("/productWS", ProductServiceRouter);
 app.use("/callingadminWS", CallingAdminServiceRouter);
 app.use("/callingproductWS", CallingProductServiceRouter);
 
-// router.get("/admins", function (req, res) {
-//     connection.query("SELECT * FROM ADMINS", function (error, results) {
-//       if (error)
-//         throw (error)
-//       return res.send({ error: false, data: results, message: "Admin lists" });
-//     });
-//   });
-
 app.listen(process.env.MYSQL_PORT, ()=>{
     console.log(`Server is listening to Port: ${process.env.MYSQL_PORT}`);
 });

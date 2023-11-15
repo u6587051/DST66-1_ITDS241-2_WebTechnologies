@@ -1,23 +1,23 @@
 //function ในการเรียก productWS ผ่านการ fetch api
-async function callProductWs(url, method, sentData = {}) {
+async function callProductWS(url, method, sentData = {}) {
     let data;
     if (method == "selectall") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
-        method: "GET", //ส่ง method get ไปยัง adminWS
+        method: "GET", //ส่ง method get ไปยัง productWS
       });
       data = await response.json();
     } else if (method == "select") { //ถ้า method ที่รับ parameter คือแสดงผลจาก params
       let response = await fetch(url, {
-        method: "GET", //ส่ง method get ไปยัง adminWS
+        method: "GET", //ส่ง method get ไปยัง productWS
       });
       data = await response.json();
-    } else if (method == "insert" || method == "update" || method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง adminWS
+    } else if (method == "insert" || method == "update" || method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง productWS
       let aMethod;
-      if (method == "insert") { //ถ้า method ที่รับ parameter มาเท่ากับ update method put ไปยัง adminWS
+      if (method == "insert") { //ถ้า method ที่รับ parameter มาเท่ากับ update method put ไปยัง productWS
         aMethod = "POST";
-      } else if (method == "update") { //ถ้า method ที่รับ parameter มาเท่ากับ delete  method delete ไปยัง adminWS
+      } else if (method == "update") { //ถ้า method ที่รับ parameter มาเท่ากับ delete  method delete ไปยัง productWS
         aMethod = "PUT";
-      } else if (method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ delete  method delete ไปยัง adminWS
+      } else if (method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ delete  method delete ไปยัง productWS
         aMethod = "DELETE";
       }
       let response = await fetch(url, {
@@ -36,13 +36,13 @@ async function callProductWs(url, method, sentData = {}) {
 
 //รับค่าปุ่มมาจาก input box โดย id
 let PID, PNAME, PBRAND, PCAT, PPRICE, PQUAN, PDETAIL;
-let PID_TXT = document.querySelector("#");
-let PNAME_TXT = document.querySelector("#");
-let PBRAND_TXT = document.querySelector("#");
-let PCAT_TXT = document.querySelector("#");
-let PPRICE_TXT = document.querySelector("#");
-let PQUAN_TXT = document.querySelector("#");
-let PDETAIL_TXT = document.querySelector("#");
+let PID_TXT = document.querySelector("#pid");
+let PNAME_TXT = document.querySelector("#pname");
+let PBRAND_TXT = document.querySelector("#pbrand");
+let PCAT_TXT = document.querySelector("#pcat");
+let PPRICE_TXT = document.querySelector("#pprice");
+let PQUAN_TXT = document.querySelector("#pquan");
+let PDETAIL_TXT = document.querySelector("#pdetail");
   
 function clearInput() { //function ในการ clear กล่อง input box
   PID_TXT.value = "";
@@ -55,16 +55,16 @@ function clearInput() { //function ในการ clear กล่อง input b
 }
 
 //รับค่าปุ่มมาจาก input box โดย id
-let insertB = document.querySelector("#ainsert");
-let updateB = document.querySelector("#aupdate");
-let deleteB = document.querySelector("#adelete");
-let selectB = document.querySelector("#aselect");
-let selectallB = document.querySelector("#aselectall");
+let insertB = document.querySelector("#pinsert");
+let updateB = document.querySelector("#pupdate");
+let deleteB = document.querySelector("#pdelete");
+let selectB = document.querySelector("#pselect");
+let selectallB = document.querySelector("#pselectall");
 
 //หากกดคลิก insert button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/product, method คือ insert, data คือไฟล์ json ที่รับค่ามา
 insertB.addEventListener("click", () => {
-    console.log("insert leaw ja")
+    // console.log("insert leaw ja")
     PID = PID_TXT.value;
     PNAME = PNAME_TXT.value;
     PBRAND = PBRAND_TXT.value;
@@ -72,7 +72,7 @@ insertB.addEventListener("click", () => {
     PPRICE = PPRICE_TXT.value;
     PQUAN = PQUAN_TXT.value;
     PDETAIL = PDETAIL_TXT.value;
-    let admindata = {
+    let productdata = {
       PID: PID,
       PNAME: PNAME,
       PBRAND: PBRAND,
@@ -81,10 +81,11 @@ insertB.addEventListener("click", () => {
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
     };
-    callAdminWs("http://localhost:8021/adminWS/" + "admin", "insert", admindata).then((data) => {
+    console.log(productdata)
+    callProductWS("http://localhost:8021/productWS/" + "product", "insert", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
-        alert(data.messPDETAIL);
+        alert(data.message);
         clearInput();
       }
     });
@@ -100,7 +101,7 @@ updateB.addEventListener("click", () => {
     PPRICE = PPRICE_TXT.value;
     PQUAN = PQUAN_TXT.value;
     PDETAIL = PDETAIL_TXT.value;
-    let admindata = {
+    let productdata = {
       PID: PID,
       PNAME: PNAME,
       PBRAND: PBRAND,
@@ -109,7 +110,7 @@ updateB.addEventListener("click", () => {
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
     };
-    callAdminWs("http://localhost:8021/adminWS/" + "admin", "update", admindata).then((data) => {
+    callProductWS("http://localhost:8021/productWS/" + "product", "update", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -119,13 +120,13 @@ updateB.addEventListener("click", () => {
 });
 
 //หากกดคลิก delete button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callProductWS
-//ส่ง parameter url คือ http://localhost:8022/productWS/product, method คือ delete, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น admin id ไว้เช็ค
+//ส่ง parameter url คือ http://localhost:8022/productWS/product, method คือ delete, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น product id ไว้เช็ค
 deleteB.addEventListener("click", () => {
     PID = PID_TXT.value;
-    let admindata = {
+    let productdata = {
       PID: PID,
     };
-    callAdminWs("http://localhost:8021/adminWS/" + "admin", "delete", admindata).then((data) => {
+    callProductWS("http://localhost:8021/productWS/" + "product", "delete", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -138,10 +139,10 @@ deleteB.addEventListener("click", () => {
 //ส่ง parameter url คือ http://localhost:8022/productWS/product บวกกับตัว product id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น product id ไว้เช็ค
 selectB.addEventListener("click", () => {
     PID = PID_TXT.value;
-    callAdminWs("http://localhost:8021/adminWS/" + "admin/" + PID, "select").then((data) => {
+    callProductWS("http://localhost:8021/productWS/" + "product/" + PID, "select").then((data) => {
       console.log(data);
       if (data) {
-        alert(data.messPDETAIL);
+        alert(data.messsage);
         PID_TXT.value = data.data.PID;
         PNAME_TXT.value = data.data.PNAME;
         PBRAND_TXT.value = data.data.PBRAND;
@@ -156,7 +157,7 @@ selectB.addEventListener("click", () => {
 //หากกดคลิก selectall button เรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/products, method คือ selectall, data คือไฟล์ json ที่รับค่ามาแล้วแสดงผลค่า product ทั้งหมดเข้าไปใน html
 selectallB.addEventListener("click", () => {
-    callAdminWs("http://localhost:8021/adminWS/" + "admins", "selectall").then((data) => {
+    callProductWS("http://localhost:8021/productWS/" + "products", "selectall").then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
