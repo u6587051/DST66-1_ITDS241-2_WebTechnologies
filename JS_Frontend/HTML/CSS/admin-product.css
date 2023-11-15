@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 header {
     background-color: #010056;
     padding: 30px;
@@ -107,6 +108,8 @@ main {
     margin-left: 30%;
     border-radius: 10px;
 }
+
+
 
 
 
