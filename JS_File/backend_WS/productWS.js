@@ -37,6 +37,24 @@ router.get("/products", function (req, res) {
     });
   });
 
+router.get("/product/:pid", function (req, res) {
+    let product_id = req.params.pid;
+  
+    connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
+        if (error || results.length === 0)
+          return res.send({
+            error: true,
+            message: "Product is not found.",
+          });
+        return res.send({
+          error: false,
+          data: results[0],
+          message: "Product retrieved",
+        });
+      }
+    );
+});
+
 router.post("/product", function (req, res) {
     let product = req.body
  

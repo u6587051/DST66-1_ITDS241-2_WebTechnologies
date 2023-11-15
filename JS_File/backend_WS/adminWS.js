@@ -31,7 +31,7 @@ router.get("/", function (req, res) {
 });
 
 router.get("/admins", function (req, res) {
-    dbConn.query("SELECT * FROM ADMINS", function (error, results) {
+    connection.query("SELECT * FROM ADMINS", function (error, results) {
       if (error)
         throw (error)
       return res.send({ error: false, data: results, message: "Admin lists" });
@@ -41,7 +41,7 @@ router.get("/admins", function (req, res) {
 router.get("/admin/:aid", function (req, res) {
     let admin_id = req.params.aid;
   
-    dbConn.query("SELECT * FROM ADMINS where AID=?",admin_id,function (error, results) {
+    connection.query("SELECT * FROM ADMINS where AID=?",admin_id,function (error, results) {
         if (error || results.length === 0)
           return res.send({
             error: true,
@@ -50,11 +50,11 @@ router.get("/admin/:aid", function (req, res) {
         return res.send({
           error: false,
           data: results[0],
-          message: "Student retrieved",
+          message: "Admin retrieved",
         });
       }
     );
-  });
+});
 
 router.post("/admin", function (req, res) {
     let admin = req.body
@@ -86,6 +86,21 @@ router.put("/admin", function (req, res) {
         });
       }
     );
+});
+
+router.delete("/admin", function (req, res) {
+  let admin_id = req.body.AID;
+
+  connection.query("DELETE FROM ADMINS WHERE AID = ?",[admin_id],function (error, results) {
+      if (error)
+        throw(error)
+      return res.send({
+        error: false,
+        data: results.affectedRows,
+        message: "Admin has been deleted.",
+      });
+    }
+  );
 });
 
 module.exports = router;
