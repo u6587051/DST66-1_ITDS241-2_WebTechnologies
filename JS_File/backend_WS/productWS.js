@@ -43,23 +43,23 @@ router.get("/products", function (req, res) {
   });
 
 //รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
-router.get("/product/:pid", function (req, res) {
-    let product_id = req.params.pid;
+// router.get("/product/:pid", function (req, res) {
+//     let product_id = req.params.pid;
   
-    connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
-        if (error || results.length === 0)
-          return res.send({
-            error: true,
-            message: "Product is not found.",
-          });
-        return res.send({
-          error: false,
-          data: results[0],
-          message: "Product retrieved",
-        });
-      }
-    );
-});
+//     connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
+//         if (error || results.length === 0)
+//           return res.send({
+//             error: true,
+//             message: "Product is not found.",
+//           });
+//         return res.send({
+//           error: false,
+//           data: results[0],
+//           message: "Product retrieved",
+//         });
+//       }
+//     );
+// });
 
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/product", function (req, res) {
@@ -111,11 +111,7 @@ router.delete("/product", function (req, res) {
   );
 });
 
-
-
-//หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
-
-// router.get("/product/:pcat&:pbrand&:pricerange", function (req, res) {
+//หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้โดยเริ่มจาก Pcat=>Pbrand=>pricerange
 router.get('/product/:pcat?/:pbrand?/:pricerange?', function (req, res) {
   let pcat = req.params.pcat ? req.params.pcat:'';
   let pbrand = req.params.pbrand ? req.params.pbrand:'';
@@ -162,6 +158,5 @@ router.get('/product/:pcat?/:pbrand?/:pricerange?', function (req, res) {
       });
     });
 });
-  
 
 module.exports = router;
