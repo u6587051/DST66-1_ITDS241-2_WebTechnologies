@@ -1,6 +1,7 @@
 var express = require("express"),
   router = express.Router(),
-  path = require("path");
+  path = require("path"),
+  app = express();
 
 router.use(
   express.urlencoded({
@@ -8,19 +9,21 @@ router.use(
   })
 );
 
+app.use("/static",express.static(path.join(__dirname, 'HTML')));
 
 // Add js to Node.js Server ไว้ Call Service
-// router.get("/js/callStudentService.js", function (req, res) {
-//   res.sendFile(path.join(__dirname + "/js/callStudentService.js"));
-// });
+router.get("/CallWs/CallAdminWs.js", function (req, res) {
+  res.sendFile(path.join(__dirname + "/CallWs/CallAdminWs.js"));
+});
 
-// router.get("/js/callStudentServicewithjwt.js", function (req, res) {
-//   res.sendFile(path.join(__dirname + "/js/callStudentServicewithjwt.js"));
-// });
+// Add js to Node.js Server ไว้ Call Service
+router.get("/CallWs/CallProductWs.js", function (req, res) {
+    res.sendFile(path.join(__dirname + "/CallWs/CallProductWs.js"));
+  });
 
 // Route ไปยังหน้า About us
 router.get('/aboutus', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/About_us.html`));
+    res.sendFile(path.join(__dirname + "/HTML/About_us.html"));
 })
 
 // router.get('/CSS/him-styles.css', (req,res) =>{

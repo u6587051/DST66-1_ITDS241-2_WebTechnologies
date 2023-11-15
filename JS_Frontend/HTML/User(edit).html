@@ -31,14 +31,14 @@
     </section>
     <section>
         <div class="search-container">
-                <input type="text" placeholder="Enter ID" name="aid">
-                <input type="text" placeholder="Enter First name" name="afname">
-                <input type="email" placeholder="Enter Email" name="aemail">
-                <button type="button" id="ainsert">Insert</button>
-                <button type="button" id="aupdate">Update</button>
-                <button type="button" id="adelete">Delete</button>
-                <button type="button" id="aselect">Select</button>
-                <button type="button" id="aselectall">Select all</button>
+                <input type="text" placeholder="Enter ID" id="aid">
+                <input type="text" placeholder="Enter First name" id="afname">
+                <input type="email" placeholder="Enter Email" id="aemail">
+                <button type="button" id="ainsert" value="insert">Insert</button>
+                <button type="button" id="aupdate" value="update">Update</button>
+                <button type="button" id="adelete" value="delete">Delete</button>
+                <button type="button" id="aselect" value="select">Select</button>
+                <button type="button" id="aselectall" value="sellecta">Select all</button>
             </form>
         </div>
     </section>
@@ -81,11 +81,12 @@
         
             <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
     </table>
+    <div id="output"></div>
     <!-- เมื่อกดจะเรียกใช้ฟังก์ชัน addRow -->
     <button onclick="addRow()" style="margin-left: 130px;">เพิ่มผู้ใช้งาน</button>
        <br>
-        <script>
-            var selectedCell = null;
+        <script src="/CallWs/CallAdminWs.js">
+            /*var selectedCell = null;
           
             // ฟังก์ชันแก้ไขแถบ
             function editRow(button) {
@@ -111,14 +112,8 @@
                 IDCell.contentEditable = false;
                 emailCell.contentEditable = false;
                 pwdCell.contentEditable = false;
-  }
+  }*/
           </script>
-        
-        
-        
-        
-        
-        
     </section>
 </main>
     <footer>

@@ -13,6 +13,7 @@ let corsOptions = {
   methods: "GET,POST,PUT,DELETE",
 };
 app.use(cors(corsOptions));
+router.use(cors(corsOptions));
 
 app.use(router);
 
@@ -36,7 +37,7 @@ router.get("/admins", function (req, res) {
         throw (error)
       return res.send({ error: false, data: results, message: "Admin lists" });
     });
-  });
+});
 
 router.get("/admin/:aid", function (req, res) {
     let admin_id = req.params.aid;
@@ -58,6 +59,7 @@ router.get("/admin/:aid", function (req, res) {
 
 router.post("/admin", function (req, res) {
     let admin = req.body
+    console.log(admin)
  
     connection.query(
       "INSERT INTO ADMINS SET ? ",admin,function (error, results) {
