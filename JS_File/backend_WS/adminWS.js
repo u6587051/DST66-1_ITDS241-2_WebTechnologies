@@ -37,7 +37,7 @@ router.get("/admins", function (req, res) {
         throw (error)
       return res.send({ error: false, data: results, message: "Admin lists" });
     });
-  });
+});
 
 router.get("/admin/:aid", function (req, res) {
     let admin_id = req.params.aid;

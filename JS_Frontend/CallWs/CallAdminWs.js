@@ -94,12 +94,12 @@ insertB.addEventListener("click", () => {
 updateB.addEventListener("click", () => {
     AID = AID_TXT.value;
     EMAIL = EMAIL_TXT.value;
-    PWD = "9898";
+    PWD = "1";
     FNAME = FNAME_TXT.value;
-    LNAME = "sas";
-    ADDRESS = "address";
-    AGE = "94";
-    NEED = "nid";
+    LNAME = "s";
+    ADDRESS = "ad";
+    AGE = "100";
+    NEED = "i";
     let admindata = {
       AID: AID,
       EMAIL: EMAIL,
@@ -130,6 +130,7 @@ deleteB.addEventListener("click", () => {
       if (data.data > 0) {
         alert(data.message);
         clearInput();
+        console.clear()
       }
     });
 });
@@ -142,12 +143,12 @@ selectB.addEventListener("click", () => {
         alert(data.message);
         AID_TXT.value = data.data.AID;
         EMAIL_TXT.value = data.data.EMAIL;
-        // PWD_TXT.value = data.data.PWD;
+        PWD_TXT.value = data.data.PWD;
         FNAME_TXT.value = data.data.FNAME;
-        // LNAME_TXT.value = data.data.LNAME;
-        // ADDRESS_TXT.value = data.data.ADDRESS;
-        // AGE_TXT.value = data.data.AGE;
-        // NEED_TXT.value = data.data.NEED;
+        LNAME_TXT.value = data.data.LNAME;
+        ADDRESS_TXT.value = data.data.ADDRESS;
+        AGE_TXT.value = data.data.AGE;
+        NEED_TXT.value = data.data.NEED;
       }
     });
 });
@@ -171,12 +172,12 @@ selectallB.addEventListener("click", () => {
           output += "<tr>";
           output += "<td>" + element.AID + "</td>";
           output += "<td>" + element.EMAIL + "</td>";
-          // output += "<td>" + element.PWD + "</td>";
+          output += "<td>" + element.PWD + "</td>";
           output += "<td>" + element.FNAME + "</td>";
-          // output += "<td>" + element.LNAME + "</td>";
-          // output += "<td>" + element.ADDRESS + "</td>";
-          // output += "<td>" + element.AGE + "</td>";
-          // output += "<td>" + element.NEED + "</td>";
+          output += "<td>" + element.LNAME + "</td>";
+          output += "<td>" + element.ADDRESS + "</td>";
+          output += "<td>" + element.AGE + "</td>";
+          output += "<td>" + element.NEED + "</td>";
           output += "</tr>";
         });
         output += "</tbody>";
