@@ -30,7 +30,7 @@ router.get("/", function (req, res) {
 
 //แสดงหลังจากกดปุ่ม product
 router.get("/products", function (req, res) {
-    dbConn.query("SELECT * FROM product", function (error, results) {
+  connection.query("SELECT * FROM product", function (error, results) {
       if (error)
         throw (error)
       return res.send({ error: false, data: results, message: "Product lists" });
