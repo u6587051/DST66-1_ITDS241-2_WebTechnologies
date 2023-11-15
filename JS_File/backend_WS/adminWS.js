@@ -49,52 +49,61 @@ router.get("/admins", function (req, res) {
 });
 
 //รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล admin ที่มีไอดีที่กำหนด
-router.get('/admin/:aid?/:pbrand?/:pricerange?', function (req, res) {
-  let pcat = req.params.pcat ? req.params.pcat:'';
-  let pbrand = req.params.pbrand ? req.params.pbrand:'';
-  let pricerange = req.params.pricerange ? req.params.pricerange:'';
+router.get("/admin/:aid", function (req, res) {
+    let admin_id = req.params.aid;
   
-    // Build the base SQL query
-  let sql = "SELECT * FROM product WHERE 1";
-  
-    // Add conditions for each parameter if provided
-  if (pcat) {
-    sql += " AND (pcat LIKE ? OR pcat = '')";
-  }
-  
-  if (pbrand) {
-    sql += " AND (pbrand LIKE ? OR pbrand = '')";
-  }
-  
-    // Add a condition to categorize products based on price
-  if (pricerange) {
-    switch (pricerange) {
-      case '1-1000':
-        sql += " AND pprice BETWEEN 1 AND 1000";
-      case '1001-2000':
-        sql += " AND pprice BETWEEN 1001 AND 2000";
-      case '>2000':
-        sql += " AND pprice > 2000";
-        // Add more cases as needed
-      }
-    }
-  
-    // Execute the query with appropriate parameters
-    connection.query(sql, [`%${pcat}%`,`%${pbrand}%`], function (error, results) {
-      if (error || results.length === 0) {
+    connection.query("SELECT * FROM ADMINS where AID=?",admin_id,function (error, results) {
+        if (error || results.length === 0)
+          return res.send({
+            error: true,
+            message: "Admin is not found.",
+          });
         return res.send({
-          error: true,
-          message: `Product is not found.`,
+          error: false,
+          data: results[0],
+          message: "Admin retrieved",
         });
       }
-  
-      return res.send({
-        error: false,
-        data: results,
-        message: "Products retrieved",
-      });
-    });
+    );
 });
+
+// //รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล admin ที่มีไอดีที่กำหนด
+// router.get('/admin/:aid?/:aemail?/:afname?', function (req, res) {
+//   let aid = req.params.aid ? req.params.aid:'';
+//   let aemail = req.params.aemail ? req.params.aemail:'';
+//   let afname = req.params.afname ? req.params.afname:'';
+  
+//     // Build the base SQL query
+//   let sql = "SELECT * FROM product WHERE 1";
+  
+//     // Add conditions for each parameter if provided
+//   if (aid) {
+//     sql += " AND (AID LIKE ? OR AID = '')";
+//   }
+  
+//   if (aemail) {
+//     sql += " AND (EMAIL LIKE ? OR EMAIL = '')";
+//   }
+//   if (afname) {
+//     sql += " AND (FNAME LIKE ? OR FNAME = '')";
+//   }
+  
+//     // Execute the query with appropriate parameters
+//     connection.query(sql, [`%${aid}%`,`%${aemail}%`,`%${afname}%`], function (error, results) {
+//       if (error || results.length === 0) {
+//         return res.send({
+//           error: true,
+//           message: `Admin is not found.`,
+//         });
+//       }
+  
+//       return res.send({
+//         error: false,
+//         data: results,
+//         message: "Admins retrieved",
+//       });
+//     });
+// });
 
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/admin", function (req, res) {
