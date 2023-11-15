@@ -45,17 +45,19 @@ router.get("/products", function (req, res) {
 
 // รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
 router.get("/product/:pid", function (req, res) {
-    let product_id = req.params.pid;
-  
-    connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
-        if (error || results.length === 0)
-          return res.send({
-            error: true,
-            message: "Product is not found.",
-          });
-        return res.send({error: false,data: results[0],message: "Product retrieved"});
-      }
-    );
+  let product_id = req.params.pid;connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
+    if (error || results.length === 0)
+      return res.send({
+        error: true,
+        message: "Product is not found.",
+      });
+    return res.send({
+      error: false,
+      data: results[0],
+      message: "Product retrieved",
+    });
+  }
+);
 });
 
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
