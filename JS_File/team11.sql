@@ -24,7 +24,7 @@ PRIMARY KEY (PID)
 CREATE TABLE ADMINS(
 AID char(3) NOT NULL UNIQUE,
 email varchar(50) NOT NULL,
-pwd char(5) NOT NULL,
+pwd varchar(5) NOT NULL,
 fname varchar(30) NOT NULL,
 lname varchar(30) NOT NULL,
 address varchar(256) NOT NULL,

@@ -30,7 +30,7 @@
     </header>
 
     <section class="login-main-content">
-        <form action="/admin-edit" method="get">
+        <form action="/admin-edit" method="get"> <!--ต้องแก้!!!!-->
             <div class="inner-box">
                 <h3>Login Here</h3>
 
@@ -41,7 +41,7 @@
                 <input type="password" placeholder=" Password" id="password" name="password" required>
             </div>
             <div class="outer-box">
-                <button type="submit" class="Login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
+                <button type="submit" class="Login" id="login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
                 <div class="g-signin2" data-onsuccess="onSignIn"></div><!--เป็นการloginด้วยgoogle--> 
             </div>
         </form>
