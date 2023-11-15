@@ -139,7 +139,7 @@ deleteB.addEventListener("click", () => {
 //ส่ง parameter url คือ http://localhost:8022/productWS/product บวกกับตัว product id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น product id ไว้เช็ค
 selectB.addEventListener("click", () => {
     PID = PID_TXT.value;
-    callProductWS("http://localhost:8022/productWS/" + "product/" + PID, "select").then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product/" + PID + "/"+ PNAME + "/" + PBRAND, "select").then((data) => {
       console.log(data);
       if (data) {
         alert(data.messsage);
@@ -151,6 +151,7 @@ selectB.addEventListener("click", () => {
         PQUAN_TXT.value = data.data.PQUAN;
         PDETAIL_TXT.value = data.data.PDETAIL;
       }
+      clearInput();
     });
 });
 

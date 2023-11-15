@@ -49,22 +49,51 @@ router.get("/admins", function (req, res) {
 });
 
 //รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล admin ที่มีไอดีที่กำหนด
-router.get("/admin/:aid", function (req, res) {
-    let admin_id = req.params.aid;
+router.get('/admin/:aid?/:pbrand?/:pricerange?', function (req, res) {
+  let pcat = req.params.pcat ? req.params.pcat:'';
+  let pbrand = req.params.pbrand ? req.params.pbrand:'';
+  let pricerange = req.params.pricerange ? req.params.pricerange:'';
   
-    connection.query("SELECT * FROM ADMINS where AID=?",admin_id,function (error, results) {
-        if (error || results.length === 0)
-          return res.send({
-            error: true,
-            message: "Admin is not found.",
-          });
+    // Build the base SQL query
+  let sql = "SELECT * FROM product WHERE 1";
+  
+    // Add conditions for each parameter if provided
+  if (pcat) {
+    sql += " AND (pcat LIKE ? OR pcat = '')";
+  }
+  
+  if (pbrand) {
+    sql += " AND (pbrand LIKE ? OR pbrand = '')";
+  }
+  
+    // Add a condition to categorize products based on price
+  if (pricerange) {
+    switch (pricerange) {
+      case '1-1000':
+        sql += " AND pprice BETWEEN 1 AND 1000";
+      case '1001-2000':
+        sql += " AND pprice BETWEEN 1001 AND 2000";
+      case '>2000':
+        sql += " AND pprice > 2000";
+        // Add more cases as needed
+      }
+    }
+  
+    // Execute the query with appropriate parameters
+    connection.query(sql, [`%${pcat}%`,`%${pbrand}%`], function (error, results) {
+      if (error || results.length === 0) {
         return res.send({
-          error: false,
-          data: results[0],
-          message: "Admin retrieved",
+          error: true,
+          message: `Product is not found.`,
         });
       }
-    );
+  
+      return res.send({
+        error: false,
+        data: results,
+        message: "Products retrieved",
+      });
+    });
 });
 
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
