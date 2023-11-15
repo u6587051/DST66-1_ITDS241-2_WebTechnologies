@@ -41,79 +41,21 @@
                 <button type="button" id="aselectall" value="sellecta">Select all</button>
             </form>
         </div>
-    </section>
+    
 
 
     <!-- สร้างตาราง -->
-    <section class="features">
     <table border="1" id="UserTable">
         <tr>
             <th>UID</th>  
             <th>Email</th>
             <th>Password</th>
         </tr>
-        <tr> 
-            <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
-            <td contenteditable="false">101</td>
-            <td contenteditable="false">slot888@gmail.com</td>
-            <td contenteditable="false">00004</td>
-        </tr>
-        <tr>
-            <td contenteditable="false">102</td>
-            <td contenteditable="false">sunut@gmail.com</td>
-            <td contenteditable="false">it555</td>
-        </tr>
-        <tr>
-            <td contenteditable="false">103</td>
-            <td contenteditable="false">sompong@gmail.com</td>
-            <td contenteditable="false">25414</td>
-        </tr>
-        <tr>
-            <td contenteditable="false">104</td>
-            <td contenteditable="false">lnwza007@gmail.com</td>
-            <td contenteditable="false">25414</td>
-        </tr>
-        <tr>
-            <td contenteditable="false">105</td>
-            <td contenteditable="false">pipat4@gmail.com</td>
-            <td contenteditable="false">99994</td>
-        </tr>
         
-            <!-- สามารถแก้ไขข้อมูลในตารางได้ -->
+        
     </table>
     <div id="output"></div>
-    <!-- เมื่อกดจะเรียกใช้ฟังก์ชัน addRow -->
-    <button onclick="addRow()" style="margin-left: 130px;">เพิ่มผู้ใช้งาน</button>
-       <br>
-        <script src="/CallWs/CallAdminWs.js">
-            /*var selectedCell = null;
-          
-            // ฟังก์ชันแก้ไขแถบ
-            function editRow(button) {
-              var cell = button.parentNode.parentNode.querySelector("[contenteditable=false]");
-              selectedCell = cell;
-              cell.focus();
-            }
-          
-            // ลบแถบในตาราง
-            function deleteRow(button) {
-              var row = button.parentNode.parentNode;
-              row.parentNode.removeChild(row);
-            }
-
-            // ฟังก์ชันเพิ่มแถว
-            function addRow() {
-                var table = document.getElementById('UserTable');
-                var newRow = table.insertRow(table.rows.length);
-                var IDCell = newRow.insertCell(0);
-                var emailCell = newRow.insertCell(1);
-                var pwdCell = newRow.insertCell(2);
-
-                IDCell.contentEditable = false;
-                emailCell.contentEditable = false;
-                pwdCell.contentEditable = false;
-  }*/
-          </script>
+    
     </section>
 </main>
     <footer>

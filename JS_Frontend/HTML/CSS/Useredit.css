@@ -99,8 +99,8 @@ a{
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-left: 11.3%;
-    margin-top: 10%;
+    margin-left: 5%;
+    margin-top: 4%;
 }
 table, th, td {
     border: 1px solid white;
@@ -109,28 +109,6 @@ table, th, td {
 }
 h4{
     margin-left: 20px;
-}
-/* แต่งปุ่มลบและแก้ไข */
-button {
-    padding: 5px 10px;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #005F7D;
-}
-.edit-button {
-    background-color: #4CAF50;
-}
-.edit-button:hover {
-    background-color: #45a049;
-  
-}
-a{
-    text-decoration: none;
-    color: #fff;
 }
 
 main{

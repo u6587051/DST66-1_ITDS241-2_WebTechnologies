@@ -32,48 +32,32 @@
         <a href="http://localhost:8021/admin-product"      class="hover-effect"> <h4>  Product             </h4> </a>
     </section>
     
-    <div class="column">
-        <img src="..\Picture\Product1.jpg" alt="ใบตัด New Kosoku" class="productimg">
-                
-                <h3 id="producthead" style="margin-left:35% ;">ใบตัด New Kosoku ขนาด 4X4</h3>
-                <h4 id="price" style="margin-left: 35%;">ราคา ฿349</h4>
+    <section>
+        <div class="search-container">
+            <input type="text" placeholder="Enter ID" id="aid">
+            <input type="text" placeholder="Enter First name" id="afname">
+            <input type="email" placeholder="Enter Email" id="aemail">
+            <button type="button" id="ainsert" value="insert">Insert</button>
+            <button type="button" id="aupdate" value="update">Update</button>
+            <button type="button" id="adelete" value="delete">Delete</button>
+            <button type="button" id="aselect" value="select">Select</button>
+            <button type="button" id="aselectall" value="sellecta">Select all</button>
+        </form>
     </div>
-
-    <div class="column">
-        <img src="..\Picture\Product2.jpg" alt="สว่านMAKITA" class="productimg">
-        
-        <h3 id="producthead" style="margin-left:35% ;">MAKITA สว่าน DF001G Cordless Driver Drill 40V</h3>
-        <h4 id="price" style="margin-left: 35%;" >ราคา ฿3500</h4>
-    </div>
-
-    <div class="column">
-        <img src="..\Picture\Product3.jpg" alt="เครื่องตัดเหล็ก" class="productimg">
-        
-        <h3 id="producthead" style="margin-left:35% ;">เครื่องตัดเหล็ก 12" Stanley #15-166</h3>
-        <h4 id="price" style="margin-left: 35%;">ราคา ฿1400</h4>
-    </div>
-
-    <div class="column">
-        <img src="..\Picture\Product3.jpg" alt="เครื่องตัดเหล็ก" class="productimg">
-        
-        <h3 id="producthead" style="margin-left:35% ;">เครื่องตัดเหล็ก 12" Stanley #15-166</h3>
-        <h4 id="price" style="margin-left: 35%;">ราคา ฿1400</h4>
-    </div>
-
-    <div class="column">
-        <img src="..\Picture\Product3.jpg" alt="เครื่องตัดเหล็ก" class="productimg">
-        
-        <h3 id="producthead" style="margin-left:35% ;">เครื่องตัดเหล็ก 12" Stanley #15-166</h3>
-        <h4 id="price" style="margin-left: 35%;">ราคา ฿1400</h4>
-    </div>
-
-    <div class="column">
-        <img src="..\Picture\Product3.jpg" alt="เครื่องตัดเหล็ก" class="productimg">
-        
-        <h3 id="producthead" style="margin-left:35% ;">เครื่องตัดเหล็ก 12" Stanley #15-166</h3>
-        <h4 id="price" style="margin-left: 35%;">ราคา ฿1400</h4>
-    </div>
-</main>
+        <table border="1" id="UserTable">
+            <tr>
+                <th>Product ID</th>  
+                <th>Product Name</th>
+                <th>Product Brand</th>
+                <th>Product Catagory</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th>Product Detail</th>
+            </tr>
+            
+        </table>
+    </section>
+</main>    
 
     <footer> <!-- footer -->
         <p>TopKing 👑</p><br>
