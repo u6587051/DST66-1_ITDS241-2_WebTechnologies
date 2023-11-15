@@ -2,7 +2,7 @@ const axios = require("axios").default;
 const express = require("express");
 const router = express.Router();
 
-let searchURL = "http://localhost:8022/adminWS/admins";
+let searchURL = "http://203.159.93.114:8022/adminWS/admins";
 
 let getAdmins = async () => {
   try {

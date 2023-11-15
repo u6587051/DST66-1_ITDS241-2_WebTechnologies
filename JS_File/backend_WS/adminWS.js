@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const cors = require('cors');
-let whiteList = ["http://localhost:8021", "http://localhost:8022"];
+let whiteList = ["http://203.159.93.114:8021", "http://203.159.93.114:8022"];
 let corsOptions = {
   origin: whiteList,
   methods: "GET,POST,PUT,DELETE",
