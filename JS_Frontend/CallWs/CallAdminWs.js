@@ -62,53 +62,55 @@ let selectallB = document.querySelector("#aselectall");
 // let loginB = document.querySelector("#login");
   
 insertB.addEventListener("click", () => {
-    console.log("insert leaw ja")
-    // AID = AID_TXT.value;
-    // EMAIL = EMAIL_TXT.value;
-    // // PWD = PWD_TXT.value;
-    // FNAME = FNAME_TXT.value;
-    // // LNAME = LNAME_TXT.value;
-    // // ADDRESS = ADDRESS_TXT.value;
-    // // AGE = AGE_TXT.value;
-    // // NEED = NEED_TXT.value;
-    // let admindata = {
-    //   AID: AID,
-    //   EMAIL: EMAIL,
-    //   // PWD: PWD,
-    //   FNAME: FNAME,
-    //   // LNAME: LNAME,
-    //   // ADDRESS: ADDRESS,
-    //   // AGE: AGE,
-    //   // NEED: NEED,
-    // };
-    // callAdminWs("http://localhost:8022/adminWS/" + "admin", "insert", admindata).then((data) => {
-    //   console.log(data);
-    //   if (data.data > 0) {
-    //     alert(data.message);
-    //     clearInput();
-    //   }
-    // });
+    // console.log("insert leaw ja")
+    AID = AID_TXT.value;
+    EMAIL = EMAIL_TXT.value;
+    PWD = "333";
+    FNAME = FNAME_TXT.value;
+    LNAME = "sudlor";
+    ADDRESS = "mangsiso";
+    AGE = "12";
+    NEED = "need";
+    let admindata = {
+      AID: AID,
+      EMAIL: EMAIL,
+      PWD: PWD,
+      FNAME: FNAME,
+      LNAME: LNAME,
+      ADDRESS: ADDRESS,
+      AGE: AGE,
+      NEED: NEED,
+    };
+    console.log(admindata);
+    callAdminWs("http://localhost:8022/adminWS/" + "admin", "insert", admindata).then((data) => {
+      console.log(data);
+      if (data.data > 0) {
+        alert(data.message);
+        clearInput();
+      }
+    });
 });
   
 updateB.addEventListener("click", () => {
     AID = AID_TXT.value;
     EMAIL = EMAIL_TXT.value;
-    // PWD = PWD_TXT.value;
+    PWD = "9898";
     FNAME = FNAME_TXT.value;
-    // LNAME = LNAME_TXT.value;
-    // ADDRESS = ADDRESS_TXT.value;
-    // AGE = AGE_TXT.value;
-    // NEED = NEED_TXT.value;
+    LNAME = "sas";
+    ADDRESS = "address";
+    AGE = "94";
+    NEED = "nid";
     let admindata = {
       AID: AID,
       EMAIL: EMAIL,
-      // PWD: PWD,
+      PWD: PWD,
       FNAME: FNAME,
-      // LNAME: LNAME,
-      // ADDRESS: ADDRESS,
-      // AGE: AGE,
-      // NEED: NEED,
+      LNAME: LNAME,
+      ADDRESS: ADDRESS,
+      AGE: AGE,
+      NEED: NEED,
     };
+    console.log(admindata);
     callAdminWs("http://localhost:8022/adminWS/" + "admin", "update", admindata).then((data) => {
       console.log(data);
       if (data.data > 0) {
