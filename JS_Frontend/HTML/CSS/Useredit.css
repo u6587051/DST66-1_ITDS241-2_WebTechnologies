@@ -1,4 +1,4 @@
-body, h1, h2, p, ul, li {
+body, h1, h2, p, ul, li, h3{
     margin: 0;
     padding: 0;
 }
@@ -95,21 +95,6 @@ a{
     width: 200px;
     display: block;
 }
-/* สร้างตารางเพื่อใส่ข้อมูล */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-left: 5%;
-    margin-top: 4%;
-}
-table, th, td {
-    border: 1px solid white;
-    padding: 10px;
-    text-align: center;
-}
-h4{
-    margin-left: 20px;
-}
 
 main{
     display: flex;
@@ -117,22 +102,37 @@ main{
 }
 
 .search-container{
-   margin-top: 50px;
-   margin-left: 50px;
+   flex-direction: column;
+   display: flex;
+   margin-left: 20px;
+   max-width: 230px;
 }
 
-.search-container input, .search-container button {
-    margin: 0 5px;
-    padding: 10px;
+.search-container input {
     font-size: 16px;
 }
 
-
-.search-container button {
+button {
     cursor: pointer;
     background-color: #4CAF50; 
     color: white;
     border: none;
     border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    margin-top: 4px;
 }
 
+.but{
+    margin-top: 32px;
+}
+
+h3{
+    margin-top: 5%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}

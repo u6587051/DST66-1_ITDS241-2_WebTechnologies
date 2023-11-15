@@ -30,34 +30,41 @@
         <a href="http://localhost:8021/admin-product" class="hover-effect"> <h4>  Product             </h4> </a>
     </section>
     <section>
-        <div class="search-container">
-                <input type="text" placeholder="Enter ID" id="aid">
-                <input type="text" placeholder="Enter First name" id="afname">
-                <input type="email" placeholder="Enter Email" id="aemail">
-                <button type="button" id="ainsert" value="insert">Insert</button>
-                <button type="button" id="aupdate" value="update">Update</button>
-                <button type="button" id="adelete" value="delete">Delete</button>
-                <button type="button" id="aselect" value="select">Select</button>
-                <button type="button" id="aselectall" value="sellecta">Select all</button>
-            </form>
-        </div>
-    
-
-
-    <!-- สร้างตาราง -->
-    <table border="1" id="UserTable">
-        <tr>
-            <th>UID</th>  
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
+            <div class="search-container">
+                <h3>Admin ID : <input type="text" placeholder="Enter ID" id="Aid"></h3>
+            </div>
+            <div class="search-container">
+                <h3>Email :<input type="email" placeholder="Enter Email" id="email"></h3>
+            </div>
+            <div class="search-container">
+                <h3>Password : <input type="text" placeholder="Enter Password" id="pwd"></h3>
+            </div>
+            <div class="search-container">
+                <h3>Frist name : &nbsp;&nbsp;<input type="text" placeholder="Enter Frist name" id="fname"></h3>
+            </div>
+            <div class="search-container">
+                <h3>Last name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter Last name" id="lname"></h3>
+            </div>
+            <div class="search-container">
+                <h3>Address : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter Address" id="address"></h3>
+            </div>
+            <div class="search-container">
+                <h3>Age : <input type="text" placeholder="Enter Age" id="age"></h3>
+            </div>
+            <div class="search-container">
+                <h3>What you need : <input type="text" placeholder="Enter Need" id="need"></h3>
+            </div>
         
-        
-    </table>
-    <div id="output"></div>
-    
+    </section>
+    <section class="but">
+    <button type="button" id="ainsert" value="insert">Insert</button>
+    <button type="button" id="aupdate" value="update">Update</button>
+    <button type="button" id="adelete" value="delete">Delete</button>
+    <button type="button" id="aselect" value="select">Select</button>
+    <button type="button" id="aselectall" value="sellecta">Select all</button>
     </section>
 </main>
+
     <footer>
         <p>TopKing 👑</p><br>
         <p>Tel: 02-345-6789</p><br>
