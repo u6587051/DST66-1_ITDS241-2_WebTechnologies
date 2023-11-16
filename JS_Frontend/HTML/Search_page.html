@@ -53,31 +53,16 @@
         <aside class="sidebar">
             <!-- h3 id=CategoryHead คือส่วนหัวข้อในแต่ละการจัดหมวดหมู่สำหรับการค้นหา -->
             <h3 id="CategoryHead">หมวดหมู่สินค้า</h3>
-            <!-- select id=Category ตามด้วยเลขต่างๆ คือการเลือกการแสดงสินค้าตามเกณฑ์ที่กำหนด -->
-            <select name="Category1" id="Category1">
-                <option value="เครื่องมือทั้งหมด">เครื่องมือทั้งหมด</option>
-                <option value="เครื่องมือตัด">เครื่องมือตัด</option>
-                <option value="เครื่องมือไฟฟ้า">เครื่องมือไฟฟ้า</option>
-                <option value="เครื่องมือลม">เครื่องมือลมปั้มลม</option>
-              </select>
+            <!-- id=Category ตามด้วยเลขต่างๆ คือการใส่ Criteria เพื่อเลือกแสดงสินค้าตามเกณฑ์ที่กำหนด -->
+            <input type="text" placeholder="eg. เครื่องมือตัด" id="Category1">
 
             <h3 id="CategoryHead">ค้นหาด้วยแบรนด์</h3>
-            <select name="Category2" id="Category2">
-                <option value="makita">All brand</option>
-                <option value="makita">MAKITA</option>
-                <option value="corolla">Corolla</option>
-                <option value="kosoku">New Kosoku</option>
-                <option value="stanley">Stanley</option>
-                <option value="total">Total</option>
-            </select>
+            <input type="text" placeholder="eg. Makita" id="Category2">
+
 
             <h3 id="CategoryHead">ค้นหาตามช่วงราคา</h3>
-            <select name="Category3" id="Category3">
-                <option value=">=1">All range</option>
-                <option value="1-1000">1-1000฿</option>
-                <option value="1001-2000">1001-2000฿</option>
-                <option value="morethan2000">>2000฿</option>
-            </select>
+            <input type="text" placeholder="eg. >2000" id="Category3">
+
 
         </aside>
 
