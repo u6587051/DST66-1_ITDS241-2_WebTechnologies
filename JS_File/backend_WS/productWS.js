@@ -37,12 +37,12 @@ router.get("/", function (req, res) {
 // post 
 router.post("/signin", (req, res) => {
   console.log(req.body);
-  let user = req.body.user;
+  let user = req.body.data;
   let jwtToken = jwt.sign(
     {
-      email: user.email,
-      userid: user.userid.toString(),
-      first_name: user.first_name,
+      email: user.EMAIL,
+      userid: user.AID.toString(),
+      first_name: user.FNAME,
     },
     process.env.SECRET,
     {
