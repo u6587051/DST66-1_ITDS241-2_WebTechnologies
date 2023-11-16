@@ -1,8 +1,9 @@
+// import libary เพื่อใช้งาน HTTP METHOD
 const axios = require("axios").default;
 const express = require("express");
 const router = express.Router();
 
-let searchURL = "http://localhost:8022/adminWS/admins";
+let searchURL = "http://localhost:8022/adminWS/admins"; //กำหนด URL ที่ใช้ adminWS
 
 let getAdmins = async () => {
   try {

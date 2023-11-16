@@ -1,8 +1,9 @@
+// import libary เพื่อใช้งาน HTTP METHOD
 const axios = require("axios").default;
 const express = require("express");
 const router = express.Router();
 
-let searchURL = "http://localhost:8022/productWS/products";
+let searchURL = "http://localhost:8022/productWS/products"; //กำหนด URL ที่ใช้ productWS
 
 let getProducts = async () => {
   try {

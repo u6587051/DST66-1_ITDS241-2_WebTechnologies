@@ -82,6 +82,8 @@ router.get("/admin", function (req, res) {
             EMAIL LIKE "%${aemail}%" AND
             FNAME LIKE "%${afname}%";`
 
+  // let sql = `SELECT * FROM ADMINS WHERE email LIKE "${aemail}";`
+
   connection.query(sql),function (error, results) {
       if (error || results.length === 0)
         return res.send({
