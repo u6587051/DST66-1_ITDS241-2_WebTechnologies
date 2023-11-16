@@ -143,26 +143,50 @@ deleteB.addEventListener("click", () => {
     });
 });
 
-//หากกดคลิก select button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
-//ส่ง parameter url คือ http://localhost:8022/adminWS/admin บวกกับตัว admin id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น admin id ไว้เช็ค
+// //หากกดคลิก select button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
+// //ส่ง parameter url คือ http://localhost:8022/adminWS/admin บวกกับตัว admin id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น admin id ไว้เช็ค
+// selectB.addEventListener("click", () => {
+//     AID = AID_TXT.value;
+//     // EMAIL = EMAIL_TXT.value;
+//     // FNAME = FNAME_TXT.value;
+//     callAdminWs("http://localhost:8022/adminWS/" + "admin/" + AID, "select").then((data) => {
+//       console.log(data);
+//       if (data) {
+//         alert(data.message);
+//         AID_TXT.value = data.data.AID;
+//         EMAIL_TXT.value = data.data.EMAIL;
+//         PWD_TXT.value = data.data.PWD;
+//         FNAME_TXT.value = data.data.FNAME;
+//         LNAME_TXT.value = data.data.LNAME;
+//         ADDRESS_TXT.value = data.data.ADDRESS;
+//         AGE_TXT.value = data.data.AGE;
+//         NEED_TXT.value = data.data.NEED;
+//       }
+//     });
+// });
+
 selectB.addEventListener("click", () => {
-    AID = AID_TXT.value;
-    // EMAIL = EMAIL_TXT.value;
-    // FNAME = FNAME_TXT.value;
-    callAdminWs("http://localhost:8022/adminWS/" + "admin/" + AID, "select").then((data) => {
-      console.log(data);
-      if (data) {
-        alert(data.message);
-        AID_TXT.value = data.data.AID;
-        EMAIL_TXT.value = data.data.EMAIL;
-        PWD_TXT.value = data.data.PWD;
-        FNAME_TXT.value = data.data.FNAME;
-        LNAME_TXT.value = data.data.LNAME;
-        ADDRESS_TXT.value = data.data.ADDRESS;
-        AGE_TXT.value = data.data.AGE;
-        NEED_TXT.value = data.data.NEED;
-      }
-    });
+  AID = AID_TXT.value;
+  EMAIL = EMAIL_TXT.value;
+  FNAME = FNAME_TXT.value;
+
+  let id = `AID=${AID}`;
+  let em = `EMAIL=${EMAIL}`;
+  let fn = `FNAME=${FNAME}`;
+  callAdminWs("http://localhost:8022/adminWS/" + "admin?"+id+"&"+em+"&"+fn, "select").then((data) => {
+    console.log(data);
+    if (data) {
+      alert(data.message);
+      AID_TXT.value = data.data.AID;
+      EMAIL_TXT.value = data.data.EMAIL;
+      PWD_TXT.value = data.data.PWD;
+      FNAME_TXT.value = data.data.FNAME;
+      LNAME_TXT.value = data.data.LNAME;
+      ADDRESS_TXT.value = data.data.ADDRESS;
+      AGE_TXT.value = data.data.AGE;
+      NEED_TXT.value = data.data.NEED;
+    }
+  });
 });
 
 //หากกดคลิก selectall button เรียก function callAdminWS
