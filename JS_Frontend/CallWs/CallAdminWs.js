@@ -147,6 +147,8 @@ deleteB.addEventListener("click", () => {
 //ส่ง parameter url คือ http://localhost:8022/adminWS/admin บวกกับตัว admin id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น admin id ไว้เช็ค
 selectB.addEventListener("click", () => {
     AID = AID_TXT.value;
+    // EMAIL = EMAIL_TXT.value;
+    // FNAME = FNAME_TXT.value;
     callAdminWs("http://localhost:8022/adminWS/" + "admin/" + AID, "select").then((data) => {
       console.log(data);
       if (data) {

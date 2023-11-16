@@ -67,6 +67,44 @@ router.get("/admin/:aid", function (req, res) {
     );
 });
 
+// //รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล admin ที่มีไอดีที่กำหนด
+// router.get('/admin/:aid?/:aemail?/:afname?', function (req, res) {
+//   let aid = req.params.aid ? req.params.aid:'';
+//   let aemail = req.params.aemail ? req.params.aemail:'';
+//   let afname = req.params.afname ? req.params.afname:'';
+  
+//     // Build the base SQL query
+//   let sql = "SELECT * FROM product WHERE 1";
+  
+//     // Add conditions for each parameter if provided
+//   if (aid) {
+//     sql += " AND (AID LIKE ? OR AID = '')";
+//   }
+  
+//   if (aemail) {
+//     sql += " AND (EMAIL LIKE ? OR EMAIL = '')";
+//   }
+//   if (afname) {
+//     sql += " AND (FNAME LIKE ? OR FNAME = '')";
+//   }
+  
+//     // Execute the query with appropriate parameters
+//     connection.query(sql, [`%${aid}%`,`%${aemail}%`,`%${afname}%`], function (error, results) {
+//       if (error || results.length === 0) {
+//         return res.send({
+//           error: true,
+//           message: `Admin is not found.`,
+//         });
+//       }
+  
+//       return res.send({
+//         error: false,
+//         data: results,
+//         message: "Admins retrieved",
+//       });
+//     });
+// });
+
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/admin", function (req, res) {
     let admin = req.body

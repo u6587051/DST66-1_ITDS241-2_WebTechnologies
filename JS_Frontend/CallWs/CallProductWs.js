@@ -82,7 +82,7 @@ insertB.addEventListener("click", () => {
       PDETAIL: PDETAIL,
     };
     console.log(productdata)
-    callProductWS("http://localhost:8021/productWS/" + "product", "insert", productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "insert", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -110,7 +110,7 @@ updateB.addEventListener("click", () => {
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
     };
-    callProductWS("http://localhost:8021/productWS/" + "product", "update", productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "update", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -126,7 +126,7 @@ deleteB.addEventListener("click", () => {
     let productdata = {
       PID: PID,
     };
-    callProductWS("http://localhost:8021/productWS/" + "product", "delete", productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "delete", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -139,7 +139,7 @@ deleteB.addEventListener("click", () => {
 //ส่ง parameter url คือ http://localhost:8022/productWS/product บวกกับตัว product id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น product id ไว้เช็ค
 selectB.addEventListener("click", () => {
     PID = PID_TXT.value;
-    callProductWS("http://localhost:8021/productWS/" + "product/" + PID, "select").then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product/" + PID, "select").then((data) => {
       console.log(data);
       if (data) {
         alert(data.messsage);
@@ -157,7 +157,7 @@ selectB.addEventListener("click", () => {
 //หากกดคลิก selectall button เรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/products, method คือ selectall, data คือไฟล์ json ที่รับค่ามาแล้วแสดงผลค่า product ทั้งหมดเข้าไปใน html
 selectallB.addEventListener("click", () => {
-    callProductWS("http://localhost:8021/productWS/" + "products", "selectall").then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "products", "selectall").then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);

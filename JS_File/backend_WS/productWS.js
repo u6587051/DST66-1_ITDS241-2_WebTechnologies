@@ -45,17 +45,19 @@ router.get("/products", function (req, res) {
 
 // รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
 router.get("/product/:pid", function (req, res) {
-    let product_id = req.params.pid;
-  
-    connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
-        if (error || results.length === 0)
-          return res.send({
-            error: true,
-            message: "Product is not found.",
-          });
-        return res.send({error: false,data: results[0],message: "Product retrieved"});
-      }
-    );
+  let product_id = req.params.pid;connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
+    if (error || results.length === 0)
+      return res.send({
+        error: true,
+        message: "Product is not found.",
+      });
+    return res.send({
+      error: false,
+      data: results[0],
+      message: "Product retrieved",
+    });
+  }
+);
 });
 
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
@@ -111,73 +113,73 @@ router.delete("/product", function (req, res) {
 
 
 
-//หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
-router.get('/product/:pid?/:pname?/:pbrand?/:pcat?/:pricerange?/:pquan?/:pdetail?', function (req, res) {
-  let pid = req.params.pid ? req.params.pid:'';
-  let pname = req.params.pname ? req.params.pname:'';
-  let pbrand = req.params.pbrand ? req.params.pbrand:'';
-  let pcat = req.params.pcat ? req.params.pcat:'';
-  let pricerange = req.params.pricerange ? req.params.pricerange:'';
-  let pquan = req.params.pquan ? req.params.pquan:'';
-  let pdetail = req.params.pdetail ? req.params.pdetail:'';
+// //หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
+// router.get('/product/:pid?/:pname?/:pbrand?/:pcat?/:pricerange?/:pquan?/:pdetail?', function (req, res) {
+//   let pid = req.params.pid ? req.params.pid:'';
+//   let pname = req.params.pname ? req.params.pname:'';
+//   let pbrand = req.params.pbrand ? req.params.pbrand:'';
+//   let pcat = req.params.pcat ? req.params.pcat:'';
+//   let pricerange = req.params.pricerange ? req.params.pricerange:'';
+//   let pquan = req.params.pquan ? req.params.pquan:'';
+//   let pdetail = req.params.pdetail ? req.params.pdetail:'';
   
-    // Build the base SQL query
-  let sql = "SELECT * FROM product WHERE 1";
+//     // Build the base SQL query
+//   let sql = "SELECT * FROM product WHERE 1";
   
-    // Add conditions for each parameter if provided
-  if (pid) {
-      sql += " AND (pid LIKE ? OR pid = '')";
-    }
+//     // Add conditions for each parameter if provided
+//   if (pid) {
+//       sql += " AND (pid LIKE ? OR pid = '')";
+//     }
 
-  if (pname) {
-      sql += " AND (pname LIKE ? OR pname = '')";
-    }
+//   if (pname) {
+//       sql += " AND (pname LIKE ? OR pname = '')";
+//     }
   
-  if (pbrand) {
-      sql += " AND (pbrand LIKE ? OR pbrand = '')";
-    }
+//   if (pbrand) {
+//       sql += " AND (pbrand LIKE ? OR pbrand = '')";
+//     }
     
-  if (pcat) {
-    sql += " AND (pcat LIKE ? OR pcat = '')";
-  }
-  if (pquan) {
-    sql += " AND (pquan LIKE ? OR pquan = '')";
-  }
-  if (pdetail) {
-    sql += " AND (pdetail LIKE ? OR pdetail = '')";
-  }
+//   if (pcat) {
+//     sql += " AND (pcat LIKE ? OR pcat = '')";
+//   }
+//   if (pquan) {
+//     sql += " AND (pquan LIKE ? OR pquan = '')";
+//   }
+//   if (pdetail) {
+//     sql += " AND (pdetail LIKE ? OR pdetail = '')";
+//   }
   
 
   
-    // Add a condition to categorize products based on price
-  if (pricerange) {
-    switch (pricerange) {
-      case '1-1000':
-        sql += " AND pprice BETWEEN 1 AND 1000";
-      case '1001-2000':
-        sql += " AND pprice BETWEEN 1001 AND 2000";
-      case '>2000':
-        sql += " AND pprice > 2000";
-        // Add more cases as needed
-      }
-    }
+//     // Add a condition to categorize products based on price
+//   if (pricerange) {
+//     switch (pricerange) {
+//       case '1-1000':
+//         sql += " AND pprice BETWEEN 1 AND 1000";
+//       case '1001-2000':
+//         sql += " AND pprice BETWEEN 1001 AND 2000";
+//       case '>2000':
+//         sql += " AND pprice > 2000";
+//         // Add more cases as needed
+//       }
+//     }
   
-    // Execute the query with appropriate parameters
-    connection.query(sql, [`%${pid}%`,`%${pname}%`,`%${pbrand}%`,`%${pcat}%`,`%${pquan}%`,`%${pdetail}%`], function (error, results) {
-      if (error || results.length === 0) {
-        return res.send({
-          error: true,
-          message: `Product is not found.`,
-        });
-      }
+//     // Execute the query with appropriate parameters
+//     connection.query(sql, [`%${pid}%`,`%${pname}%`,`%${pbrand}%`,`%${pcat}%`,`%${pquan}%`,`%${pdetail}%`], function (error, results) {
+//       if (error || results.length === 0) {
+//         return res.send({
+//           error: true,
+//           message: `Product is not found.`,
+//         });
+//       }
   
-      return res.send({
-        error: false,
-        data: results,
-        message: "Products retrieved",
-      });
-    });
-});
+//       return res.send({
+//         error: false,
+//         data: results,
+//         message: "Products retrieved",
+//       });
+//     });
+// });
   
 
 module.exports = router;
