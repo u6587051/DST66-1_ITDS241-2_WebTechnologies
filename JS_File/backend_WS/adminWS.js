@@ -3,6 +3,7 @@ const express =require('express');
 const mysql = require('mysql2');
 const app = express();
 const router = express.Router();
+const jwt = require("jsonwebtoken");
 
 //import dotenv สภาพแวดล้อม เช่น port ชื่อdatabase
 const dotenv = require('dotenv');
@@ -37,6 +38,26 @@ let connection = mysql.createConnection({
 //รับ get มาแล้วแสดงข้อความว่าอยู่ในหน้าการทำงาน admin
 router.get("/", function (req, res) {
     return res.send({ message: "you are in admin page" });
+});
+
+router.post("/signin", (req, res) => {
+  console.log(req.body);
+  let user = req.body.data;
+  let jwtToken = jwt.sign(
+    {
+      email: user.EMAIL,
+      userid: user.AID.toString(),
+      first_name: user.FNAME,
+    },
+    process.env.SECRET,
+    {
+      expiresIn: "1h",
+    }
+  );
+  res.status(200).json({
+    token: jwtToken,
+    message: user,
+  });
 });
 
 //รับ get มาแล้วแสดงผล admin ทั้งหมด

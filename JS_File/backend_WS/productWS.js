@@ -34,6 +34,27 @@ router.get("/", function (req, res) {
     return res.send({ message: "you are in product page" });
 });
 
+// post 
+router.post("/signin", (req, res) => {
+  console.log(req.body);
+  let user = req.body.user;
+  let jwtToken = jwt.sign(
+    {
+      email: user.email,
+      userid: user.userid.toString(),
+      first_name: user.first_name,
+    },
+    process.env.SECRET,
+    {
+      expiresIn: "1h",
+    }
+  );
+  res.status(200).json({
+    token: jwtToken,
+    message: user,
+  });
+});
+
 //รับ get มาแล้วแสดงผล product ทั้งหมด
 router.get("/products", function (req, res) {
   connection.query("SELECT * FROM product", function (error, results) {
@@ -114,72 +135,44 @@ router.delete("/product", function (req, res) {
 
 
 // //หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
-// router.get('/product/:pid?/:pname?/:pbrand?/:pcat?/:pricerange?/:pquan?/:pdetail?', function (req, res) {
-//   let pid = req.params.pid ? req.params.pid:'';
-//   let pname = req.params.pname ? req.params.pname:'';
-//   let pbrand = req.params.pbrand ? req.params.pbrand:'';
-//   let pcat = req.params.pcat ? req.params.pcat:'';
-//   let pricerange = req.params.pricerange ? req.params.pricerange:'';
-//   let pquan = req.params.pquan ? req.params.pquan:'';
-//   let pdetail = req.params.pdetail ? req.params.pdetail:'';
+router.get('/product/:pid?/:pname?/:pbrand?', function (req, res) {
+  let pid = req.params.pid || '';
+  let pname = req.params.pname||'';
+  let pbrand = req.query.pbrand || '';
+  let pcat = req.query.pcat
+  let pprice = req.query.Pprice 
+  let pquan = req.query.PQuan
+  let pdetail = req.query.Pdetail
   
-//     // Build the base SQL query
-//   let sql = "SELECT * FROM product WHERE 1";
-  
-//     // Add conditions for each parameter if provided
-//   if (pid) {
-//       sql += " AND (pid LIKE ? OR pid = '')";
-//     }
+    // Build the base SQL query
 
-//   if (pname) {
-//       sql += " AND (pname LIKE ? OR pname = '')";
-//     }
+  if (pname==''){
+    req.query.pname = '';
+  }
+  if (pbrand==''){
+    req.query.pbrand = '';
+  }
   
-//   if (pbrand) {
-//       sql += " AND (pbrand LIKE ? OR pbrand = '')";
-//     }
-    
-//   if (pcat) {
-//     sql += " AND (pcat LIKE ? OR pcat = '')";
-//   }
-//   if (pquan) {
-//     sql += " AND (pquan LIKE ? OR pquan = '')";
-//   }
-//   if (pdetail) {
-//     sql += " AND (pdetail LIKE ? OR pdetail = '')";
-//   }
+  let sql = `SELECT * FROM product WHERE 1
+            AND pname LIKE '%${pname}%'
+            AND pbrand LIKE '%${pbrand}%';`;
   
-
+    // Execute the query with appropriate parameters
+  connection.query(sql, function (error, results) {
+      if (error || results.length === 0) {
+        return res.send({
+          error: true,
+          message: `Product is not found.`,
+        });
+      }
   
-//     // Add a condition to categorize products based on price
-//   if (pricerange) {
-//     switch (pricerange) {
-//       case '1-1000':
-//         sql += " AND pprice BETWEEN 1 AND 1000";
-//       case '1001-2000':
-//         sql += " AND pprice BETWEEN 1001 AND 2000";
-//       case '>2000':
-//         sql += " AND pprice > 2000";
-//         // Add more cases as needed
-//       }
-//     }
-  
-//     // Execute the query with appropriate parameters
-//     connection.query(sql, [`%${pid}%`,`%${pname}%`,`%${pbrand}%`,`%${pcat}%`,`%${pquan}%`,`%${pdetail}%`], function (error, results) {
-//       if (error || results.length === 0) {
-//         return res.send({
-//           error: true,
-//           message: `Product is not found.`,
-//         });
-//       }
-  
-//       return res.send({
-//         error: false,
-//         data: results,
-//         message: "Products retrieved",
-//       });
-//     });
-// });
+      return res.send({
+        error: false,
+        data: results,
+        message: "Products retrieved",
+      });
+    })
+  });
   
 
 module.exports = router;
