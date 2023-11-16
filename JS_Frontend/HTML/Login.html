@@ -41,11 +41,13 @@
                 <input type="password" placeholder=" Password" id="password" name="password" required>
             </div>
             <div class="outer-box">
-                <button type="submit" class="Login" id="login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
+                <button type="submit" class="Login" id="login" value="login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
                 <div class="g-signin2" data-onsuccess="onSignIn"></div><!--เป็นการloginด้วยgoogle--> 
             </div>
         </form>
     </section>
+    <script src="/CallWs/CallAdminWs.js"></script>
+    <script src="/CallWs/CallProductWs.js"></script>
 
     <footer>
         <section class="login-footer">

@@ -4,6 +4,7 @@ const mysql = require('mysql2');
 const app = express();
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+authorize = require("../middlewares/auth");
 
 //import dotenv สภาพแวดล้อม เช่น port ชื่อdatabase
 const dotenv = require('dotenv');
@@ -42,7 +43,7 @@ router.get("/", function (req, res) {
 
 router.post("/signin", (req, res) => {
   console.log(req.body);
-  let user = req.body.data;
+  let user = req.body.user;
   let jwtToken = jwt.sign(
     {
       email: user.EMAIL,
@@ -61,7 +62,7 @@ router.post("/signin", (req, res) => {
 });
 
 //รับ get มาแล้วแสดงผล admin ทั้งหมด
-router.get("/admins", function (req, res) {
+router.get("/admins",authorize,function (req, res) {
     connection.query("SELECT * FROM ADMINS", function (error, results) {
       if (error)
         throw (error)
@@ -89,7 +90,7 @@ router.get("/admins", function (req, res) {
 // });
 
 //รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล admin ที่มีไอดีที่กำหนด
-router.get("/admin", function (req, res) {
+router.get("/admin",authorize,function (req, res) {
   let aid = req.query.AID;
   let aemail = req.query.EMAIL;
   let afname = req.query.FNAME;
@@ -120,7 +121,7 @@ router.get("/admin", function (req, res) {
 });
 
 //รับ put มาเพื่ออัพเดทข้อมูลใน database จาก admin id และอัพเดทข้อมูลจากข้อมูลที่ได้รับ
-router.put("/admin", function (req, res) {
+router.put("/admin",authorize,function (req, res) {
     let admin_id = req.body.AID;
     let admin = req.body;
 
@@ -137,7 +138,7 @@ router.put("/admin", function (req, res) {
 });
 
 //รับ delete มาเพื่อลบข้อมูล admin จาก admin id ที่กำหนด
-router.delete("/admin", function (req, res) {
+router.delete("/admin",authorize,function (req, res) {
   let admin_id = req.body.AID;
 
   connection.query("DELETE FROM ADMINS WHERE AID = ?",[admin_id],function (error, results) {

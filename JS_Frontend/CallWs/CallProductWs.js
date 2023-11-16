@@ -1,5 +1,5 @@
 //function ในการเรียก productWS ผ่านการ fetch api
-async function callProductWS(url, method, sentData = {}) {
+async function callProductWS(url, method,token = "",sentData = {}) {
     let data;
     if (method == "selectall") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
@@ -17,9 +17,9 @@ async function callProductWS(url, method, sentData = {}) {
         },
       });
       data = await response.json();
-    } else if (method == "insert" || method == "update" || method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง productWS
+    } else if (method == "insert" || method == "update" || method == "delete" || method == "login") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง productWS
       let aMethod;
-      if (method == "insert") { //ถ้า method ที่รับ parameter มาเท่ากับ update method put ไปยัง productWS
+      if (method == "insert" || method == "login") { //ถ้า method ที่รับ parameter มาเท่ากับ update method put ไปยัง productWS
         aMethod = "POST";
       } else if (method == "update") { //ถ้า method ที่รับ parameter มาเท่ากับ delete  method delete ไปยัง productWS
         aMethod = "PUT";
@@ -67,6 +67,22 @@ let updateB = document.querySelector("#pupdate");
 let deleteB = document.querySelector("#pdelete");
 let selectB = document.querySelector("#pselect");
 let selectallB = document.querySelector("#pselectall");
+let loginB = document.querySelector("#login");
+
+//หากกด login จะ post ตัว login แล้วส่ง token
+loginB.addEventListener("click", () => {
+  let user_data = {
+    user: {
+      email: "test@test.com",
+      userid: 1,
+      first_name: "Wudhichart",
+    },
+  };
+  callStudentWS("http://localhost:8022/productWS/"+ "signin", "login", token, user_data).then((data) => {
+    console.log(data);
+    token = data.token;
+  });
+});
 
 //หากกดคลิก insert button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/product, method คือ insert, data คือไฟล์ json ที่รับค่ามา
@@ -117,7 +133,7 @@ updateB.addEventListener("click", () => {
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
     };
-    callProductWS("http://localhost:8022/productWS/" + "product", "update", productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "update", token, productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -133,7 +149,7 @@ deleteB.addEventListener("click", () => {
     let productdata = {
       PID: PID,
     };
-    callProductWS("http://localhost:8022/productWS/" + "product", "delete", productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "delete", token, productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -146,7 +162,7 @@ deleteB.addEventListener("click", () => {
 //ส่ง parameter url คือ http://localhost:8022/productWS/product บวกกับตัว product id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น product id ไว้เช็ค
 selectB.addEventListener("click", () => {
     PID = PID_TXT.value;
-    callProductWS("http://localhost:8022/productWS/" + "product/" + PID, "select").then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product/" + PID, "select",token).then((data) => {
       console.log(data);
       if (data) {
         alert(data.messsage);
@@ -164,7 +180,7 @@ selectB.addEventListener("click", () => {
 //หากกดคลิก selectall button เรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/products, method คือ selectall, data คือไฟล์ json ที่รับค่ามาแล้วแสดงผลค่า product ทั้งหมดเข้าไปใน html
 selectallB.addEventListener("click", () => {
-    callProductWS("http://localhost:8022/productWS/" + "products", "selectall").then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "products", "selectall",token).then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
