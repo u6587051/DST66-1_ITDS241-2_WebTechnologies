@@ -4,11 +4,17 @@ async function callProductWS(url, method, sentData = {}) {
     if (method == "selectall") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
         method: "GET", //ส่ง method get ไปยัง productWS
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       });
       data = await response.json();
     } else if (method == "select") { //ถ้า method ที่รับ parameter คือแสดงผลจาก params
       let response = await fetch(url, {
         method: "GET", //ส่ง method get ไปยัง productWS
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       });
       data = await response.json();
     } else if (method == "insert" || method == "update" || method == "delete") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง productWS
@@ -25,6 +31,7 @@ async function callProductWS(url, method, sentData = {}) {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
         },
         body: JSON.stringify(sentData),
       });
