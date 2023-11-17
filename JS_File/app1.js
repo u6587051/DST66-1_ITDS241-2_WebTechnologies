@@ -19,11 +19,13 @@ const app = express();
 
 const AdminServiceRouter = require("./backend_WS/adminWS");
 const ProductServiceRouter = require("./backend_WS/productWS");
+const SearchServiceRouter = require("./backend_WS/searchWS");
 const CallingAdminServiceRouter = require("./backend_WS/callingadminWS");
-const CallingProductServiceRouter = require("./backend_WS/callingproductWS")
+const CallingProductServiceRouter = require("./backend_WS/callingproductWS");
 
 app.use("/adminWS",AdminServiceRouter);
 app.use("/productWS", ProductServiceRouter);
+app.use("/searchWS", SearchServiceRouter);
 app.use("/callingadminWS", CallingAdminServiceRouter);
 app.use("/callingproductWS", CallingProductServiceRouter);
 

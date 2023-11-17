@@ -145,25 +145,11 @@ h3#CategoryHead{
     color: black;
     font-size: 30px;
 }
-#Category1{
+#pname, #pcat, #pbrand {
     color: #010056;
     font-size: 25px;
     width: 10em;
 }
-
-#Category2{
-    color: #010056;
-    font-size: 25px;
-    width: 10em;
-}
-
-#Category3{
-    color: #010056;
-    font-size: 25px;
-    width: 10em;
-}
-
-
 
 .sidebar {
     text-align: left;

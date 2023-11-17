@@ -40,8 +40,7 @@
             <div class="SearchBar"><h1 id="SearchHeading">Find Your Tools🛠️ </h1>
                     <label for="txtProduct"></label>
                     <input type="text" id="txtProduct" placeholder="Search For Your Products" >
-                    <a id="selectall" href="http://localhost:8021/Searchpage"><button type="Submit" id="SubmitButton">Search</button></a>
-                    
+                    <button type="button" id="psearch" value="select">Select</button>                    
             </div>
         </section>
         <!-- กล่อง SearchBox -->
@@ -52,16 +51,17 @@
         <!-- ส่วน Sidebar แบ่ง Category เป็นตามประเภทสินค้า แบรนด์ และราคา-->
         <aside class="sidebar">
             <!-- h3 id=CategoryHead คือส่วนหัวข้อในแต่ละการจัดหมวดหมู่สำหรับการค้นหา -->
+            <h3 id="CategoryHead">ค้นหาตามชื่อสินค้า</h3>
+            <!-- กล่องข้อความสำหรับใส่ Criteria ในการ Search -->
+            <input type="text" placeholder="eg. สว่านไฟฟ้า" id="pname">
+
             <h3 id="CategoryHead">หมวดหมู่สินค้า</h3>
-            <!-- id=Category ตามด้วยเลขต่างๆ คือการใส่ Criteria เพื่อเลือกแสดงสินค้าตามเกณฑ์ที่กำหนด -->
-            <input type="text" placeholder="eg. เครื่องมือตัด" id="Category1">
+            <input type="text" placeholder="eg. เครื่องมือตัด" id="pcat">
 
             <h3 id="CategoryHead">ค้นหาด้วยแบรนด์</h3>
-            <input type="text" placeholder="eg. Makita" id="Category2">
+            <input type="text" placeholder="eg. Makita" id="pbrand">
 
 
-            <h3 id="CategoryHead">ค้นหาตามช่วงราคา</h3>
-            <input type="text" placeholder="eg. >2000" id="Category3">
 
 
         </aside>
@@ -141,5 +141,6 @@
             <p>Tel: 02-345-6789</p><br>
             <p> Address: 999 Phutthamonthon Sai 4 Rd, Salaya, Phutthamonthon District, Nakhon Pathom 73170 </p>
         </footer>
-</body>
+        <script src="/JS_Frontend/CallWs/CallSearchWs.js"></script>
+    </body>
 </html>
