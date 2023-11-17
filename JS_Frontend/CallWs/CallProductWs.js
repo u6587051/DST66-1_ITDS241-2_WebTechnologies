@@ -179,7 +179,7 @@ selectB.addEventListener("click", () => {
 //หากกดคลิก selectall button เรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/products, method คือ selectall, data คือไฟล์ json ที่รับค่ามาแล้วแสดงผลค่า product ทั้งหมดเข้าไปใน html
 selectallB.addEventListener("click", () => {
-    callProductWS("http://localhost:8022/productWS/" + "products", "selectall",token).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "products", "selectall").then((data) => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
