@@ -1,20 +1,14 @@
 //function ในการเรียก productWS ผ่านการ fetch api
-async function callProductWS(url, method,token = "",sentData = {}) {
+async function callProductWS(url, method,sentData = {}) {
     let data;
     if (method == "selectall") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
         method: "GET", //ส่ง method get ไปยัง productWS
-        headers: {
-          Authorization: "Bearer " + token,
-        },
       });
       data = await response.json();
     } else if (method == "select") { //ถ้า method ที่รับ parameter คือแสดงผลจาก params
       let response = await fetch(url, {
         method: "GET", //ส่ง method get ไปยัง productWS
-        headers: {
-          Authorization: "Bearer " + token,
-        },
       });
       data = await response.json();
     } else if (method == "insert" || method == "update" || method == "delete" || method == "login") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง productWS
@@ -30,8 +24,7 @@ async function callProductWS(url, method,token = "",sentData = {}) {
         method: aMethod,
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(sentData),
       });
@@ -67,22 +60,22 @@ let updateB = document.querySelector("#pupdate");
 let deleteB = document.querySelector("#pdelete");
 let selectB = document.querySelector("#pselect");
 let selectallB = document.querySelector("#pselectall");
-let loginB = document.querySelector("#login");
+// let loginB = document.querySelector("#login");
 
-//หากกด login จะ post ตัว login แล้วส่ง token
-loginB.addEventListener("click", () => {
-  let user_data = {
-    user: {
-      email: "test@test.com",
-      userid: 1,
-      first_name: "Wudhichart",
-    },
-  };
-  callStudentWS("http://localhost:8022/productWS/"+ "signin", "login", token, user_data).then((data) => {
-    console.log(data);
-    token = data.token;
-  });
-});
+// //หากกด login จะ post ตัว login แล้วส่ง token
+// loginB.addEventListener("click", () => {
+//   let user_data = {
+//     user: {
+//       email: "test@test.com",
+//       userid: 1,
+//       first_name: "Wudhichart",
+//     },
+//   };
+//   callStudentWS("http://localhost:8022/productWS/"+ "signin", "login", user_data).then((data) => {
+//     console.log(data);
+//     token = data.token;
+//   });
+// });
 
 //หากกดคลิก insert button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/product, method คือ insert, data คือไฟล์ json ที่รับค่ามา
@@ -133,7 +126,7 @@ updateB.addEventListener("click", () => {
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
     };
-    callProductWS("http://localhost:8022/productWS/" + "product", "update", token, productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "update", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -149,7 +142,7 @@ deleteB.addEventListener("click", () => {
     let productdata = {
       PID: PID,
     };
-    callProductWS("http://localhost:8022/productWS/" + "product", "delete", token, productdata).then((data) => {
+    callProductWS("http://localhost:8022/productWS/" + "product", "delete", productdata).then((data) => {
       console.log(data);
       if (data.data > 0) {
         alert(data.message);
@@ -161,20 +154,26 @@ deleteB.addEventListener("click", () => {
 //หากกดคลิก select button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callProductWS
 //ส่ง parameter url คือ http://localhost:8022/productWS/product บวกกับตัว product id ที่รับมาเป็น params, method คือ select, data คือไฟล์ json ที่รับค่ามาซึ่งเป็น product id ไว้เช็ค
 selectB.addEventListener("click", () => {
-    PID = PID_TXT.value;
-    callProductWS("http://localhost:8022/productWS/" + "product/" + PID, "select",token).then((data) => {
-      console.log(data);
-      if (data) {
-        alert(data.messsage);
-        PID_TXT.value = data.data.PID;
-        PNAME_TXT.value = data.data.PNAME;
-        PBRAND_TXT.value = data.data.PBRAND;
-        PCAT_TXT.value = data.data.PCAT;
-        PPRICE_TXT.value = data.data.PPRICE;
-        PQUAN_TXT.value = data.data.PQUAN;
-        PDETAIL_TXT.value = data.data.PDETAIL;
-      }
-    });
+  PID = PID_TXT.value;
+  PBRAND = PBRAND_TXT.value;
+  PCAT = PCAT_TXT.value;
+
+  let id = `PID=${PID}`;
+  let brand = `PBRAND=${PBRAND}`;
+  let cat = `PCAT=${PCAT}`;
+  callProductWS("http://localhost:8022/productWS/" + "product?"+id+"&"+brand+"&"+cat, "select").then((data) => {
+    console.log(data);
+    if (data) {
+      alert(data.message);
+      PID = data.PID;
+      PNAME = data.PName;
+      PBRAND = data.PBrand;
+      PCAT = data.PCat;
+      PPRICE = data.PPrice;
+      PQUAN = data.Pquan;
+      PDETAIL = data.PDetail;
+    }
+  });
 });
 
 //หากกดคลิก selectall button เรียก function callProductWS

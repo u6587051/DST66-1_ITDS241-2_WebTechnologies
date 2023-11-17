@@ -5,8 +5,6 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 const router = express.Router();
-const jwt = require("jsonwebtoken");
-authorize = require("../middlewares/auth");
 app.use(router);
 
 //import cors เพื่อสามารถทำงานคนละ origin ได้
@@ -36,29 +34,13 @@ router.get("/", function (req, res) {
     return res.send({ message: "you are in product page" });
 });
 
-// post 
-router.post("/signin", (req, res) => {
-  console.log(req.body);
-  let user = req.body.user;
-  let jwtToken = jwt.sign(
-    {
-      email: user.EMAIL,
-      userid: user.AID.toString(),
-      first_name: user.FNAME,
-    },
-    process.env.SECRET,
-    {
-      expiresIn: "1h",
-    }
-  );
-  res.status(200).json({
-    token: jwtToken,
-    message: user,
-  });
-});
+// // post 
+// router.post("/signin", (req, res) => {
+//   console.log(req.body);
+// });
 
 //รับ get มาแล้วแสดงผล product ทั้งหมด
-router.get("/products",authorize,function (req, res) {
+router.get("/products",function (req, res) {
   connection.query("SELECT * FROM product", function (error, results) {
       if (error)
         throw (error)
@@ -67,24 +49,35 @@ router.get("/products",authorize,function (req, res) {
   });
 
 // รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
-router.get("/product/:pid",authorize,function (req, res) {
-  let product_id = req.params.pid;connection.query("SELECT * FROM product where PID=?",product_id,function (error, results) {
-    if (error || results.length === 0)
-      return res.send({
-        error: true,
-        message: "Product is not found.",
-      });
-    return res.send({
-      error: false,
-      data: results[0],
-      message: "Product retrieved",
-    });
-  }
-);
-});
+router.get("/product",function (req, res) {
+  let id = req.query.PID;
+  let brand = req.query.PBRAND;
+  let cat = req.query.PCAT;
 
+  console.log(id);
+  console.log(brand);
+  console.log(cat);
+
+  let sql = `SELECT * FROM product
+            WHERE PID LIKE "%${id}%" AND
+            PBRAND LIKE "%${brand}%" AND
+            PCAT LIKE "%${cat}%";`
+
+  connection.query(sql,function (error, results) {
+      if (error || results.length === 0)
+        return res.send({
+          error: true,
+          message: "Product is not found.",
+        });
+      return res.send({
+        error: false,
+        data: results,
+        message: "Product retrieved",
+      });
+  });
+});
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
-router.post("/product",authorize,function (req, res) {
+router.post("/product",function (req, res) {
     let product = req.body
  
     connection.query(
@@ -101,7 +94,7 @@ router.post("/product",authorize,function (req, res) {
   });
 
 //รับ put มาเพื่ออัพเดทข้อมูลใน database จาก product id และอัพเดทข้อมูลจากข้อมูลที่ได้รับ
-router.put("/product",authorize,function (req, res) {
+router.put("/product",function (req, res) {
     let product_id = req.body.PID;
     let product = req.body;
 
@@ -118,7 +111,7 @@ router.put("/product",authorize,function (req, res) {
 });
 
 //รับ delete มาเพื่อลบข้อมูล admin จาก admin id ที่กำหนด
-router.delete("/product",authorize,function (req, res) {
+router.delete("/product",function (req, res) {
   let product_id = req.body.PID;
 
   connection.query("DELETE FROM product WHERE PID = ?",[product_id],function (error, results) {
@@ -137,7 +130,7 @@ router.delete("/product",authorize,function (req, res) {
 
 
 // //หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
-router.get('/product/:pid?/:pname?/:pbrand?',authorize,function (req, res) {
+router.get('/product/:pid?/:pname?/:pbrand?',function (req, res) {
   let pid = req.params.pid || '';
   let pname = req.params.pname||'';
   let pbrand = req.query.pbrand || '';
@@ -160,7 +153,7 @@ router.get('/product/:pid?/:pname?/:pbrand?',authorize,function (req, res) {
             AND pbrand LIKE '%${pbrand}%';`;
   
     // Execute the query with appropriate parameters
-  connection.query(sql,authorize,function (error, results) {
+  connection.query(sql,function (error, results) {
       if (error || results.length === 0) {
         return res.send({
           error: true,

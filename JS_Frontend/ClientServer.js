@@ -9,7 +9,7 @@ router.use(
   })
 );
 
-app.use("/static",express.static(path.join(__dirname, 'HTML')));
+app.use(express.static(path.join(__dirname, 'HTML')));
 
 // Add js to Node.js Server ไว้ Call Service
 router.get("/CallWs/CallAdminWs.js", function (req, res) {
