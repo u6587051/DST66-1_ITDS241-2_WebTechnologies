@@ -172,14 +172,14 @@ selectB.addEventListener("click", () => {
     console.log(data);
     if (data) {
       alert(data.message);
-      AID_TXT.value = data.data.AID;
-      EMAIL_TXT.value = data.data.EMAIL;
-      PWD_TXT.value = data.data.PWD;
-      FNAME_TXT.value = data.data.FNAME;
-      LNAME_TXT.value = data.data.LNAME;
-      ADDRESS_TXT.value = data.data.ADDRESS;
-      AGE_TXT.value = data.data.AGE;
-      NEED_TXT.value = data.data.NEED;
+      AID_TXT.value = data.data[0].AID;
+      EMAIL_TXT.value = data.data[0].email;
+      PWD_TXT.value = data.data[0].pwd;
+      FNAME_TXT.value = data.data[0].fname;
+      LNAME_TXT.value = data.data[0].lname;
+      ADDRESS_TXT.value = data.data[0].address;
+      AGE_TXT.value = data.data[0].age;
+      NEED_TXT.value = data.data[0].need;
     }
   });
 });
@@ -189,6 +189,7 @@ selectB.addEventListener("click", () => {
 selectallB.addEventListener("click", () => {
     callAdminWs("http://localhost:8022/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);
+      console.log(data.data);
       if (data.data.length > 0) {
         alert(data.message);
         let output;
@@ -215,7 +216,7 @@ selectallB.addEventListener("click", () => {
         });
         output += "</tbody>";
         output += "</table>";
-        $("#output").html(output);
+        // $("#output").html(output);
         clearInput();
       }
     });

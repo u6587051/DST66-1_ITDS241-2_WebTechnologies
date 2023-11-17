@@ -46,7 +46,7 @@ router.get("/products",function (req, res) {
         throw (error)
       return res.send({ error: false, data: results, message: "Product lists" });
     });
-  });
+});
 
 // รับค่า get มาแล้วรับค่าไอดี params เพื่อแสดงผล product ที่มีไอดีที่กำหนด
 router.get("/product",function (req, res) {

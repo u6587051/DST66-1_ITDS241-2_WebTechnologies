@@ -165,13 +165,13 @@ selectB.addEventListener("click", () => {
     console.log(data);
     if (data) {
       alert(data.message);
-      PID = data.PID;
-      PNAME = data.PName;
-      PBRAND = data.PBrand;
-      PCAT = data.PCat;
-      PPRICE = data.PPrice;
-      PQUAN = data.Pquan;
-      PDETAIL = data.PDetail;
+      PID = data.data[0].PID;
+      PNAME = data.data[0].PName;
+      PBRAND = data.data[0].PBrand;
+      PCAT = data.data[0].PCat;
+      PPRICE = data.data[0].PPrice;
+      PQUAN = data.data[0].PQuan;
+      PDETAIL = data.data[0].PDetail;
     }
   });
 });
