@@ -5,7 +5,7 @@ const path = require("path");
 
 const clientServerRouter = require(`${__dirname}/ClientServer`);
 
-app.use("/js",express.static(path.join(__dirname,"CallWs")));
+app.use("/CallWs",express.static(path.join(__dirname,"CallWs")));
 app.use("/css",express.static(path.join(__dirname,"HTML/CSS")));
 app.use("/picture",express.static(path.join(__dirname,"picture")));
 

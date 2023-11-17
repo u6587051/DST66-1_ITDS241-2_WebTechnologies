@@ -1,24 +1,14 @@
 //function ในการเรียก searchWS ผ่านการ fetch api
 async function callSearchWS(url, method,sentData = {}) {
     let data;
-      data = await response.json();
-      if (method == "search") { //ถ้า method ที่รับ parameter คือแสดงผลจาก params
+    if (method == "select") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
         method: "GET", //ส่ง method get ไปยัง productWS
       });
       data = await response.json();
     }
-    let response = await fetch(url, {
-        method: aMethod,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(sentData),
-      });
-      data = await response.json();
-      return data; //ส่งข้อมูลกลับมา
-    }
+    return data; //ส่งข้อมูลกลับมา
+}
 
 //รับค่า input box โดย id
 let PNAME, PBRAND, PCAT;
@@ -41,7 +31,7 @@ selectB.addEventListener("click", () => {
     let cat = `PCAT=${PCAT}`;
     let brand = `PBRAND=${PBRAND}`;
 
-    callSearchWS("http://localhost:8022/searchWS/" + "search?"+pname+"&"+cat+"&"+brand, "search").then((data) => {
+    callSearchWS("http://localhost:8022/searchWS/" + "search?"+pname+"&"+cat+"&"+brand, "select").then((data) => {
       console.log(data);
       if (data) {
         alert(data.message);

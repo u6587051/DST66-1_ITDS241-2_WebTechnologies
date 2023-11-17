@@ -121,8 +121,10 @@ p1 {
     margin-bottom: 40px;
 }
 
-#SubmitButton{
+#psearch{
     width: 10%;
+    height: 3em;
+    border-radius: 1em;
 }
 
 #SearchHeading{
