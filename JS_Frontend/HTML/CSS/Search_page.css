@@ -135,10 +135,11 @@ p1 {
     color: black;
     padding-bottom: 4%;
 }
-#txtProduct, #SubmitButton{
+#pname, #SubmitButton{
     font-size: large;
     padding: 10px;
     border-width:3px ;
+    width: 40%;
 }
 
 div.SearchBar{
@@ -151,7 +152,7 @@ h3#CategoryHead{
     color: black;
     font-size: 30px;
 }
-#pname, #pcat, #pbrand {
+#pcat, #pbrand {
     color: #010056;
     font-size: 25px;
     width: 10em;

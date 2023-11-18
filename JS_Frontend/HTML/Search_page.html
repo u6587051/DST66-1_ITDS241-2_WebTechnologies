@@ -39,7 +39,7 @@
             <!-- แถบ Search Bar โดยจะใช้เป็นส่วนที่ไว้ใส่กล่อง Search และปุ่ม Search-->
             <div class="SearchBar"><h1 id="SearchHeading">Find Your Tools🛠️ </h1>
                     <label for="txtProduct"></label>
-                    <input type="text" id="txtProduct" placeholder="Search For Your Products" >
+                    <input type="text" id="pname" placeholder="Search For Your Products" >
                     <button type="button" id="psearch" value="select">Search</button>                    
             </div>
         </section>
@@ -51,13 +51,9 @@
         <!-- ส่วน Sidebar แบ่ง Category เป็นตามประเภทสินค้า แบรนด์ และราคา-->
         <aside class="sidebar">
             <!-- h3 id=CategoryHead คือส่วนหัวข้อในแต่ละการจัดหมวดหมู่สำหรับการค้นหา -->
-            <h3 id="CategoryHead">ค้นหาตามชื่อสินค้า</h3>
-            <!-- กล่องข้อความสำหรับใส่ Criteria ในการ Search -->
-            <input type="text" placeholder="eg. สว่าน" id="pname">
-
             <h3 id="CategoryHead">หมวดหมู่สินค้า</h3>
             <input type="text" placeholder="eg. เครื่องมือตัด" id="pcat">
-
+            <!-- กล่องข้อความสำหรับใส่ Criteria ในการ Search -->
             <h3 id="CategoryHead">ค้นหาด้วยแบรนด์</h3>
             <input type="text" placeholder="eg. Makita" id="pbrand">
         </aside>
