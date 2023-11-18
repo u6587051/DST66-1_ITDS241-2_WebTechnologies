@@ -174,29 +174,28 @@ selectB.addEventListener("click", () => {
 selectallB.addEventListener("click", () => {
     callAdminWs("http://localhost:8022/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);
-      console.log(data.data);
       if (data.data.length > 0) {
         alert(data.message);
         let output;
-        output = "<h1>Student List</h1>";
+        output = "<h1 style='margin-left:325px; margib-top:20px;'>Student List</h1>";
         output += "<table class='table'>";
         output += "<thead>";
         output += "<tr>";
         output +=
-          "<th scope='col'>#</th><th scope='col'>First name</th><th scope='col'>Last name</th><th scope='col'>Age</th>";
+          "<th scope='col'>#</th><th scope='col'>Email</th><th scope='col'>Password</th><th scope='col'>First name</th><th scope='col'>Last name</th><th scope='col'>Address</th><th scope='col'>Age</th><th scope='col'>Need</th>";
         output += "</tr>";
         output += "</thead>";
         output += "<tbody>";
         data.data.forEach((element) => {
           output += "<tr>";
           output += "<td>" + element.AID + "</td>";
-          output += "<td>" + element.EMAIL + "</td>";
-          output += "<td>" + element.PWD + "</td>";
-          output += "<td>" + element.FNAME + "</td>";
-          output += "<td>" + element.LNAME + "</td>";
-          output += "<td>" + element.ADDRESS + "</td>";
-          output += "<td>" + element.AGE + "</td>";
-          output += "<td>" + element.NEED + "</td>";
+          output += "<td>" + element.email + "</td>";
+          output += "<td>" + element.pwd + "</td>";
+          output += "<td>" + element.fname + "</td>";
+          output += "<td>" + element.lname + "</td>";
+          output += "<td>" + element.address + "</td>";
+          output += "<td>" + element.age + "</td>";
+          output += "<td>" + element.need + "</td>";
           output += "</tr>";
         });
         output += "</tbody>";

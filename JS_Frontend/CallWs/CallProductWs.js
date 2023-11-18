@@ -184,24 +184,24 @@ selectallB.addEventListener("click", () => {
       if (data.data.length > 0) {
         alert(data.message);
         let output;
-        output = "<h1>Student List</h1>";
+        output = "<h1 s>Product List</h1>";
         output += "<table class='table'>";
         output += "<thead>";
         output += "<tr>";
         output +=
-          "<th scope='col'>#</th><th scope='col'>First name</th><th scope='col'>Last name</th><th scope='col'>PDETAIL</th>";
+          "<th scope='col'>PID</th><th scope='col'>Product name</th><th scope='col'>Product Brand</th><th scope='col'>Product Category</th><th scope='col'>Product Price</th><th scope='col'>Product Quantity</th><th scope='col'>Product Details</th>";
         output += "</tr>";
         output += "</thead>";
         output += "<tbody>";
         data.data.forEach((element) => {
           output += "<tr>";
           output += "<td>" + element.PID + "</td>";
-          output += "<td>" + element.PNAME + "</td>";
-          output += "<td>" + element.PBRAND + "</td>";
-          output += "<td>" + element.PCAT + "</td>";
-          output += "<td>" + element.PPRICE + "</td>";
-          output += "<td>" + element.PQUAN + "</td>";
-          output += "<td>" + element.PDETAIL + "</td>";
+          output += "<td>" + element.PName + "</td>";
+          output += "<td>" + element.PBrand + "</td>";
+          output += "<td>" + element.PCat + "</td>";
+          output += "<td>" + element.PPrice + "</td>";
+          output += "<td>" + element.PQuan + "</td>";
+          output += "<td>" + element.PDetail + "</td>";
           output += "</tr>";
         });
         output += "</tbody>";

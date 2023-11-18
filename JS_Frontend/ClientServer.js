@@ -40,26 +40,6 @@ router.get('/admin-edit', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/User(edit).html`));
 })
 
-// Route ไปยังหน้า Delete-page
-router.get('/delete-page', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/delete-page.html`));
-})
-
-// Route ไปยังหน้า Delete(Admin)
-router.get('/delete-admin', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Delete(Admid).html`));
-})
-
-// Route ไปยังหน้า edit-page
-router.get('/edit-page', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/edit-page.html`));
-})
-
-// Route ไปยังหน้า edit-product
-router.get('/edit-product', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/edit-product.html`));
-})
-
 // Route ไปยังหน้า Home
 router.get('/home', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/Home.html`));
