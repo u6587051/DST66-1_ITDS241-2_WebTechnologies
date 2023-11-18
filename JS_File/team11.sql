@@ -49,7 +49,7 @@ INSERT INTO ADMINS VALUES
 -- ("105","pipat4@gmail.com","78 swadee","99994");
 
 INSERT INTO Product VALUES
-("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4"),
+("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4","https://i.postimg.cc/mkZyPYC3/Product1.jpg"),
 ("02","MAKITA สว่าน DF001G Cordless Driver Drill","MAKITA","เครื่องมือไฟฟ้า",3500,99,"40V"),
 ("03","เครื่องตัดเหล็ก 12 Stanley","Stanley","เครื่องมือตัด",1400,99,"#15-166"),
 ("04","ใบตัด Corolla","Corolla","เครื่องมือตัด",500,99,"ขนาด4x1"),
