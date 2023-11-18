@@ -126,48 +126,4 @@ router.delete("/product",function (req, res) {
   );
 });
 
-
-
-
-// //หา Product ที่สามารถไม่ใส่ Criteria หรือใส่ก็ได้ ยังไม่ได้
-router.get('/product/:pid?/:pname?/:pbrand?',function (req, res) {
-  let pid = req.params.pid || '';
-  let pname = req.params.pname||'';
-  let pbrand = req.query.pbrand || '';
-  let pcat = req.query.pcat
-  let pprice = req.query.Pprice 
-  let pquan = req.query.PQuan
-  let pdetail = req.query.Pdetail
-  
-    // Build the base SQL query
-
-  if (pname==''){
-    req.query.pname = '';
-  }
-  if (pbrand==''){
-    req.query.pbrand = '';
-  }
-  
-  let sql = `SELECT * FROM product WHERE 1
-            AND pname LIKE '%${pname}%'
-            AND pbrand LIKE '%${pbrand}%';`;
-  
-    // Execute the query with appropriate parameters
-  connection.query(sql,function (error, results) {
-      if (error || results.length === 0) {
-        return res.send({
-          error: true,
-          message: `Product is not found.`,
-        });
-      }
-  
-      return res.send({
-        error: false,
-        data: results,
-        message: "Products retrieved",
-      });
-    })
-  });
-  
-
 module.exports = router;
