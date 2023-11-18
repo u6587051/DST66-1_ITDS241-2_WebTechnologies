@@ -41,23 +41,20 @@ selectB.addEventListener("click", () => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
-        
         data.data.forEach((productData) => {
           var column = document.createElement('div'); 
           column.className = 'column';
-
         // var img = document.createElement('img');
         // img.src = productData.PIMG; // Replace with the actual property name from your data
         // // img.alt = productData.altText;
         // img.className = 'productimg';
-
+        // console.log(productData)
         var heading = document.createElement('h3');
         heading.id = 'producthead';
-        heading.textContent = productData.PNAME; // Replace with the actual property name from your data
-
+        heading.textContent = productData.PName; // Replace with the actual property name from your data
         var price = document.createElement('h4');
         price.id = 'price';
-        price.textContent = '฿' + productData.PPRICE; // Replace with the actual property name from your data
+        price.textContent = '฿' + productData.PPrice; // Replace with the actual property name from your data
 
         var buyButton = document.createElement('h4');
         buyButton.id = 'buybutton';
