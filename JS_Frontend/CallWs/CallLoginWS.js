@@ -1,4 +1,4 @@
-//function ในการเรียก productWS ผ่านการ fetch api
+//function ในการเรียก loginWS ผ่านการ fetch api
 async function callLoginWS(url, method,sentData = {}) {
     let data;
     if (method == "login") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
