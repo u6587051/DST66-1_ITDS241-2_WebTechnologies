@@ -39,7 +39,7 @@ selectB.addEventListener("click", () => {
 
     callSearchWS("http://localhost:8022/searchWS/" + "search?"+pname+"&"+cat+"&"+brand, "select").then((data) => {
       console.log(data);
-      if (data.data.length > 0) {
+      if (data.error == false) {
         alert(data.message);
         // ใช้เพื่อ clear กล่อง id:Soutput จากไฟล์ Search_page.html
         $("#Soutput").empty();
@@ -88,6 +88,8 @@ selectB.addEventListener("click", () => {
           });
 
     
+      }else{
+        window.location.replace('http://localhost:8021/Searchpage');
       }
   });
 });
