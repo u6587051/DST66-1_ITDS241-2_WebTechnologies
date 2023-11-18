@@ -205,18 +205,18 @@ selectallB.addEventListener("click", () => {
         data.data.forEach((element) => {
           output += "<tr>";
           output += "<td>" + element.AID + "</td>";
-          output += "<td>" + element.EMAIL + "</td>";
-          output += "<td>" + element.PWD + "</td>";
-          output += "<td>" + element.FNAME + "</td>";
-          output += "<td>" + element.LNAME + "</td>";
-          output += "<td>" + element.ADDRESS + "</td>";
-          output += "<td>" + element.AGE + "</td>";
-          output += "<td>" + element.NEED + "</td>";
+          output += "<td>" + element.email + "</td>";
+          output += "<td>" + element.pwd + "</td>";
+          output += "<td>" + element.fname + "</td>";
+          output += "<td>" + element.lname + "</td>";
+          output += "<td>" + element.address + "</td>";
+          output += "<td>" + element.age + "</td>";
+          output += "<td>" + element.need + "</td>";
           output += "</tr>";
         });
         output += "</tbody>";
         output += "</table>";
-        // $("#output").html(output);
+        $("#output").html(output);
         clearInput();
       }
     });
