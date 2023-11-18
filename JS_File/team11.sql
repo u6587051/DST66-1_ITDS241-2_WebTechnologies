@@ -10,6 +10,7 @@ PCat varchar(50) NOT NULL,
 PPrice int NOT NULL,
 PQuan int NOT NULL,
 PDetail varchar(256) NOT NULL,
+Pimg varchar(256) NOT NULL,
 PRIMARY KEY (PID)
 );
 
@@ -60,3 +61,7 @@ INSERT INTO Product VALUES
 SELECT * FROM ADMINS;
 
 SELECT * FROM Product;
+
+
+SELECT * FROM product
+WHERE pprice < (SELECT MAX(pprice) FROM product);
