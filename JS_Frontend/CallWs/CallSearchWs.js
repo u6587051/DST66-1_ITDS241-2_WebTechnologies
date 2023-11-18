@@ -80,4 +80,7 @@ selectB.addEventListener("click", () => {
 
         $("#Soutput").html(column);
         clearInput();
-      }
+      })
+    }
+  })
+});
