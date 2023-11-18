@@ -46,3 +46,7 @@ selectB.addEventListener("click", () => {
     });
   });
 
+function filterProduct(){
+  
+}
+

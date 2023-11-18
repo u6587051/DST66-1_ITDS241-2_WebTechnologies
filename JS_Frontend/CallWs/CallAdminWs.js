@@ -216,7 +216,7 @@ selectallB.addEventListener("click", () => {
         });
         output += "</tbody>";
         output += "</table>";
-        // $("#output").html(output);
+        $("#output").html(output);
         clearInput();
       }
     });
