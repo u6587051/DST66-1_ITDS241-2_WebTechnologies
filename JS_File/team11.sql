@@ -50,11 +50,11 @@ INSERT INTO ADMINS VALUES
 
 INSERT INTO Product VALUES
 ("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4","https://i.postimg.cc/mkZyPYC3/Product1.jpg"),
-("02","MAKITA สว่าน DF001G Cordless Driver Drill","MAKITA","เครื่องมือไฟฟ้า",3500,99,"40V","https://postimg.cc/dh6P9R1R"),
+("02","MAKITA สว่าน DF001G Cordless Driver Drill","MAKITA","เครื่องมือไฟฟ้า",3500,99,"40V","https://i.postimg.cc/9f5mCJHk/f97159484da0f32a8476c45427b6cc87.jpg"),
 ("03","เครื่องตัดเหล็ก 12 Stanley","Stanley","เครื่องมือตัด",1400,99,"#15-166","https://i.postimg.cc/Nfj7kkVZ/Product3.jpg"),
-("04","ใบตัด Corolla","Corolla","เครื่องมือตัด",500,99,"ขนาด4x1","https://postimg.cc/94y9Sf6B"),
+("04","ใบตัด Corolla","Corolla","เครื่องมือตัด",500,99,"ขนาด4x1","https://i.postimg.cc/PqRMCpK0/COROLLA-4-1.jpg"),
 ("05","MAKITA สว่านไร้สาย สว่าน 3 ระบบ","MAKITA","เครื่องมือไฟฟ้า",849,99,"148V","https://i.postimg.cc/7PmZ03SC/e63b80290abfee823e13426b5c587023.jpg"),
-("06","Total ปั๊มลมอัตโนมัติ ปั๊มลมมินิ","Total","เครื่องมือลมปั้มลม",1169,99,"12V 18A แรงดัน 120 PSI","https://postimg.cc/dh6P9R1R");
+("06","Total ปั๊มลมอัตโนมัติ ปั๊มลมมินิ","Total","เครื่องมือลมปั้มลม",1169,99,"12V 18A แรงดัน 120 PSI","https://i.postimg.cc/7L6FvzfR/sg-11134201-22100-y2koa121xvivdb.png");
 
 -- SELECT * FROM USERS;
 
