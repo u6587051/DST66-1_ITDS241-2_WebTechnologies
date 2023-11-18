@@ -81,7 +81,6 @@ selectB.addEventListener("click", () => {
     
       }
       else{
-        console.log("not found")
         window.location.replace("http://localhost:8021/Searchpage");
       }
   });
