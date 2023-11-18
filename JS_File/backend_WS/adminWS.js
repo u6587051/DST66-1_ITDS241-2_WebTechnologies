@@ -80,6 +80,7 @@ router.get("/admin", function (req, res) {
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/admin",function (req, res) {
   let admin = req.body
+  console.log(admin);
 
   connection.query(
     "INSERT INTO ADMINS SET ? ",admin,function (error, results) {
@@ -98,7 +99,6 @@ router.post("/admin",function (req, res) {
 router.put("/admin", function (req, res) {
   let admin_id = req.body.AID;
   let admin = req.body;
-
   connection.query("UPDATE ADMINS SET ? WHERE AID = ?", [admin, admin_id], function (error, results) {
     if (error)
       throw (error)
