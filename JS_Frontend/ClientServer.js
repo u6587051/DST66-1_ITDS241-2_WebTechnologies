@@ -11,15 +11,10 @@ router.use(
 
 app.use(express.static(path.join(__dirname, 'HTML')));
 
-// // Add js to Node.js Server ไว้ Call Service
-// router.get("/CallWs/CallAdminWs.js", function (req, res) {
-//   res.sendFile(path.join(__dirname + "/CallWs/CallAdminWs.js"));
-// });
-
-// // Add js to Node.js Server ไว้ Call Service
-// router.get("/CallWs/CallProductWs.js", function (req, res) {
-//     res.sendFile(path.join(__dirname + "/CallWs/CallProductWs.js"));
-// });
+// Route ไปยังหน้า Home
+router.get('/', (req,res) =>{
+    res.sendFile(path.join(`${__dirname}/HTML/Home.html`));
+})
 
 // Route ไปยังหน้า About us
 router.get('/aboutus', (req,res) =>{
