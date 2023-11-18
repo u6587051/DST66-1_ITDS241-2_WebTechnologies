@@ -77,6 +77,23 @@ router.get("/admin", function (req, res) {
   });
 });
 
+//รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
+router.post("/admin",function (req, res) {
+  let admin = req.body
+
+  connection.query(
+    "INSERT INTO ADMINS SET ? ",admin,function (error, results) {
+      if (error)
+        throw(error);
+      return res.send({
+        error: false,
+        data: results.affectedRows,
+        message: "New admin has been added.",
+      });
+    }
+  );
+});
+
 //รับ put มาเพื่ออัพเดทข้อมูลใน database จาก admin id และอัพเดทข้อมูลจากข้อมูลที่ได้รับ
 router.put("/admin", function (req, res) {
   let admin_id = req.body.AID;

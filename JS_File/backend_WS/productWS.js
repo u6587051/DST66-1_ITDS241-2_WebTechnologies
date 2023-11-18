@@ -76,6 +76,7 @@ router.get("/product",function (req, res) {
       });
   });
 });
+
 //รับ post มาเพื่อรับข้อมูลแล้ว insert เข้า database
 router.post("/product",function (req, res) {
     let product = req.body
@@ -91,7 +92,7 @@ router.post("/product",function (req, res) {
         });
       }
     );
-  });
+});
 
 //รับ put มาเพื่ออัพเดทข้อมูลใน database จาก product id และอัพเดทข้อมูลจากข้อมูลที่ได้รับ
 router.put("/product",function (req, res) {
