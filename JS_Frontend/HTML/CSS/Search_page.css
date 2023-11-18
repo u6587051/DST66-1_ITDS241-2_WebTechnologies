@@ -119,12 +119,16 @@ p1 {
     width: 60%;
     margin: auto;
     margin-bottom: 40px;
+    border-radius:0% ;
 }
 
 #psearch{
     width: 10%;
     height: 3em;
-    border-radius: 1em;
+    font-size: 15px;
+    background-color: white;
+    border-width:3px ;
+    border-color:#1a1a1a;
 }
 
 #SearchHeading{
@@ -134,7 +138,7 @@ p1 {
 #txtProduct, #SubmitButton{
     font-size: large;
     padding: 10px;
-    border-radius: 10px;
+    border-width:3px ;
 }
 
 div.SearchBar{
@@ -217,13 +221,25 @@ h3#producthead, h4#price, h4#buybutton{
     border-radius: 10px;
     margin-right: 10px;
 }
+
+
 #Buy{
     background-color: #fba906;
     padding: 1%;
     text-align: center;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color:black;
+    border-radius: 5px;
+}
+
+#Buy:hover{
+    background-color: #fba906;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    color:red;
     border-radius: 5px;
 }
 

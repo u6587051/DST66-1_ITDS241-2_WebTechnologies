@@ -3,7 +3,7 @@ async function callSearchWS(url, method,sentData = {}) {
     let data;
     if (method == "select") { //ถ้า method ที่รับ parameter คือแสดงผลทั้งหมด
       let response = await fetch(url, {
-        method: "GET", //ส่ง method get ไปยัง productWS
+        method: "GET", //ส่ง method get ไปยัง SearchWS
       });
       data = await response.json();
     }
