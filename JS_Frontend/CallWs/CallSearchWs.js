@@ -89,6 +89,7 @@ selectB.addEventListener("click", () => {
 
     
       }else{
+        // กรณีที่เกิด error ให้ใช้ Javascript environment ชื่อ Window ในการไปที่ URL Searchpage อีกรอบ
         window.location.replace('http://localhost:8021/Searchpage');
       }
   });
