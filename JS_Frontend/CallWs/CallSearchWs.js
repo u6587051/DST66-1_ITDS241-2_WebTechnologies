@@ -41,6 +41,7 @@ selectB.addEventListener("click", () => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
+        $("#Soutput").empty();
         data.data.forEach((productData) => {
           var column = document.createElement('div'); 
           column.className = 'column';
@@ -68,7 +69,7 @@ selectB.addEventListener("click", () => {
 
           buyButton.appendChild(link);
 
-          // column.appendChild(img);
+          column.appendChild(img);
           column.appendChild(heading);
           column.appendChild(price);
           column.appendChild(buyButton);
