@@ -46,23 +46,9 @@ selectB.addEventListener("click", () => {
       console.log(data);
       if (data) {
         alert(data.message);
-        PID = data.PID;
-        PNAME = data.PName;
-        PBRAND = data.PBrand;
-        PCAT = data.PCat;
-        PPRICE = data.PPrice;
-        PQUAN = data.Pquan;
-        PDETAIL = data.PDetail;
-        PIMG = data.Pimg;
-
-        createProductElement(data)
-      }
-    });
-  });
-
-function createProductElement(productData) {
-    var column = document.createElement('div');
-    column.className = 'column';
+        data.data.forEach((productData) => {
+          var column = document.createElement('div'); 
+          column.className = 'column';
 
     var img = document.createElement('img');
     img.src = productData.PIMG; // Replace with the actual property name from your data
@@ -87,10 +73,10 @@ function createProductElement(productData) {
 
     buyButton.appendChild(link);
 
-    column.appendChild(img);
-    column.appendChild(heading);
-    column.appendChild(price);
-    column.appendChild(buyButton);
+          // column.appendChild(img);
+          column.appendChild(heading);
+          column.appendChild(price);
+          column.appendChild(buyButton);
 
     $("#Soutput").html(column);
     clearInput();
