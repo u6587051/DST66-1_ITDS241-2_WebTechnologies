@@ -3,7 +3,7 @@ const axios = require("axios").default;
 const express = require("express");
 const router = express.Router();
 
-let searchURL = "http://localhost:8022/loginWS/login"; //กำหนด URL ที่ใช้ searchWS
+let searchURL = "http://localhost:8022/loginWS/login"; //กำหนด URL ที่ใช้ loginWS
 
 let getResults = async () => {
   try {

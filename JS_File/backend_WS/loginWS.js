@@ -29,7 +29,7 @@ let connection = mysql.createConnection({
     database : process.env.MYSQL_DATABASE
 });
 
-//รับ get มาแล้วแสดงข้อความว่าอยู่ในหน้าการทำงาน product
+//รับ get มาแล้วแสดงข้อความว่าอยู่ในหน้าการทำงาน login
 router.get("/", function (req, res) {
     return res.send({ message: "you are login" });
 });

@@ -18,7 +18,7 @@ let PWD_TXT = document.querySelector("#pwd");
 //รับค่าปุ่มมาจาก input box โดย id
 let loginB = document.querySelector("#login");
 
-//หากกด login จะ post ตัว login แล้วส่ง token
+//หากกด login จะส่ง method post
 loginB.addEventListener("click", () => {
   USERNAME = USERNAME_TXT.value;
   PWD = PWD_TXT.value;
