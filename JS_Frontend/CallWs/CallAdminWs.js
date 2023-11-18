@@ -189,16 +189,15 @@ selectB.addEventListener("click", () => {
 selectallB.addEventListener("click", () => {
     callAdminWs("http://localhost:8022/adminWS/" + "admins", "selectall").then((data) => {
       console.log(data);
-      console.log(data.data);
       if (data.data.length > 0) {
         alert(data.message);
         let output;
-        output = "<h1>Student List</h1>";
+        output = "<h1 style='margin-left:325px; margib-top:20px;'>Student List</h1>";
         output += "<table class='table'>";
         output += "<thead>";
         output += "<tr>";
         output +=
-          "<th scope='col'>#</th><th scope='col'>First name</th><th scope='col'>Last name</th><th scope='col'>Age</th>";
+          "<th scope='col'>#</th><th scope='col'>Email</th><th scope='col'>Password</th><th scope='col'>First name</th><th scope='col'>Last name</th><th scope='col'>Address</th><th scope='col'>Age</th><th scope='col'>Need</th>";
         output += "</tr>";
         output += "</thead>";
         output += "<tbody>";
