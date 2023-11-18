@@ -6,14 +6,14 @@ async function callAdminWs(url, method,sentData = {}) {
         method: "GET", //ส่ง method get ไปยัง adminWS
       });
       data = await response.json();
-    } else if (method == "select") {
+    } else if (method == "select" || method == "login") {
       let response = await fetch(url, { //ถ้า method ที่รับ parameter คือแสดงผลจาก params
         method: "GET", //ส่ง method get ไปยัง adminWS
       });
       data = await response.json();
-    } else if (method == "insert" || method == "update" || method == "delete" || method == "login") { 
+    } else if (method == "insert" || method == "update" || method == "delete") { 
       let aMethod;
-      if (method == "insert" || method == "login") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง adminWS
+      if (method == "insert") { //ถ้า method ที่รับ parameter มาเท่ากับ insert ให้ส่ง method post ไปยัง adminWS
         aMethod = "POST";
       } else if (method == "update") { //ถ้า method ที่รับ parameter มาเท่ากับ update method put ไปยัง adminWS
         aMethod = "PUT";
@@ -61,22 +61,6 @@ let updateB = document.querySelector("#aupdate");
 let deleteB = document.querySelector("#adelete");
 let selectB = document.querySelector("#aselect");
 let selectallB = document.querySelector("#aselectall");
-let loginB = document.querySelector("#login");
-
-// //หากกด login จะ post ตัว login แล้วส่ง token
-// loginB.addEventListener("click", () => {
-//   let user_data = {
-//     user: {
-//       email: "test@test.com",
-//       userid: 1,
-//       first_name: "Wudhichart",
-//     },
-//   };
-//   callStudentWS("http://localhost:8022/adminWS/"+ "signin", "login", user_data).then((data) => {
-//     console.log(data);
-//     token = data.token;
-//   });
-// });
 
 //หากกดคลิก insert button ให้รับค่ามาเก็บเป็น json ไฟล์แล้วส่งเข้าไปพร้อมเรียก function callAdminWS
 //ส่ง parameter url คือ http://localhost:8022/adminWS/admin, method คือ insert, data คือไฟล์ json ที่รับค่ามา
@@ -164,6 +148,7 @@ selectB.addEventListener("click", () => {
   AID = AID_TXT.value;
   EMAIL = EMAIL_TXT.value;
   FNAME = FNAME_TXT.value;
+  console.log(FNAME);
 
   let id = `AID=${AID}`;
   let em = `EMAIL=${EMAIL}`;
@@ -216,7 +201,7 @@ selectallB.addEventListener("click", () => {
         });
         output += "</tbody>";
         output += "</table>";
-        // $("#output").html(output);
+        $("#output").html(output);
         clearInput();
       }
     });

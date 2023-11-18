@@ -39,11 +39,6 @@ router.get("/", function (req, res) {
     return res.send({ message: "you are in admin page" });
 });
 
-// router.post("/signin", (req, res) => {
-//   console.log(req.body);
-//   let user = req.body.user;
-// });
-
 //รับ get มาแล้วแสดงผล admin ทั้งหมด
 router.get("/admins",function (req, res) {
     connection.query("SELECT * FROM ADMINS", function (error, results) {

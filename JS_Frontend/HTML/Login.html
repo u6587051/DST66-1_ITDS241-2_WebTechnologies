@@ -30,22 +30,23 @@
     </header>
 
     <section class="login-main-content">
-        <form action="/admin-edit" method="get"> <!--ต้องแก้!!!!-->
+        <form> <!--ต้องแก้!!!!-->
             <div class="inner-box">
                 <h3>Login Here</h3>
 
                 <label for="username">Username</label><!--เป็นการloginโดยใช้email--> 
-                <input type="email" placeholder=" Email" id="username" name="username" required>
+                <input type="text" placeholder=" Email" id="username" required>
             
                 <label for="password">Password</label>
-                <input type="password" placeholder=" Password" id="password" name="password" required>
+                <input type="text" placeholder=" Password" id="pwd" required>
             </div>
             <div class="outer-box">
-                <button type="submit" class="Login" id="login" value="login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
+                <button type="button" class="Login" id="login" value="login">Log In</button><!--กำหนดtype submit เพื่อให้เช็คกับตัวusername & password-->
                 <div class="g-signin2" data-onsuccess="onSignIn"></div><!--เป็นการloginด้วยgoogle--> 
             </div>
         </form>
     </section>
+    <script src="/CallWs/CallLoginWS.js"></script>
     <footer>
         <section class="login-footer">
         <p>TopKing 👑</p><br>
