@@ -20,9 +20,14 @@ let PBRAND_TXT = document.querySelector("#pbrand");
 let selectB = document.querySelector("#psearch");
 
 function clearInput() { //function ในการ clear กล่อง input box
+  PID_TXT.value = "";
   PNAME_TXT.value = "";
   PBRAND_TXT.value = "";
   PCAT_TXT.value = "";
+  PPRICE_TXT.value = "";
+  PQUAN_TXT.value = "";
+  PDETAIL_TXT.value = "";
+  PIMG_TXT.value = "";
 }
 
 
@@ -39,80 +44,55 @@ selectB.addEventListener("click", () => {
 
     callSearchWS("http://localhost:8022/searchWS/" + "search?"+pname+"&"+cat+"&"+brand, "select").then((data) => {
       console.log(data);
-      if (data.data.length > 0) {
+      if (data) {
         alert(data.message);
-        data.data.forEach((productData) => {
-          var column = document.createElement('div'); 
-          column.className = 'column';
+        PID = data.PID;
+        PNAME = data.PName;
+        PBRAND = data.PBrand;
+        PCAT = data.PCat;
+        PPRICE = data.PPrice;
+        PQUAN = data.Pquan;
+        PDETAIL = data.PDetail;
+        PIMG = data.Pimg;
 
-          var img = document.createElement('img');
-          img.src = productData.Pimg; // Replace with the actual property name from your data
-          // img.alt = productData.altText;
-          img.className = 'productimg';
-          console.log(productData)
-
-          var heading = document.createElement('h3');
-          heading.id = 'producthead';
-          heading.textContent = productData.PName; // Replace with the actual property name from your data
-          var price = document.createElement('h4');
-          price.id = 'price';
-          price.textContent = '฿' + productData.PPrice; // Replace with the actual property name from your data
-
-          var buyButton = document.createElement('h4');
-          buyButton.id = 'buybutton';
-          
-          var link = document.createElement('a');
-          link.id = 'Buy';
-          // link.href = productData.buyLink; // Replace with the actual property name from your data
-          link.textContent = 'สั่งซื้อสินค้า';
-
-          buyButton.appendChild(link);
-
-          // column.appendChild(img);
-          column.appendChild(heading);
-          column.appendChild(price);
-          column.appendChild(buyButton);
-
-          $("#Soutput").append(column); // Assuming .content is a valid target
-          clearInput();
-          });
-
-    
+        createProductElement(data)
       }
+    });
   });
-});
-// function createProductElement(productData) {
-//     var column = document.createElement('div');
-//     column.className = 'column';
 
-//     var img = document.createElement('img');
-//     img.src = productData.PIMG; // Replace with the actual property name from your data
-//     // img.alt = productData.altText;
-//     img.className = 'productimg';
+function createProductElement(productData) {
+    var column = document.createElement('div');
+    column.className = 'column';
 
-//     var heading = document.createElement('h3');
-//     heading.id = 'producthead';
-//     heading.textContent = productData.PNAME; // Replace with the actual property name from your data
+    var img = document.createElement('img');
+    img.src = productData.PIMG; // Replace with the actual property name from your data
+    // img.alt = productData.altText;
+    img.className = 'productimg';
 
-//     var price = document.createElement('h4');
-//     price.id = 'price';
-//     price.textContent = '฿' + productData.PPRICE; // Replace with the actual property name from your data
+    var heading = document.createElement('h3');
+    heading.id = 'producthead';
+    heading.textContent = productData.PNAME; // Replace with the actual property name from your data
 
-//     var buyButton = document.createElement('h4');
-//     buyButton.id = 'buybutton';
+    var price = document.createElement('h4');
+    price.id = 'price';
+    price.textContent = '฿' + productData.PPRICE; // Replace with the actual property name from your data
+
+    var buyButton = document.createElement('h4');
+    buyButton.id = 'buybutton';
     
-//     var link = document.createElement('a');
-//     link.id = 'Buy';
-//     // link.href = productData.buyLink; // Replace with the actual property name from your data
-//     link.textContent = 'สั่งซื้อสินค้า';
+    var link = document.createElement('a');
+    link.id = 'Buy';
+    // link.href = productData.buyLink; // Replace with the actual property name from your data
+    link.textContent = 'สั่งซื้อสินค้า';
 
-//     buyButton.appendChild(link);
+    buyButton.appendChild(link);
 
-//     column.appendChild(img);
-//     column.appendChild(heading);
-//     column.appendChild(price);
-//     column.appendChild(buyButton);
+    column.appendChild(img);
+    column.appendChild(heading);
+    column.appendChild(price);
+    column.appendChild(buyButton);
 
-//    document.getElementById("Soutput").innerHTML = column
-// }
+    $("#Soutput").html(column);
+    clearInput();
+}
 
