@@ -52,7 +52,7 @@ INSERT INTO Product VALUES
 ("01","ใบตัด New Kosoku","New Kosoku","เครื่องมือตัด",349,99,"ขนาด4x4","https://i.postimg.cc/mkZyPYC3/Product1.jpg"),
 ("02","MAKITA สว่าน DF001G Cordless Driver Drill","MAKITA","เครื่องมือไฟฟ้า",3500,99,"40V"),
 ("03","เครื่องตัดเหล็ก 12 Stanley","Stanley","เครื่องมือตัด",1400,99,"#15-166"),
-("04","ใบตัด Corolla","Corolla","เครื่องมือตัด",500,99,"ขนาด4x1"),
+("04","ใบตัด Corolla","Corolla","เครื่องมือตัด",500,99,"ขนาด4x1","https://postimg.cc/94y9Sf6B"),
 ("05","MAKITA สว่านไร้สาย สว่าน 3 ระบบ","MAKITA","เครื่องมือไฟฟ้า",849,99,"148V"),
 ("06","Total ปั๊มลมอัตโนมัติ ปั๊มลมมินิ","Total","เครื่องมือลมปั้มลม",1169,99,"12V 18A แรงดัน 120 PSI");
 
