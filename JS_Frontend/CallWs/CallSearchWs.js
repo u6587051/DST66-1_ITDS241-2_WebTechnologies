@@ -44,39 +44,46 @@ selectB.addEventListener("click", () => {
         // ใช้เพื่อ clear กล่อง id:Soutput จากไฟล์ Search_page.html
         $("#Soutput").empty();
 
+        //ลูปเรียก data จาก Object
         data.data.forEach((productData) => {
+
+          //มีการกำหนดเพื่อสร้าง element HTML และทำการกำหนด Semantic ต่างๆ
           var column = document.createElement('div'); 
           column.className = 'column';
 
+          //สร้าง Element img และ กำหนด src โดยการเรียก Propertie จาก Object productData
           var img = document.createElement('img');
-          img.src = productData.Pimg; // Replace with the actual property name from your data
-          // img.alt = productData.altText;
-          img.className = 'productimg';
+          img.src = productData.Pimg; 
+          img.className = 'productimg'; 
           console.log(productData)
 
+          // สร้าง Element h3 และกำหนด id เป็น producthead
           var heading = document.createElement('h3');
-          heading.id = 'producthead';
-          heading.textContent = productData.PName; // Replace with the actual property name from your data
+          heading.id = 'producthead'; 
+          heading.textContent = productData.PName; //กำหนด text จาก property PName
+
+          //สร้าง Element h4 และกำหนด id เป็น price
           var price = document.createElement('h4');
           price.id = 'price';
-          price.textContent = '฿' + productData.PPrice; // Replace with the actual property name from your data
+          price.textContent = '฿' + productData.PPrice; //กำหนด text จาก property Pprice
 
           var buyButton = document.createElement('h4');
           buyButton.id = 'buybutton';
           
           var link = document.createElement('a');
           link.id = 'Buy';
-          // link.href = productData.buyLink; // Replace with the actual property name from your data
           link.textContent = 'สั่งซื้อสินค้า';
 
           buyButton.appendChild(link);
 
+          // นำ Tag ต่างๆ ใส่เป็น child ของตัวแปร column ซึ่งคือ div ที่ class คือ column
           column.appendChild(img);
           column.appendChild(heading);
           column.appendChild(price);
           column.appendChild(buyButton);
 
-          $("#Soutput").append(column); // Assuming .content is a valid target
+          // ใช้ jQuery selector เลือก HTML element ทีมี ID ชื่อ Soutput และทำการ append ด้วย column ซึ่งคือ div ที่ class คือ column
+          $("#Soutput").append(column);
           clearInput();
           });
 
