@@ -43,6 +43,7 @@ let PCAT_TXT = document.querySelector("#pcat");
 let PPRICE_TXT = document.querySelector("#pprice");
 let PQUAN_TXT = document.querySelector("#pquan");
 let PDETAIL_TXT = document.querySelector("#pdetail");
+let PIMG_TXT = document.querySelector("#pimage");
   
 function clearInput() { //function ในการ clear กล่อง input box
   PID_TXT.value = "";
@@ -52,6 +53,7 @@ function clearInput() { //function ในการ clear กล่อง input b
   PPRICE_TXT.value = "";
   PQUAN_TXT.value = "";
   PDETAIL_TXT.value = "";
+  PIMG_TXT.value = "";
 }
 
 //รับค่าปุ่มมาจาก input box โดย id
@@ -88,6 +90,7 @@ insertB.addEventListener("click", () => {
     PPRICE = PPRICE_TXT.value;
     PQUAN = PQUAN_TXT.value;
     PDETAIL = PDETAIL_TXT.value;
+    PIMG = PIMG_TXT.value;
     let productdata = {
       PID: PID,
       PNAME: PNAME,
@@ -96,6 +99,7 @@ insertB.addEventListener("click", () => {
       PPRICE: PPRICE,
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
+      PIMG: PIMG,
     };
     console.log(productdata)
     callProductWS("http://localhost:8022/productWS/" + "product", "insert", productdata).then((data) => {
@@ -117,6 +121,7 @@ updateB.addEventListener("click", () => {
     PPRICE = PPRICE_TXT.value;
     PQUAN = PQUAN_TXT.value;
     PDETAIL = PDETAIL_TXT.value;
+    PIMG = PIMG_TXT.values;
     let productdata = {
       PID: PID,
       PNAME: PNAME,
@@ -125,6 +130,7 @@ updateB.addEventListener("click", () => {
       PPRICE: PPRICE,
       PQUAN: PQUAN,
       PDETAIL: PDETAIL,
+      PIMG: PIMG,
     };
     callProductWS("http://localhost:8022/productWS/" + "product", "update", productdata).then((data) => {
       console.log(data);
@@ -165,13 +171,14 @@ selectB.addEventListener("click", () => {
     console.log(data);
     if (data) {
       alert(data.message);
-      PID = data.data[0].PID;
-      PNAME = data.data[0].PName;
-      PBRAND = data.data[0].PBrand;
-      PCAT = data.data[0].PCat;
-      PPRICE = data.data[0].PPrice;
-      PQUAN = data.data[0].PQuan;
-      PDETAIL = data.data[0].PDetail;
+      PID_TXT.value = data.data[0].PID;
+      PNAME_TXT.value  = data.data[0].PName;
+      PBRAND_TXT.value  = data.data[0].PBrand;
+      PCAT_TXT.value  = data.data[0].PCat;
+      PPRICE_TXT.value  = data.data[0].PPrice;
+      PQUAN_TXT.value  = data.data[0].PQuan;
+      PDETAIL_TXT.value  = data.data[0].PDetail;
+      PIMG_TXT.value  = data.data[0].Pimg;
     }
   });
 });
@@ -202,6 +209,7 @@ selectallB.addEventListener("click", () => {
           output += "<td>" + element.PPrice + "</td>";
           output += "<td>" + element.PQuan + "</td>";
           output += "<td>" + element.PDetail + "</td>";
+          output += "<td>" + element.Pimg + "</td>";
           output += "</tr>";
         });
         output += "</tbody>";
