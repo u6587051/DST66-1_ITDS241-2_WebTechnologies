@@ -35,11 +35,11 @@ PRIMARY KEY (AID)
 );
 
 INSERT INTO ADMINS VALUES
-("001","pguide@gmail.com","12345","Thanawich","Juangroongruangkit","69 poseidon",20,"อยากจะเป็นนักการเมือง"),
-("002","psub@gmail.com","11111","Jaosub","Juangroongruangkit","888 panunonline",20,"เป็นพ่อเล้า"),
-("003","pjay@gmail.com","69696","Salute","Juangroongruangkit","123 city",20,"หืวข้าว"),
-("004","pcho@gmail.com","25474","Suntipap","Juangroongruangkit","99 samainiyom",19,"อยากเป็นหมอ"),
-("005","phim@gmail.com","98764","Jittakan","Juangroongruangkit","911 USA",21,"อยากจะเป็นนักธุรกิจพันล้าน");
+("001","pguide@gmail.com","12345","Thanawich","Juangroongruangkit","42 ponisit",20,"เจ้าของร้านค้า"),
+("002","psub@gmail.com","11111","Jaosub","Juangroongruangkit","888 pasulo",20,"เป็นพ่อค้า"),
+("003","pjay@gmail.com","69696","Salute","Juangroongruangkit","123 city",20,"ทำรายได้ 50,000 ต่อเดือน"),
+("004","pcho@gmail.com","25474","Suntipap","Juangroongruangkit","99 samainiyom",19,"อยากขายของหมด"),
+("005","phim@gmail.com","98764","Jittakan","Juangroongruangkit","10 USA",21,"อยากจะเป็นนักธุรกิจพันล้าน");
 
 -- INSERT INTO USERS VALUES
 -- ("101","slot888@gmail.com","69 jatujak","00004"),
@@ -61,7 +61,3 @@ INSERT INTO Product VALUES
 SELECT * FROM ADMINS;
 
 SELECT * FROM Product;
-
-
-SELECT * FROM product
-WHERE pprice < (SELECT MAX(pprice) FROM product);
