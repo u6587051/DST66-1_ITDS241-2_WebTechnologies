@@ -41,7 +41,9 @@ selectB.addEventListener("click", () => {
       console.log(data);
       if (data.data.length > 0) {
         alert(data.message);
+        // ใช้เพื่อ clear กล่อง id:Soutput จากไฟล์ Search_page.html
         $("#Soutput").empty();
+
         data.data.forEach((productData) => {
           var column = document.createElement('div'); 
           column.className = 'column';
