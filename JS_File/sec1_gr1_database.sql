@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS team11;
-CREATE DATABASE team11;
-USE team11;
+DROP DATABASE IF EXISTS sec1_gr1_database;
+CREATE DATABASE sec1_gr1_database;
+USE sec1_gr1_database;
 
 CREATE TABLE Product (
 PID char(2) NOT NULL UNIQUE,
