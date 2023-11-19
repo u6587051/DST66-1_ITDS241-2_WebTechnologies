@@ -62,6 +62,15 @@ selectB.addEventListener("click", () => {
           heading.id = 'producthead'; 
           heading.textContent = productData.PName; //กำหนด text จาก property PName
 
+          var cate = document.createElement('h5');
+          cate.id = 'productCat'; 
+          cate.textContent = "ประเภท: "+productData.PCat; //กำหนด text จาก property PCat
+
+          
+          var brand_ = document.createElement('h5');
+          brand_.id = 'productBrand'; 
+          brand_.textContent = "แบรนด์: "+productData.PBrand; //กำหนด text จาก property PName
+
           //สร้าง Element h4 และกำหนด id เป็น price
           var price = document.createElement('h4');
           price.id = 'price';
@@ -79,6 +88,8 @@ selectB.addEventListener("click", () => {
           // นำ Tag ต่างๆ ใส่เป็น child ของตัวแปร column ซึ่งคือ div ที่ class คือ column
           column.appendChild(img);
           column.appendChild(heading);
+          column.appendChild(cate);
+          column.appendChild(brand_);
           column.appendChild(price);
           column.appendChild(buyButton);
 
