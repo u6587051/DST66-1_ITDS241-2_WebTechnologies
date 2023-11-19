@@ -262,3 +262,7 @@ span#currentpage{
     padding: 5px;
     border-radius: 10px;
   }
+
+#productCat, #productBrand{
+    margin-left: 5px;
+}
