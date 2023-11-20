@@ -81,7 +81,7 @@ selectB.addEventListener("click", () => {
           buyButton.id = 'buybutton';
           buyButton.value = 'สั่งซื้อสินค้า';
 
-
+          // ฟังก์ชันสร้าง Dynamic Page เพื่อแสดงรายละเอียดของ Product นั้น ๆ หลังกดปุ่ม สั่งซื้อสินค้า
           buyButton.onclick = function() {
             var productPage = document.createElement('div');
 
@@ -92,6 +92,7 @@ selectB.addEventListener("click", () => {
             var productQuantity = productData.PQuan; // กำหนดตัวแปรเป็น PQuan จาก Database
             var productDetail = productData.PDetail; // กำหนดตัวแปรเป็น PDetail จาก Database
 
+            // สร้างตัวแปร productPage ไว้ใส่ HTML elements ต่างๆ
             productPage.innerHTML = 
             `<section class="ProInfo">
                     <table>
@@ -112,10 +113,10 @@ selectB.addEventListener("click", () => {
                     <h2 class="center-container" id="pdetail">${productDetail}</h2><br>
                 </section>`;
 
-            // Retrieve the dynamically created content from localStorage
+            // เก็บ productPage.innerHTML เข้าไปเก็บใน localStorage เพื่อจะนำไปสร้างหน้า Product แบบ Dynamic หลังกดปุ่ม
             localStorage.setItem('productPageContent', productPage.innerHTML);
 
-            // Navigate ไป หน้า product โดยใช้ window.location เมื่อกดปุ่มสั่งซื้อสินค้า
+            // Navigate ไป หน้า product โดยใช้ window.location.replace ด้วย URL ของหน้า Product เมื่อกดปุ่มสั่งซื้อสินค้า
             window.location.replace('http://localhost:8021/Product1');
           };
           
