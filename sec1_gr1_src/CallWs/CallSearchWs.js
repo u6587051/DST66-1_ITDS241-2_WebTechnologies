@@ -111,7 +111,12 @@ selectB.addEventListener("click", () => {
                 <!-- หัวข้อรายระเอียดของสินค้า -->
                 <section class="BoxContent">
                     <h2 class="center-container" id="pdetail">${productDetail}</h2><br>
-                </section>`;
+                </section>
+                <footer>
+                <p>TopKing 👑</p><br>
+                <p>Tel: 02-345-6789</p><br>
+                <p>Address: 999 Phutthamonthon Sai 4 Rd, Salaya, Phutthamonthon District, Nakhon Pathom 73170 </p>
+            </footer>`;
 
             // เก็บ productPage.innerHTML เข้าไปเก็บใน localStorage เพื่อจะนำไปสร้างหน้า Product แบบ Dynamic หลังกดปุ่ม
             localStorage.setItem('productPageContent', productPage.innerHTML);
