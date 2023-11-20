@@ -28,32 +28,49 @@
     </header>
 
     <!-- หัวข้อรายการสำคัญของสินค้า -->
-    <section class="ProInfo">
+    <!-- <section class="ProInfo">
         <table>
             <td>
-                <img src="..\Picture\Product1.jpg" class="ProImg"><br>
+                <img src="..\Picture\Product1.jpg" class="ProImg" id="pimg"><br>
             </td>
             <td>
                 <h1 id="pname">ใบตัดเหล็ก NKK (A36P) ขนาด 4 นิ้ว หนา 1.8 มม.</h1>
                 <h3 id="pcat">เครื่องมือตัด</h3>
                 <h3 id="pprice">ราคา 520.00 บาท</h3>
-                <label for="quantity">Quantity: 3</label>
+                <label for="quantity" id="pquan">Quantity: 3</label>
             </td>
         </table>
-    </section>
+    </section> -->
 
     <!-- หัวข้อรายระเอียดของสินค้า -->
-    <section class="BoxContent">
-        <h2 class="center-container">ใบตัดเหล็ก NKK (A36P) ขนาด 4 นิ้ว หนา 1.8 มม. เสริมด้วยใยแก้วเคลือบเรซินชนิดพิเศษ
+    <!-- <section class="BoxContent">
+        <h2 class="center-container" id="pdetail">ใบตัดเหล็ก NKK (A36P) ขนาด 4 นิ้ว หนา 1.8 มม. เสริมด้วยใยแก้วเคลือบเรซินชนิดพิเศษ
             มีความคม ทน ปลอดภัย ไม่มีการแตกหักร่อน ตัดได้รวดเร็ว ได้จำนวนชิ้นงานที่มากกว่า</h2><br>
-        <img src="..\Picture\Product1-1.jpg" class="ProImgDes"><br>
-        <img src="..\Picture\Product1-2.jpg" class="ProImgDes"><br>
-    </section>
+    </section> -->
 
     <!-- แหล่งอ้างอิง -->
-    <div style="padding: 20px;">Ref: <a href="https://shorturl.at/yB278">https://shorturl.at/yB278</a></div>
+    <!-- <div style="padding: 20px;">Ref: <a href="https://shorturl.at/yB278">https://shorturl.at/yB278</a></div> -->
 
     <!-- ส่วนของ Footer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Retrieve the dynamically created content from localStorage
+        var productPageContent = localStorage.getItem('productPageContent');
+
+        // Check if content exists before appending it to the DOM
+        if (productPageContent) {
+            // Create a container element
+            var container = document.createElement('div');
+            container.innerHTML = productPageContent;
+
+            // Append the container to the body or another target element
+            document.body.appendChild(container);
+        }
+
+        // Clear the stored content to avoid duplication on page reload
+        localStorage.removeItem('productPageContent');
+    });
+    </script>
     <footer>
         <p>TopKing 👑</p><br>
         <p>Tel: 02-345-6789</p><br>

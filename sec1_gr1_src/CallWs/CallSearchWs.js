@@ -76,8 +76,48 @@ selectB.addEventListener("click", () => {
           price.id = 'price';
           price.textContent = '฿' + productData.PPrice; //กำหนด text จาก property Pprice
 
-          var buyButton = document.createElement('h4');
+          var buyButton = document.createElement('input'); //สร้าง element input เป็น type button เพื่อเป็นปุ่มสั่งซื้อสินค้า
+          buyButton.type = 'button';
           buyButton.id = 'buybutton';
+          buyButton.value = 'สั่งซื้อสินค้า';
+
+
+          buyButton.onclick = function() {
+            var productPage = document.createElement('div');
+
+            var imgSrc = productData.Pimg; // กำหนดตัวแปรเป็น Pimg จาก Database
+            var productName = productData.PName; // กำหนดตัวแปรเป็น PName จาก Database
+            var productCategory = productData.PCat; // กำหนดตัวแปรเป็น PCat จาก Database
+            var productPrice = productData.PPrice; // กำหนดตัวแปรเป็น PPrice จาก Database
+            var productQuantity = productData.PQuan; // กำหนดตัวแปรเป็น PQuan จาก Database
+            var productDetail = productData.PDetail; // กำหนดตัวแปรเป็น PDetail จาก Database
+
+            productPage.innerHTML = 
+            `<section class="ProInfo">
+                    <table>
+                        <td>
+                            <img src="${imgSrc}" class="ProImg" id="pimg"><br>
+                        </td>
+                        <td>
+                            <h1 id="pname">${productName}</h1>
+                            <h3 id="pcat">${productCategory}</h3>
+                            <h3 id="pprice">ราคา ${productPrice} บาท</h3>
+                            <label for="quantity" id="pquan">Quantity: ${productQuantity}</label>
+                        </td>
+                    </table>
+                </section>
+
+                <!-- หัวข้อรายระเอียดของสินค้า -->
+                <section class="BoxContent">
+                    <h2 class="center-container" id="pdetail">${productDetail}</h2><br>
+                </section>`;
+
+            // Retrieve the dynamically created content from localStorage
+            localStorage.setItem('productPageContent', productPage.innerHTML);
+
+            // Navigate ไป หน้า product โดยใช้ window.location เมื่อกดปุ่มสั่งซื้อสินค้า
+            window.location.replace('http://localhost:8021/Product1');
+          };
           
           var link = document.createElement('a');
           link.id = 'Buy';
