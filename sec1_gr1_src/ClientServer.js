@@ -55,31 +55,6 @@ router.get('/Product1', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/Product1.html`));
 })
 
-// Route ไปยังหน้า Product2
-router.get('/Product2', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Product2.html`));
-})
-
-// Route ไปยังหน้า Product3
-router.get('/Product3', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Product3.html`));
-})
-
-// Route ไปยังหน้า Product4
-router.get('/Product4', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Product4.html`));
-})
-
-// Route ไปยังหน้า Product5
-router.get('/Product5', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Product5.html`));
-})
-
-// Route ไปยังหน้า Product6
-router.get('/Product6', (req,res) =>{
-    res.sendFile(path.join(`${__dirname}/HTML/Product6.html`));
-})
-
 // Route ไปยังหน้า Search page
 router.get('/Searchpage', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/Search_page.html`));
