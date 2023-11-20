@@ -44,7 +44,6 @@ INSERT INTO Product VALUES
 ("08","ปั๊มลม 30 ลิตร","ETOP","เครื่องมือลม",2500,35,"ปั๊มลม oil free เสียงเงียบ ไม่มีกลิ่นน้ำมัน ไม่ต้องใช้น้ำมันหล่อลื่น","https://i.postimg.cc/SR98sFqC/etop-30l-400x400-4-1.jpg"),
 ("09","ปั๊มน้ำ ปั๊มแช่ ปั๊มจุ่ม","DC-SOLAR","เครื่องฉีดน้ำแรงดันสูงและอุปกรณ์",790,54,"วัสดุ: โลหะและพลาสติก","https://i.postimg.cc/44vVrGLR/9122019-0006.jpg"),
 ("10","สีสเปรย์เรดฟ็อกซ์ RED FOX NO.36(300)","RED FOX","สีสเปร์ย",90,10,"NO.36(300) BRIGHT SILVER (สีบรอนซ์)","https://i.postimg.cc/8zLJjqrc/RED-FOX-NO-36-300-BRIGHT-SILVER-2.jpg");
-SELECT * FROM USERS;
 
 SELECT * FROM ADMINS;
 
