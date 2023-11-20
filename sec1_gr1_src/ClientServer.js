@@ -21,10 +21,6 @@ router.get('/aboutus', (req,res) =>{
     res.sendFile(path.join(__dirname + "/HTML/About_us.html"));
 })
 
-// router.get('/CSS/him-styles.css', (req,res) =>{
-//     res.sendFile(path.join(`${__dirname}/HTML/CSS/him-styles.css`));
-// })
-
 // Route ไปยังหน้า Admin-product
 router.get('/admin-product', (req,res) =>{
     res.sendFile(path.join(`${__dirname}/HTML/admin-product.html`));
